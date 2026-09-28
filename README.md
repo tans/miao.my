@@ -1,0 +1,27 @@
+# MIAO 官网与文档
+
+独立的静态站点，包含产品官网和产品文档，可直接作为 Vercel 项目部署。
+
+## 本地预览
+
+用任意静态 HTTP 服务器将本目录作为站点根目录，例如：
+
+```sh
+python3 -m http.server 4173
+```
+
+然后打开 `http://localhost:4173`。
+
+## 部署到 Vercel
+
+在 Vercel 导入此目录（或将此目录作为项目根目录），无需 Build Command，Output Directory 使用 `.`。站点为纯静态 HTML/CSS，无需安装依赖。
+
+此工程只包含官网和文档，不含原应用的 Fastify API、PocketBase 或登录/工作区功能。完整应用后端需单独部署。
+
+## 目录
+
+- `index.html`：官网
+- `docs/`：产品文档
+- `assets/mascots/`：官网使用的 MIAO 猫咪素材
+- `styles.css`：站点样式
+- `vercel.json`：静态路由与图片缓存设置
