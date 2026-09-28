@@ -23,5 +23,12 @@ python3 -m http.server 4173
 - `index.html`：官网
 - `docs/`：产品文档
 - `assets/mascots/`：官网使用的 MIAO 猫咪素材
+- `assets/scenes/`：AI 生成的工作场景示意图
 - `styles.css`：站点样式
 - `vercel.json`：静态路由与图片缓存设置
+
+场景图由内置 ImageGen 生成，提示词：
+
+> Candid editorial photograph of a small Chinese business team using a lightweight internal workbench to coordinate daily operations; a modest bright office connected to a tidy stockroom, two colleagues reviewing a tablet and paper inventory list, another preparing a shipment; natural morning light, off-white, sage green and soft wood; no legible text, logos or watermark.
+
+官网的工作台界面与三组客户场景均为原型演示内容；虚构案例不代表真实客户或已验证成果。
