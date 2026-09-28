@@ -53,7 +53,7 @@ a:focus-visible { outline: 3px solid #a9cfb4; outline-offset: 3px; }
 .hero-art img { display: block; width: min(100%, 480px); max-height: 430px; object-fit: contain; }
 .how-section { max-width: 1080px; margin: 84px auto 74px; padding: 0 28px; }
 .how-section h2, .docs-callout h2 { margin: 0 0 34px; font-family: Manrope, sans-serif; font-size: 30px; letter-spacing: -.035em; }
-.how-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px; }
+.how-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
 .how-steps article { border-top: 1px solid #dce2d9; padding-top: 17px; }
 .how-steps h3 { margin: 8px 0; font-family: Manrope, sans-serif; font-size: 19px; }
 .how-steps p { max-width: 290px; margin: 0; color: #52645a; font-size: 14px; line-height: 1.7; }
@@ -97,6 +97,7 @@ a:focus-visible { outline: 3px solid #a9cfb4; outline-offset: 3px; }
   .hero-shell { min-height: 0; padding: 48px 28px; grid-template-columns: 1fr; }
   .hero-art img { width: min(82%, 390px); max-height: 340px; }
   .docs-main { padding-top: 56px; }
+  .how-steps { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 580px) {
   .site-nav { padding: 14px 16px; }
