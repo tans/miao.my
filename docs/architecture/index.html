@@ -16,15 +16,15 @@
     <nav class="breadcrumbs docs-breadcrumb" aria-label="面包屑"><ul><li><a href="/docs/">文档</a></li><li>产品架构</li></ul></nav>
     <article class="docs-article">
       <h1>产品架构</h1>
-      <p class="article-lead">MIAO 将页面托管、业务 API、数据存储和浏览器 AI 分开处理。官网可独立部署，完整应用仍需要 MIAO API 与 PocketBase 服务。</p>
+      <p class="article-lead">MIAO 面向希望自托管内部工作台的企业，将页面、业务 API、数据存储和浏览器 AI 分开处理。官网可独立部署，完整应用还需要 MIAO API 与 PocketBase 服务。</p>
       <h2>各部分的职责</h2>
       <ul><li><strong>官网与文档：</strong>静态 HTML、CSS 和图片，可部署到 Vercel 等静态托管平台。</li><li><strong>MIAO API：</strong>由 Fastify 提供，负责账号、工作区、应用和记录接口，并校验数据访问边界。</li><li><strong>PocketBase：</strong>保存身份、工作区、应用数据表元信息和业务记录。</li><li><strong>浏览器 AI 助手：</strong>通过 fx WebAssembly SDK 在浏览器中运行；用户提供 Gateway Key，MIAO 应用向助手提供受限的数据工具。</li></ul>
       <h2>部署提示</h2>
-      <p>当前 Vercel 项目目录只包含官网和文档静态页面，不提供账号或应用 API。完整 MIAO 应用的 API 与 PocketBase 需要部署在可运行持久化服务的后端环境，再由应用前端连接相应服务。</p>
+      <p>MIAO 的开源应用可以部署在团队管理的基础设施上。当前 Vercel 项目目录只包含官网和文档静态页面，不提供账号或应用 API。完整 MIAO 应用的 API 与 PocketBase 需要部署在可运行持久化服务的后端环境，再由应用前端连接相应服务。</p>
       <p>本目录没有为 API 地址预设占位配置，也不会把服务器密钥打包进静态资源。后续若要把应用前端也迁移到 Vercel，需要先明确 API 的公开地址与浏览器访问策略。</p>
     </article>
     <aside class="article-aside"><span class="badge badge-outline">架构文档</span><p>查看产品功能边界。</p><a href="/docs/product/">阅读产品说明 →</a></aside>
   </main>
-  <footer class="site-footer"><a class="brand" href="/"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>MIAO</strong></a><span>为日常工作而做</span><a href="/docs/">全部文档</a></footer>
+  <footer class="site-footer"><a class="brand" href="/"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>MIAO</strong></a><span>开源企业内部工作台</span><a href="/docs/">全部文档</a></footer>
 </body>
 </html>
