@@ -11,6 +11,7 @@
 .home-hero-compact h1{margin:0;font-size:clamp(34px,4.6vw,54px);font-weight:590;line-height:1.15;letter-spacing:-.055em}
 .home-hero-compact .hero-visual{width:min(100%,920px);margin:34px auto 0}
 .home-hero-compact .visual-window{transform:none}
+.home-hero-compact .home-preview-image{display:block;width:100%;height:auto;border:1px solid #e4e7e9;border-radius:9px;background:#f8f9f9;box-shadow:0 20px 56px rgb(0 0 0 / 8%)}
 .feature-list{width:min(760px,100%);display:flex;justify-content:center;align-items:center;list-style:none;margin:24px 0 0;padding:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .feature-list li{flex:1;padding:16px 12px;color:#24262b;font-size:14px;font-weight:560;white-space:nowrap}
 .feature-list li+li{border-left:1px solid var(--line)}
