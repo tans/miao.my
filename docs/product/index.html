@@ -1,37 +1,51 @@
 <!doctype html>
-<html lang="zh-CN" data-theme="miao">
+<html lang="zh-CN" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MIAO 产品说明：开源企业内部工作台的定位、当前功能与发展边界。" />
-  <title>产品说明 · MIAO 文档</title>
-  <link rel="icon" type="image/png" href="/assets/mascots/cat-logo-head.png" />
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="/styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MIAO 产品说明：从团队日常工作出发理解 Agent-first 内部应用、当前能力和产品规划。" />
+  <title>产品说明 · MIAO</title><link rel="icon" type="image/png" href="/assets/mascots/cat-logo-head.png" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" /><link rel="stylesheet" href="/styles.css" /><script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-  <header class="navbar site-nav"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>MIAO</strong></a><nav class="navbar-end" aria-label="主导航"><a class="btn btn-ghost" href="/docs/">全部文档</a><a class="btn btn-ghost" href="/">官网首页</a></nav></header>
+  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>MIAO</strong><span class="brand-divider"></span><span class="brand-caption">开放的工作台</span></a></div><nav class="navbar-end" aria-label="主导航"><a class="nav-link" href="/docs/">全部文档</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub ↗</a></nav></header>
   <main class="docs-main article-layout">
     <nav class="breadcrumbs docs-breadcrumb" aria-label="面包屑"><ul><li><a href="/docs/">文档</a></li><li>产品说明</li></ul></nav>
     <article class="docs-article">
-      <h1>MIAO 产品说明</h1>
-      <p class="article-lead">MIAO 是一个开源企业内部工作台，目标是让团队把日常流程、业务数据和 AI 助手放进可自托管、可扩展的工作环境。</p>
-      <h2>产品方向</h2>
-      <p>企业可以根据自己的流程创建内部应用，在工作台中组织数据，并让 AI 助手参与信息查询与整理。开源代码便于团队检查、部署和按需扩展。</p>
-      <h2>为什么选择 MIAO</h2>
-      <ul><li><strong>内置 AI 助手：</strong>用自然语言描述需求，快速搭建企业内部应用。</li><li><strong>开源、自主部署：</strong>运行在企业自己的环境中，业务数据由企业管理。</li><li><strong>免平台年费：</strong>MIAO 软件不收年费，不依赖随使用规模上涨的平台订阅费。</li><li><strong>面向中小企业：</strong>轻量、简单、快速上线，从真实工作流程开始。</li></ul>
-      <h2>如何使用</h2>
-      <ol><li>创建应用，并用一句话说明它要解决的工作。</li><li>创建数据表和字段，定义要记录的信息。</li><li>浏览、添加和删除记录；也可以使用内置 AI 助手协助创建数据表和操作记录。</li></ol>
-      <h2>当前已实现</h2>
-      <ul><li>每个账号拥有自己的工作区。</li><li>应用包含数据表和业务记录。</li><li>AI 助手运行在浏览器中，通过 MIAO 提供的工具操作当前应用数据。</li><li>使用 AI 助手时，需要用户提供 Vercel AI Gateway Key；密钥仅保存在当前页面内存中，刷新后需重新输入。</li></ul>
-      <h2>当前阶段与边界</h2>
-      <p>“企业内部工作台”是 MIAO 的产品定位和发展方向。当前版本仍以个人工作区为基础，尚无工作区邀请、成员角色和团队共享；应用也不会根据描述自动生成完整页面或业务流程。AI 助手需要支持 JavaScript Promise Integration（JSPI）的浏览器。此 Vercel 站点只包含官网与文档，完整应用的 API 和 PocketBase 需要单独部署。</p>
-      <p>自托管不等于没有运行成本：企业仍需承担自己的服务器、域名，以及按需使用的 AI 服务费用；MIAO 本身不收平台年费。</p>
-      <p class="article-footnote">产品能力说明依据当前代码与产品定义整理，功能范围可能随版本更新。</p>
+      <h1>让团队的工作，<br />有一个自己的入口。</h1>
+      <p class="article-lead">日常工作常常不在同一个地方：需求在消息里，进度在表格里，下一步记在某个人心里。MIAO 的方向，是让小团队能把这些真实流程整理成自己掌握的内部应用。</p>
+
+      <h2>从重复，而不是从软件开始</h2>
+      <p>挑一件经常发生、又需要多人接续的工作：客户沟通、采购申请、项目进度，或内部需求收集。先说清楚谁在做、要留下哪些信息、下一步怎么交接。工具应跟着这套工作长出来，而不是先要求团队适应一套固定系统。</p>
+      <p>在 Agent-first 的产品体验中，fx 会围绕这些目标提出必要的问题，整理一份应用草稿。团队能先预览页面和操作，再决定是否发布。发布后的应用承接日常填写、查询和状态更新；需要核对或修复时，才打开底层数据视图。</p>
+
+      <h2>一条可理解、可确认的工作路径</h2>
+      <ol>
+        <li><strong>描述要完成的工作。</strong>从业务目标和当前阻碍开始，不必先学习数据库或页面搭建器。</li>
+        <li><strong>检查方案和预览。</strong>确认需要的页面、记录和动作。修改先形成草稿，团队可以继续沟通与查看。</li>
+        <li><strong>确认后交给团队使用。</strong>发布是有意为之的动作。日常用户在业务页面做事，不必每一步都和 AI 对话。</li>
+        <li><strong>需要排查时查看数据。</strong>数据表是检查、导出和必要修正的入口，不是用户进入应用时的默认界面。</li>
+      </ol>
+      <p>这个流程是 MIAO 的产品目标。页面生成、版本化预览和发布目前仍在规划与分阶段开发中；今天的产品还不能仅凭一句描述生成完整业务应用。</p>
+
+      <h2>今天可以用 MIAO 做什么</h2>
+      <p>当前版本已提供工作区、成员与邀请、应用和数据表管理、记录的新增编辑与查询、应用级访问权限，以及操作日志和数据导出。fx 在受支持的浏览器中运行，可通过当前工作区获授权的数据工具协助整理表结构与记录。团队也可自行部署代码和后端服务。</p>
+      <p>因此，现阶段更适合把 MIAO 当作一套可自托管的轻量数据工作台，并在 fx 协助下处理数据。它还不是成熟的无代码建站工具，也不会把任意 AI 生成代码直接作为应用运行。</p>
+
+      <h2>把控制权留在团队手里</h2>
+      <p>MIAO 是开源软件。团队可以检查代码，选择自己的部署方式，并管理业务数据所在的后端。服务端对工作区成员和应用访问逐请求校验；浏览器中的 fx 只能使用应用明确交给它的上下文和工具。</p>
+      <p>自托管也意味着部署方需要维护服务器、域名、备份和恢复流程；启用 AI 时，还要配置自己的 AI Gateway 服务并承担供应商费用。软件不收平台年费，不代表运行基础设施没有成本。</p>
+
+      <h2>目前的边界</h2>
+      <ul>
+        <li>自然语言生成业务界面、草稿版本、应用预览与发布是产品规划，不应视为当前已上线能力。</li>
+        <li>fx 需要可用的服务端 AI Gateway 配置；嵌入式浏览器执行需要支持 JavaScript Promise Integration（JSPI）的浏览器。</li>
+        <li>此 Vercel 站点提供官网和静态文档；账号、应用 API 与 PocketBase 需要单独部署和配置。</li>
+        <li>代码已实现的功能仍需在目标环境按真实账号、权限和运行配置验收后，才能作为生产可用承诺。</li>
+      </ul>
+      <p class="article-footnote">能力状态依据 MIAO 仓库 2026-09-29 的代码评审和产品方案整理。产品规划与已实现能力分别标注，部署环境可能影响实际可用性。</p>
     </article>
-    <aside class="article-aside"><span class="badge badge-outline">产品文档</span><p>想了解各服务之间的关系？</p><a href="/docs/architecture/">阅读产品架构 →</a></aside>
+    <aside class="article-aside"><span class="badge badge-outline">产品 / 01</span><p>想了解静态官网与运行服务之间的关系？</p><a href="/docs/architecture/">阅读产品架构 →</a></aside>
   </main>
-  <footer class="site-footer"><a class="brand" href="/"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>MIAO</strong></a><span>开源企业内部工作台</span><a href="/docs/">全部文档</a></footer>
+  <footer class="site-footer"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>MIAO</strong></a><span>开源的内部工作台</span><nav aria-label="页脚导航"><a href="/docs/">全部文档</a><a href="/">官网首页</a></nav></footer>
 </body>
 </html>
