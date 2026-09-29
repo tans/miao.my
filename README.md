@@ -1,6 +1,6 @@
 # MIAO 官网与文档
 
-MIAO 是开源企业内部工作台。本仓库目录提供独立静态官网和产品文档，可直接作为 Vercel 项目部署；完整应用支持单独自托管，详见产品文档。
+MIAO 是开源企业内部工作台。本仓库提供静态官网和面向企业使用者的单页用户手册，可直接作为 Vercel 项目部署。完整应用单独自托管，源码见 [`tans/miao`](https://github.com/tans/miao)。
 
 ## 本地预览
 
@@ -21,7 +21,9 @@ python3 -m http.server 4173
 ## 目录
 
 - `index.html`：官网
-- `docs/`：产品文档
+- `docs/USER_GUIDE.md`：用户手册正文，唯一内容源
+- `docs/index.html`：手册静态页面，由 `python3 scripts/build-docs.py` 生成（需要 Pandoc）
+- `docs/product/`、`docs/architecture/`：旧文档地址，跳转到手册对应章节
 - `assets/mascots/`：官网使用的 MIAO 猫咪素材
 - `assets/scenes/`：AI 生成的工作场景示意图
 - `styles.css`：站点样式
