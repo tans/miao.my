@@ -7,7 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" /><link rel="stylesheet" href="/styles.css" /><script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>MIAO</strong><span class="brand-divider"></span><span class="brand-caption">开放的工作台</span></a></div><nav class="navbar-end" aria-label="主导航"><a class="nav-link" href="/docs/">全部文档</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub ↗</a></nav></header>
+  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>MIAO</strong><span class="brand-divider"></span><span class="brand-caption">开源的企业 AI 工作台</span></a></div><nav class="navbar-end" aria-label="主导航"><a class="nav-link" href="/docs/">全部文档</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub ↗</a></nav></header>
   <main class="docs-main article-layout">
     <nav class="breadcrumbs docs-breadcrumb" aria-label="面包屑"><ul><li><a href="/docs/">文档</a></li><li>产品架构</li></ul></nav>
     <article class="docs-article">
@@ -15,18 +15,18 @@
       <p class="article-lead">MIAO 把静态官网、应用界面、业务 API、数据存储和 AI 服务分开。这样团队可以单独部署公开页面，也能在运行应用时保留明确的数据访问边界。</p>
       <h2>一次请求经过哪些部分</h2>
       <ol><li><strong>浏览器：</strong>承载登录后的 MIAO 工作台和 fx。浏览器只获得当前会话和界面所需数据。</li><li><strong>MIAO API：</strong>由 Fastify 提供账号、工作区、应用和记录接口。每次请求都会重新检查成员关系、应用访问和操作权限。</li><li><strong>PocketBase：</strong>保存身份、工作区关联、应用元数据、数据表和业务记录。</li><li><strong>AI Gateway：</strong>fx 的模型请求经 MIAO 服务端代理转发。Gateway 长期密钥由服务端配置，浏览器不会获得该密钥。</li></ol>
-      <h2>浏览器中的 fx 有哪些边界</h2>
-      <p>fx 通过浏览器内的 WebAssembly SDK 运行。MIAO 为它提供界面、当前工作区上下文和受限工具；工具请求仍通过 MIAO API 授权。它不会继承 fx CLI 的文件系统、Shell、系统密钥链或 MCP 配置，也不应收到超出当前任务需要的整库记录。</p>
-      <p>嵌入式 fx 执行需要浏览器支持 JavaScript Promise Integration（JSPI）。如果浏览器不支持，或服务端没有配置可用 AI 服务，用户仍可使用当前手动数据管理能力，但 AI 对话不可用。</p>
-      <h2>静态站点与完整应用是两项部署</h2>
+      <h2>fx 可以访问哪些信息</h2>
+      <p>fx 通过浏览器内的 WebAssembly SDK 运行。MIAO 为它提供界面、当前工作区上下文和受限工具；工具请求仍通过 MIAO API 授权。它不会继承 fx CLI 的文件系统、Shell、系统密钥链或 MCP 配置，也不会一次性读取所有业务记录。</p>
+      <p>fx 要在浏览器中运行，浏览器需支持 JavaScript Promise Integration（JSPI）。如果浏览器不支持，或服务端没有配置 AI 服务，用户仍可手动管理数据，但无法使用 fx 对话。</p>
+      <h2>官网与 MIAO 应用需要分别部署</h2>
       <p>本 Vercel 项目包含官网和产品文档，发布为静态文件。它不提供账号、业务 API、数据库，也不代管 AI Gateway 密钥。完整 MIAO 应用还需要部署 Fastify API 与 PocketBase，并按实际域名配置浏览器访问策略。</p>
-      <p>自托管方应负责 TLS、服务进程、备份和异地副本，并在隔离环境定期演练恢复。API 与数据库的可用性、AI 供应商费用和公网邮件投递，都取决于具体部署配置。</p>
-      <h2>产品规划与实现状态分开管理</h2>
-      <p>目标中的界面生成、草稿预览、版本发布和纯界面回退，需要新增版本化运行时与服务端校验，不能只靠静态官网、隐藏按钮或前端配置实现。规划细节和当前功能边界见<a href="/docs/product/">产品说明</a>。</p>
+      <p>自行部署的团队需要负责 HTTPS、服务运行、备份和异地副本，并定期在隔离环境中演练数据恢复。API、数据库、AI 服务费用和邮件发送也取决于具体部署配置。</p>
+      <h2>当前功能与开发中的功能</h2>
+      <p>自然语言生成业务页面、预览草稿、发布新版本和切回旧版，都需要有版本管理的应用运行环境与服务端校验，不能只靠官网静态页面或前端设置实现。规划细节和当前功能边界见<a href="/docs/product/">产品说明</a>。</p>
       <p class="article-footnote">架构说明依据 MIAO 当前代码与部署形态整理。生产环境仍需独立验收权限、AI 配置、跨工作区隔离和备份恢复。</p>
     </article>
     <aside class="article-aside"><span class="badge badge-outline">架构 / 02</span><p>先了解 MIAO 面向什么工作。</p><a href="/docs/product/">阅读产品说明 →</a></aside>
   </main>
-  <footer class="site-footer"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>MIAO</strong></a><span>开源的内部工作台</span><nav aria-label="页脚导航"><a href="/docs/">全部文档</a><a href="/">官网首页</a></nav></footer>
+  <footer class="site-footer"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>MIAO</strong></a><span>开源的企业 AI 工作台</span><nav aria-label="页脚导航"><a href="/docs/">全部文档</a><a href="/">官网首页</a></nav></footer>
 </body>
 </html>
