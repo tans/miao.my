@@ -13,19 +13,13 @@
 </head>
 <body>
   <header class="navbar site-nav">
-    <div class="navbar-start"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>MIAO</strong><span class="brand-divider"></span><span class="brand-caption">开源的企业 AI 工作台</span></a></div>
-    <nav class="navbar-end" aria-label="主导航"><a class="nav-link" href="#product">产品</a><a class="nav-link" href="/docs/">文档</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub <span aria-hidden="true">↗</span></a></nav>
+    <div class="navbar-start"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>MIAO</strong></a></div>
+    <nav class="navbar-end" aria-label="主导航"><a class="nav-link" href="/docs/">文档</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub ↗</a></nav>
   </header>
-  <main>
-    <section class="home-hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="announcement"><span class="announcement-dot"></span> 开源 · 团队自行部署 · AI 助手协助工作</p>
-        <h1 id="hero-title">开源的企业<br />AI 工作台。</h1>
-        <p class="hero-description">在自己的环境中管理内部应用、成员和业务数据，并由 fx 协助查询与整理。根据需求生成业务页面的能力仍在开发中。</p>
-        <div class="hero-actions"><a class="btn btn-neutral btn-lg" href="https://github.com/tans/miao">查看开源项目 <span aria-hidden="true">↗</span></a><a class="hero-secondary" href="/docs/product/">了解产品功能 <span aria-hidden="true">→</span></a></div>
-        <p class="hero-note">部署在团队自己的服务器，数据由团队管理。</p>
-      </div>
-      <div class="hero-visual" aria-label="MIAO 工作台产品概念预览">
+  <main class="landing-home">
+    <section class="home-hero home-hero-compact" aria-labelledby="hero-title">
+      <h1 id="hero-title">开源的企业 AI 工作台</h1>
+      <div class="hero-visual" role="img" aria-label="MIAO 工作台产品概念图">
         <div class="visual-window">
           <div class="window-bar"><div class="window-controls"><i></i><i></i><i></i></div><span>miao / workspace</span><span class="window-menu">···</span></div>
           <div class="workspace-preview">
@@ -43,37 +37,25 @@
               <div class="preview-list-heading"><strong>继续工作</strong><span>最近更新　⌄</span></div>
               <div class="preview-app-row"><span class="app-glyph">客</span><span><b>客户跟进</b><small>客户关系、沟通记录与下一步计划</small></span><span class="row-arrow">↗</span></div>
               <div class="preview-app-row"><span class="app-glyph gray">项</span><span><b>项目进度</b><small>项目状态、负责人和待办事项</small></span><span class="row-arrow">↗</span></div>
-              <div class="preview-demo-note">界面概念示意 · 名称和内容为虚构示例</div>
+              <div class="preview-demo-note">产品概念示意 · 内容为虚构示例</div>
             </div>
           </div>
         </div>
-        <div class="visual-caption"><span>产品概念</span><span>从工作需求开始 · 日常在应用中处理</span></div>
       </div>
+      <ul class="feature-list" aria-label="产品特性"><li>自定义应用</li><li>开源 · 免费商用</li><li>Agent Embed</li></ul>
+      <button class="btn btn-neutral deploy-cta" id="contact-cta" type="button" aria-haspopup="dialog">定制部署，联系客服</button>
     </section>
-    <div class="signal-row" aria-label="产品原则"><span>让 AI 助手参与日常工作</span><span>从真实流程开始</span><span>数据与部署由团队掌握</span></div>
-
-    <section id="product" class="workflow-section">
-      <div class="section-intro"><p class="section-kicker">从提出需求到日常使用</p><h2>从需求开始，<br />逐步形成团队常用的应用。</h2><p>当工作信息散落在表格、消息和个人习惯里，团队很难接着彼此的进度往下做。MIAO 将需求、业务界面与数据放在同一处，让工具贴近工作本身。</p></div>
-      <div class="workflow-list">
-        <article><span class="step-mark">A</span><div><h3>先说清楚要完成什么</h3><p>用日常语言说明需求。fx 帮你梳理参与人、关键步骤和需要记录的信息。</p></div><span class="step-type">描述工作</span></article>
-        <article><span class="step-mark">B</span><div><h3>一起形成可检查的方案</h3><p>把业务对象、页面和动作整理成草稿。先看预览、提出修改，再决定是否发布。</p></div><span class="step-type">预览与确认</span></article>
-        <article><span class="step-mark">C</span><div><h3>让团队在应用里继续做事</h3><p>团队发布后，可以用应用录入信息、查询记录和更新进度；需要核对或修正时，再打开数据表。</p></div><span class="step-type">日常使用</span></article>
-      </div>
-      <p class="roadmap-note"><span></span> 用自然语言描述需求、生成业务页面并预览发布，是 MIAO 正在开发的能力。<a href="/docs/product/">查看当前能力与规划 →</a></p>
-    </section>
-
-    <section class="product-principles">
-      <div><p class="section-kicker">为什么是 MIAO</p><h2>让软件跟上团队的工作方式。</h2></div>
-      <div class="principle-copy"><p>小团队往往没有资源从零开发内部系统，也常常需要迁就固定的软件流程。MIAO 从一件经常要做的事开始，把相关信息和后续安排放在一起，再按实际需要扩展。</p><a href="/docs/">阅读产品文档 <span aria-hidden="true">→</span></a></div>
-    </section>
-
-    <section class="trust-section">
-      <div class="trust-heading"><p class="section-kicker">由团队决定的基础设施</p><h2>开放的代码。清楚的边界。</h2><p>团队可以自行部署，也需要负责服务器运行和 AI 服务配置。</p></div>
-      <div class="trust-table"><div><span>01 / 数据</span><p>账号和业务数据保存在团队部署的后端；API 会按工作区和应用权限检查每次访问。</p></div><div><span>02 / AI</span><p>fx 只能使用 MIAO 提供的工作区信息和操作工具，无法访问用户电脑上的文件或终端。</p></div><div><span>03 / 发布</span><p>计划中的应用修改会先保存为草稿，由用户预览并确认后再发布。该能力仍在开发中。</p></div></div>
-    </section>
-
-    <section class="closing-cta"><div><h2>先从团队每天要处理的工作开始。</h2><p>查看开源代码、部署方法和产品说明。</p></div><div><a class="btn btn-neutral" href="https://github.com/tans/miao">前往 GitHub ↗</a><a class="cta-doc-link" href="/docs/">浏览文档 →</a></div></section>
   </main>
-  <footer class="site-footer"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>MIAO</strong></a><span>开源的企业 AI 工作台</span><nav aria-label="页脚导航"><a href="/docs/">文档</a><a href="https://github.com/tans/miao">GitHub ↗</a></nav><small>团队自行部署 · 数据由团队管理</small></footer>
+  <footer class="site-footer"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>MIAO</strong></a><nav aria-label="页脚导航"><a href="/docs/">文档</a><a href="https://github.com/tans/miao">GitHub ↗</a></nav></footer>
+  <dialog class="modal contact-modal" id="wechat-dialog" aria-labelledby="wechat-title">
+    <div class="modal-box">
+      <h2 id="wechat-title">添加微信联系客服</h2>
+      <p>微信号</p>
+      <strong class="wechat-id">tianshe00</strong>
+      <form method="dialog" class="modal-action"><button class="btn btn-neutral">知道了</button></form>
+    </div>
+    <form method="dialog" class="modal-backdrop"><button aria-label="关闭提示">关闭</button></form>
+  </dialog>
+  <script>document.getElementById('contact-cta').addEventListener('click', () => document.getElementById('wechat-dialog').showModal());</script>
 </body>
 </html>
