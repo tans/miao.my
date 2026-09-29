@@ -23,6 +23,8 @@ python3 -m http.server 4173
 - `index.html`：官网
 - `docs/USER_GUIDE.md`：用户手册正文，唯一内容源
 - `docs/index.html`：手册静态页面，由 `python3 scripts/build-docs.py` 生成（需要 Pandoc）
+- `docs/prototypes/`：12 张独立 HTML 界面原型、同名 PNG 预览与图库；`scripts/build-prototypes.py` 生成 HTML
+- `scripts/render-prototypes.py`：从 HTML 导出 1440×900 PNG（需要 WeasyPrint、PyMuPDF 和中文字体）
 - `docs/product/`、`docs/architecture/`：旧文档地址，跳转到手册对应章节
 - `assets/mascots/`：官网使用的 MIAO 猫咪素材
 - `assets/scenes/`：AI 生成的工作场景示意图
