@@ -22,3 +22,11 @@
 .contact-modal p{margin:19px 0 5px;color:#777b81;font-size:12px}
 .wechat-id{font-family:"Geist Mono",ui-monospace,monospace;font-size:18px;font-weight:550;letter-spacing:.02em}
 .contact-modal .modal-action{margin-top:24px}
+
+/* Rotating business type in the homepage headline */
+.home-hero-compact h1{line-height:1.2}
+.rotating-product{display:inline-block;min-width:4.6em;color:#111;transition:opacity 180ms ease,transform 180ms ease}
+.rotating-product.is-changing{opacity:0;transform:translateY(7px)}
+.hero-subtitle{margin:12px 0 0;color:var(--muted);font-size:clamp(15px,1.8vw,20px);line-height:1.5;letter-spacing:-.02em}
+@media(max-width:700px){.hero-subtitle{margin-top:9px;font-size:15px}}
+@media(prefers-reduced-motion:reduce){.rotating-product{transition:none}}
