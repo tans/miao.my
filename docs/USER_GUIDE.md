@@ -21,6 +21,8 @@
 
 **界面参考：**[HTML 原型](./prototypes/01-overview.html) · [原型图](./prototypes/images/01-overview.png) · [全部原型](./prototypes/)
 
+![工作区首页：Agent 输入与应用列表](./prototypes/images/01-overview.png)
+
 MIAO 用于建立和使用企业内部应用。你向内置 Agent（fx）说明工作目标，它帮你整理页面、数据和操作；确认后发布给团队。成员打开应用，直接使用表单、列表、详情和任务页面处理工作。
 
 **三种操作各有入口：**
@@ -42,6 +44,8 @@ MIAO 用于建立和使用企业内部应用。你向内置 Agent（fx）说明�
 
 **界面参考：**[HTML 原型](./prototypes/02-start.html) · [原型图](./prototypes/images/02-start.png)
 
+![开始使用：选择企业或个人工作区](./prototypes/images/02-start.png)
+
 1. 使用企业提供的 MIAO 地址注册或登录。收到邀请时，用受邀邮箱接受；需要验证邮箱时，先完成验证。
 2. 登录后选择工作区。个人工作区用于自己的应用；加入企业工作区后，按企业授予的权限协作。
 3. 在首页输入想建立的应用，或从应用列表打开已有应用。最近使用的应用排在前面；应用较多时可搜索和排序。
@@ -55,6 +59,8 @@ MIAO 用于建立和使用企业内部应用。你向内置 Agent（fx）说明�
 ## 创建应用
 
 **界面参考：**[HTML 原型](./prototypes/03-create.html) · [原型图](./prototypes/images/03-create.png)
+
+![创建应用：与 fx 对话并检查应用方案](./prototypes/images/03-create.png)
 
 1. 在工作区首页的输入区说明目标，也可以补充现有表格、字段清单或业务规则。
 2. fx 围绕对象、操作、参与人和结果追问必要问题。你可以直接回答，也可以指出它理解错的地方。
@@ -72,6 +78,8 @@ MIAO 用于建立和使用企业内部应用。你向内置 Agent（fx）说明�
 ## 预览与发布
 
 **界面参考：**[HTML 原型](./prototypes/04-publish.html) · [原型图](./prototypes/images/04-publish.png)
+
+![预览与发布：试用草稿并确认发布影响](./prototypes/images/04-publish.png)
 
 1. 打开“预览”，逐页检查导航、列表、详情和表单。用示例记录验证页面是否符合实际工作。
 2. 检查必填项、字段名称、筛选条件、操作按钮、不同角色能看到的内容，以及手机上的体验。
@@ -91,6 +99,8 @@ MIAO 用于建立和使用企业内部应用。你向内置 Agent（fx）说明�
 
 **界面参考：**[HTML 原型](./prototypes/05-work.html) · [原型图](./prototypes/images/05-work.png)
 
+![团队日常使用：客户跟进业务页面](./prototypes/images/05-work.png)
+
 打开应用后，默认看到已发布的业务界面。页面导航由实际工作决定：可能是总览、客户、跟进任务，也可能是申请、审批或项目事项。日常操作直接在页面完成，无需向 fx 发每一条指令。
 
 ### 查找与处理记录
@@ -109,6 +119,8 @@ MIAO 用于建立和使用企业内部应用。你向内置 Agent（fx）说明�
 
 **界面参考：**[HTML 原型](./prototypes/06-change.html) · [原型图](./prototypes/images/06-change.png)
 
+![修改应用：对话、变更摘要和草稿版本](./prototypes/images/06-change.png)
+
 进入应用页，向右侧 fx 描述修改。它会读取当前应用和页面上下文，给出差异摘要与新草稿。例如：“在客户详情增加最近一次联系结果，并把逾期客户放在总览最上方。”
 
 1. 确认变化会影响的页面、字段、动作和人员。
@@ -122,6 +134,8 @@ MIAO 用于建立和使用企业内部应用。你向内置 Agent（fx）说明�
 ## 数据、附件与导出
 
 **界面参考：**[HTML 原型](./prototypes/07-data.html) · [原型图](./prototypes/images/07-data.png)
+
+![数据检查：记录列表和详情](./prototypes/images/07-data.png)
 
 从应用右上角“··· → 查看数据表”进入检查页。按表、记录逐层查看，可搜索、筛选、排序和分页。具有相应权限的成员可进入编辑状态修正单条记录；保存结果会明确提示。
 
@@ -138,6 +152,8 @@ MIAO 用于建立和使用企业内部应用。你向内置 Agent（fx）说明�
 ## 成员与权限
 
 **界面参考：**[HTML 原型](./prototypes/08-team.html) · [原型图](./prototypes/images/08-team.png)
+
+![成员与权限：工作区成员及应用访问范围](./prototypes/images/08-team.png)
 
 工作区 owner 管理成员和应用访问范围；admin 协助邀请与日常管理；member 使用授予的应用。每个应用还可以分配 viewer、editor 和应用管理权限。工作区角色不自动等于所有应用的发布或编辑权限。
 
@@ -160,6 +176,8 @@ MIAO 用于建立和使用企业内部应用。你向内置 Agent（fx）说明�
 
 **界面参考：**[HTML 原型](./prototypes/09-governance.html) · [原型图](./prototypes/images/09-governance.png)
 
+![企业治理：应用、成员、用量和审计](./prototypes/images/09-governance.png)
+
 ### 应用责任
 
 为每个应用指定业务负责人：谁审核需求、谁发布变更、谁处理授权、谁定期检查数据质量。先从小范围团队试用，再扩大使用人员；变更前告知受影响成员。
@@ -179,6 +197,8 @@ MIAO 用于建立和使用企业内部应用。你向内置 Agent（fx）说明�
 ## 常见问题
 
 **界面参考：**[HTML 原型](./prototypes/10-troubleshoot.html) · [原型图](./prototypes/images/10-troubleshoot.png)
+
+![常见问题：帮助与排障入口](./prototypes/images/10-troubleshoot.png)
 
 ### 同事打不开应用
 
@@ -208,6 +228,8 @@ MIAO 用于建立和使用企业内部应用。你向内置 Agent（fx）说明�
 
 **界面参考：**[HTML 原型](./prototypes/11-example.html) · [原型图](./prototypes/images/11-example.png)
 
+![完整示例：客户详情、待办和沟通记录](./prototypes/images/11-example.png)
+
 **客户跟进应用：**
 
 1. **发起：**负责人描述“销售录入客户、安排下次联系；主管看本周待跟进”。fx 澄清销售之间的可见范围和逾期定义。
@@ -221,6 +243,8 @@ MIAO 用于建立和使用企业内部应用。你向内置 Agent（fx）说明�
 ## 附录：技术架构
 
 **界面参考：**[HTML 原型](./prototypes/12-architecture.html) · [原型图](./prototypes/images/12-architecture.png)
+
+![技术架构：浏览器、MIAO API、数据和备份边界](./prototypes/images/12-architecture.png)
 
 本节供企业技术负责人评估部署与数据边界。日常使用无需了解这些内部组件。
 
