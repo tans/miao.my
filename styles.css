@@ -35,3 +35,21 @@
 /* User guide */
 .guide-main{width:min(1040px,calc(100% - 56px));padding-top:66px}.guide-article{max-width:780px}.guide-article>h1{max-width:720px}.guide-article>h1+p{max-width:690px;margin:20px 0 38px;color:#60656b;font-size:16px;line-height:1.8}.guide-article>h2{scroll-margin-top:95px;margin-top:72px;padding-top:17px;border-top:1px solid #e5e6e8;font-size:25px}.guide-article>h2#目录{margin-top:48px}.guide-article h3{scroll-margin-top:95px}.guide-article>h2#目录+ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 30px;padding:0;margin:15px 0 46px;list-style:none;border-top:1px solid #e5e6e8}.guide-article>h2#目录+ol li{margin:0;padding:10px 0;border-bottom:1px solid #e5e6e8}.guide-article>h2#目录+ol a{text-decoration:none;color:#33373d}.guide-article>h2#目录+ol a:hover{text-decoration:underline}.guide-article table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:22px 0 30px;font-size:12px}.guide-article th,.guide-article td{min-width:120px;padding:11px 14px;border-bottom:1px solid #e3e5e8;text-align:left;vertical-align:top}.guide-article th{color:#303339;background:#f7f8f8;font-weight:600}.guide-article blockquote{margin:25px 0;padding:13px 20px;border-left:3px solid #93d771;background:#f7faf5}.guide-article blockquote p{margin:4px 0}.guide-article>hr{margin-top:58px;border:0;border-top:1px solid #e3e5e8}.guide-article>hr+p{font-size:11px;color:#858990}.guide-back{margin-top:42px;font-size:12px}.guide-back a{color:#5b6067}@media(max-width:700px){.guide-main{width:calc(100% - 40px);padding-top:47px}.guide-article>h2#目录+ol{grid-template-columns:1fr}.guide-article>h2{margin-top:56px;font-size:22px}.guide-article>h1+p{font-size:14px}.guide-article th,.guide-article td{padding:9px 10px}}
 .guide-article img{display:block;width:100%;height:auto;margin:18px 0 30px;border:1px solid #e4e7e9;border-radius:7px;background:#f8f9f9;box-shadow:0 12px 32px rgba(0,0,0,.045)}
+
+/* Decorative cat in the homepage preview's upper-right whitespace.
+   Percentages follow the 1440 x 900 prototype image as it scales. */
+.home-hero-compact .hero-visual{position:relative}
+.miao-cat-track{position:absolute;top:13%;right:4%;width:24%;height:8%;overflow:hidden;pointer-events:none}
+.miao-walking-cat{position:absolute;top:0;left:100%;width:19%;height:auto;color:#171815;animation:miao-cat-cross-left 26s linear infinite}
+.miao-cat-body{transform-box:fill-box;transform-origin:center;animation:miao-cat-body-bob .48s ease-in-out infinite}
+.miao-cat-legs-back,.miao-cat-legs-front{transform-box:fill-box;transform-origin:50% 0;animation:miao-cat-step .48s ease-in-out infinite alternate}
+.miao-cat-legs-front{animation-delay:-.24s}
+.miao-cat-tail{transform-box:fill-box;transform-origin:80% 80%;animation:miao-cat-tail-sway .8s ease-in-out infinite alternate}
+@keyframes miao-cat-cross-left{from{left:100%}to{left:-19%}}
+@keyframes miao-cat-body-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.2px)}}
+@keyframes miao-cat-step{from{transform:rotate(-15deg)}to{transform:rotate(15deg)}}
+@keyframes miao-cat-tail-sway{from{transform:rotate(-8deg)}to{transform:rotate(10deg)}}
+@media(prefers-reduced-motion:reduce){
+  .miao-walking-cat{left:76%;animation:none!important}
+  .miao-cat-body,.miao-cat-legs-back,.miao-cat-legs-front,.miao-cat-tail{animation:none!important}
+}
