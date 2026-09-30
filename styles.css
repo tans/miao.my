@@ -41,7 +41,7 @@
 .miao-cat-track{--cat-width:clamp(34px,5vw,52px);position:absolute;z-index:1;top:-64px;left:10px;right:10px;height:64px;overflow:hidden;pointer-events:none}
 .miao-cat{position:absolute;bottom:-1px;width:var(--cat-width);color:#171815}
 .miao-cat-luna{--stride:1.05s;--lift:1;left:calc(100% - var(--cat-width));animation:miao-cat-cross-left 64s linear -8s infinite}
-.miao-cat-sol{--stride:.82s;--lift:1.4;left:0;animation:miao-cat-cross-right 56s linear -6s infinite}
+.miao-cat-sol{--stride:.82s;--lift:1.4;left:0;animation:miao-cat-sol-to-center 28s linear forwards}
 .miao-cat-figure{display:block;width:100%;height:auto;overflow:visible}
 .miao-cat-sol .miao-cat-figure{transform:scaleX(-1)}
 .miao-cat-label{position:absolute;bottom:calc(100% + 5px);left:50%;color:#73777e;font:500 10px/1.2 ui-monospace,SFMono-Regular,monospace;letter-spacing:.04em;animation:miao-cat-label-float 3s ease-in-out infinite;transform:translateX(-50%);white-space:nowrap}
@@ -93,3 +93,19 @@
 .home-preview-caption { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 12px; color: var(--muted); font-size: 13px; line-height: 1.5; text-align: left; }
 .home-preview-caption a { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; white-space: nowrap; }
 @media (max-width: 700px) { .home-preview-caption { font-size: 12px; } }
+
+/* Sol reaches the midpoint once, then settles into a seated pose. */
+@keyframes miao-cat-sol-to-center{0%{left:0;opacity:0}6%{opacity:1}100%{left:calc(50% - var(--cat-width)/2);opacity:1}}
+.miao-cat-sol .miao-cat-figure{transition:opacity .65s ease,translate .65s ease}
+.miao-cat-seated{position:absolute;bottom:0;left:0;width:100%;height:auto;overflow:visible;transform:scaleX(-1);opacity:0;translate:0 -3px;transition:opacity .65s ease,translate .65s ease}
+.miao-cat-sol.is-sitting .miao-cat-figure{opacity:0;translate:0 2px}
+.miao-cat-sol.is-sitting .miao-cat-seated{opacity:1;translate:0 0}
+.miao-cat-sol.is-sitting .miao-cat-figure *{animation-play-state:paused}
+.miao-cat-seated-tail{transform-box:view-box;transform-origin:42px 34px}
+.miao-cat-sol.is-sitting .miao-cat-seated-tail{animation:miao-cat-seated-tail 4s ease-in-out infinite}
+@keyframes miao-cat-seated-tail{0%,100%{transform:rotate(0)}50%{transform:rotate(-4deg)}}
+@media(prefers-reduced-motion:reduce){
+  .miao-cat-sol{left:calc(50% - var(--cat-width)/2)}
+  .miao-cat-sol .miao-cat-figure,.miao-cat-seated{transition:none}
+  .miao-cat-seated-tail{animation:none!important}
+}
