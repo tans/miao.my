@@ -36,22 +36,52 @@
 .guide-main{width:min(1040px,calc(100% - 56px));padding-top:66px}.guide-article{max-width:780px}.guide-article>h1{max-width:720px}.guide-article>h1+p{max-width:690px;margin:20px 0 38px;color:#60656b;font-size:16px;line-height:1.8}.guide-article>h2{scroll-margin-top:95px;margin-top:72px;padding-top:17px;border-top:1px solid #e5e6e8;font-size:25px}.guide-article>h2#目录{margin-top:48px}.guide-article h3{scroll-margin-top:95px}.guide-article>h2#目录+ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 30px;padding:0;margin:15px 0 46px;list-style:none;border-top:1px solid #e5e6e8}.guide-article>h2#目录+ol li{margin:0;padding:10px 0;border-bottom:1px solid #e5e6e8}.guide-article>h2#目录+ol a{text-decoration:none;color:#33373d}.guide-article>h2#目录+ol a:hover{text-decoration:underline}.guide-article table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:22px 0 30px;font-size:12px}.guide-article th,.guide-article td{min-width:120px;padding:11px 14px;border-bottom:1px solid #e3e5e8;text-align:left;vertical-align:top}.guide-article th{color:#303339;background:#f7f8f8;font-weight:600}.guide-article blockquote{margin:25px 0;padding:13px 20px;border-left:3px solid #93d771;background:#f7faf5}.guide-article blockquote p{margin:4px 0}.guide-article>hr{margin-top:58px;border:0;border-top:1px solid #e3e5e8}.guide-article>hr+p{font-size:11px;color:#858990}.guide-back{margin-top:42px;font-size:12px}.guide-back a{color:#5b6067}@media(max-width:700px){.guide-main{width:calc(100% - 40px);padding-top:47px}.guide-article>h2#目录+ol{grid-template-columns:1fr}.guide-article>h2{margin-top:56px;font-size:22px}.guide-article>h1+p{font-size:14px}.guide-article th,.guide-article td{padding:9px 10px}}
 .guide-article img{display:block;width:100%;height:auto;margin:18px 0 30px;border:1px solid #e4e7e9;border-radius:7px;background:#f8f9f9;box-shadow:0 12px 32px rgba(0,0,0,.045)}
 
-/* Cat walks on the preview's top border; feet meet y=0 of the image. */
-.home-hero-compact .hero-visual{position:relative}
-.miao-cat-track{--cat-width:clamp(32px,5vw,52px);position:absolute;z-index:1;top:-40px;left:10px;right:10px;height:40px;overflow:hidden;pointer-events:none}
-.miao-walking-cat{position:absolute;bottom:-1px;left:calc(100% - var(--cat-width));width:var(--cat-width);height:auto;overflow:visible;color:#171815;animation:miao-cat-cross-left 64s linear infinite}
-.miao-cat-body{transform-box:fill-box;transform-origin:center;animation:miao-cat-body-bob .95s ease-in-out infinite}
-.miao-cat-legs-back{color:#393b38}
-.miao-cat-leg{transform-box:fill-box;transform-origin:50% 0;animation:miao-cat-step .95s linear infinite}
-.miao-cat-leg-far-front{animation-delay:-.475s}
-.miao-cat-leg-far-hind{animation-delay:-.24s}
-.miao-cat-leg-near-hind{animation-delay:-.715s}
-.miao-cat-tail{transform-box:view-box;transform-origin:47px 23px;animation:miao-cat-tail-sway 1.9s ease-in-out infinite alternate}
-@keyframes miao-cat-cross-left{0%{left:calc(100% - var(--cat-width));opacity:0}3%{opacity:1}97%{opacity:1}100%{left:0;opacity:0}}
-@keyframes miao-cat-body-bob{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-.6px)}}
-@keyframes miao-cat-step{0%,100%{transform:rotate(-17deg)}45%{transform:rotate(17deg)}65%{transform:translateY(-2px) rotate(8deg)}85%{transform:translateY(-1px) rotate(-10deg)}}
-@keyframes miao-cat-tail-sway{from{transform:rotate(-5deg)}to{transform:rotate(7deg)}}
+/* Two model mascots walk on the screenshot's top border. */
+.home-hero-compact .hero-visual{position:relative;margin-top:62px}
+.miao-cat-track{--cat-width:clamp(34px,5vw,52px);position:absolute;z-index:1;top:-64px;left:10px;right:10px;height:64px;overflow:hidden;pointer-events:none}
+.miao-cat{position:absolute;bottom:-1px;width:var(--cat-width);color:#171815}
+.miao-cat-luna{--stride:1.05s;--lift:1;left:calc(100% - var(--cat-width));animation:miao-cat-cross-left 64s linear -8s infinite}
+.miao-cat-sol{--stride:.82s;--lift:1.4;left:0;animation:miao-cat-cross-right 56s linear -6s infinite}
+.miao-cat-figure{display:block;width:100%;height:auto;overflow:visible}
+.miao-cat-sol .miao-cat-figure{transform:scaleX(-1)}
+.miao-cat-label{position:absolute;bottom:calc(100% + 5px);left:50%;color:#73777e;font:500 10px/1.2 ui-monospace,SFMono-Regular,monospace;letter-spacing:.04em;animation:miao-cat-label-float 3s ease-in-out infinite;transform:translateX(-50%);white-space:nowrap}
+.miao-cat-sol .miao-cat-label{animation-delay:-1.5s;color:#555b63}
+.miao-cat-body{animation:miao-cat-body-bob var(--stride) ease-in-out infinite}
+.miao-cat-sol .miao-cat-body{animation-name:miao-cat-sol-bob}
+.miao-cat-legs-back{color:#444641}
+.miao-cat-leg{animation:miao-cat-step var(--stride) linear infinite}
+.miao-cat-sol .miao-cat-leg{animation-name:miao-cat-sol-step}
+.miao-cat-leg-far-front{animation-delay:calc(var(--stride) * -.5)}
+.miao-cat-leg-far-hind{animation-delay:calc(var(--stride) * -.25)}
+.miao-cat-leg-near-hind{animation-delay:calc(var(--stride) * -.75)}
+.miao-cat-tail{transform-box:view-box;transform-origin:47px 23px;animation:miao-cat-tail-sway 2.4s ease-in-out infinite}
+.miao-cat-tail-tip{transform-box:view-box;transform-origin:56px 14px;animation:miao-cat-tail-tip 2.4s ease-in-out -.3s infinite}
+.miao-cat-sol .miao-cat-tail{animation-duration:1.8s;animation-name:miao-cat-sol-tail}
+.miao-cat-sol .miao-cat-tail-tip{animation-duration:1.8s;animation-delay:-.22s}
+@keyframes miao-cat-cross-left{0%{left:calc(100% - var(--cat-width));opacity:0}3%,97%{opacity:1}100%{left:0;opacity:0}}
+@keyframes miao-cat-cross-right{0%{left:0;opacity:0}3%,97%{opacity:1}100%{left:calc(100% - var(--cat-width));opacity:0}}
+/* Contact phase keeps paws on the border; swing flexes knee and lifts paw. */
+@keyframes miao-cat-step{
+  0%,100%{d:path("M0 0 Q1 6 -3 12 L-5 13")}
+  50%{d:path("M0 0 Q3 6 4 12 L2 13")}
+  70%{d:path("M0 0 Q-2 5 1 9 L-1 10")}
+  85%{d:path("M0 0 Q-3 5 -3 10 L-5 11")}
+}
+@keyframes miao-cat-sol-step{
+  0%,100%{d:path("M0 0 Q0 6 -4 12 L-6 13")}
+  48%{d:path("M0 0 Q4 6 5 12 L3 13")}
+  68%{d:path("M0 0 Q-2 4 2 8 L0 9")}
+  85%{d:path("M0 0 Q-4 4 -3 9 L-5 10")}
+}
+@keyframes miao-cat-body-bob{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-.45px)}}
+@keyframes miao-cat-sol-bob{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-.8px)}}
+@keyframes miao-cat-tail-sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(6deg)}}
+@keyframes miao-cat-sol-tail{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(9deg)}}
+@keyframes miao-cat-tail-tip{0%,100%{transform:rotate(8deg)}50%{transform:rotate(-12deg)}}
+@keyframes miao-cat-label-float{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-3px)}}
+@media(max-width:700px){.home-hero-compact .hero-visual{margin-top:54px}.miao-cat-label{font-size:9px}}
 @media(prefers-reduced-motion:reduce){
-  .miao-walking-cat{left:calc(100% - var(--cat-width));opacity:1;animation:none!important}
-  .miao-cat-body,.miao-cat-leg,.miao-cat-tail{animation:none!important}
+  .miao-cat-luna{left:calc(100% - var(--cat-width))}
+  .miao-cat-sol{left:0}
+  .miao-cat,.miao-cat-label,.miao-cat-body,.miao-cat-leg,.miao-cat-tail,.miao-cat-tail-tip{opacity:1;animation:none!important}
 }
