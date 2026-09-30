@@ -85,3 +85,11 @@
   .miao-cat-sol{left:0}
   .miao-cat,.miao-cat-label,.miao-cat-body,.miao-cat-leg,.miao-cat-tail,.miao-cat-tail-tip{opacity:1;animation:none!important}
 }
+
+
+/* Homepage preview: show the interface at a more readable size and expose its crisp HTML counterpart. */
+.home-hero-compact .hero-visual { width: min(100%, 1180px); }
+.home-preview-figure { margin: 0; }
+.home-preview-caption { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 12px; color: var(--muted); font-size: 13px; line-height: 1.5; text-align: left; }
+.home-preview-caption a { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; white-space: nowrap; }
+@media (max-width: 700px) { .home-preview-caption { font-size: 12px; } }
