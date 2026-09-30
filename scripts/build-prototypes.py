@@ -172,14 +172,14 @@ SCREENS = [
 def sidebar(active):
     items = [("◫", "概览"), ("□", "客户跟进"), ("□", "需求收集"), ("□", "采购申请")]
     nav = "".join(f'<div class="nav-item {"active" if name == active else ""}"><span>{icon}</span>{name}</div>' for icon, name in items)
-    return ('<aside class="sidebar"><div class="logo"><img src="../../assets/mascots/cat-logo-head.png" alt=""><b>MIAO</b></div>'
+    return ('<aside class="sidebar"><div class="logo"><img src="/assets/mascots/cat-logo-head.png" alt=""><b>MIAO</b></div>'
             '<div class="switch">T　极速互动 <span>⌄</span></div><div class="side-label">工作区</div>' + nav +
             '<div class="side-bottom"><div class="nav-item"><span>⚙</span>空间设置</div><div class="person"><i>陈</i>陈曦 <span>···</span></div></div></aside>')
 
 for number, (slug, section, label, body) in enumerate(SCREENS, 1):
     active = "概览" if number <= 3 or number in (9, 10, 12) else "客户跟进"
     html = (f'<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-            f'<title>{escape(section)} · MIAO 原型</title><link rel="stylesheet" href="./prototype.css"></head><body>'
+            f'<title>{escape(section)} · MIAO 原型</title><link rel="stylesheet" href="/docs/prototypes/prototype.css"></head><body>'
             f'<div class="frame">{sidebar(active)}<div class="work-area"><header class="topbar"><div>极速互动 <span>/</span> {escape(label)}</div>'
             '<div class="top-right"><i></i> 服务正常　　⌕　 <b>陈</b></div></header>'
             f'<main class="screen">{body}<div class="prototype-note">MIAO 界面原型 · 第 {number:02d} / 12 张 · 示例数据</div></main>'
@@ -187,5 +187,5 @@ for number, (slug, section, label, body) in enumerate(SCREENS, 1):
     (OUT / f"{slug}.html").write_text(html, encoding="utf-8")
 
 links = "".join(f'<a class="gallery-card" href="./{slug}.html"><img src="./images/{slug}.png" alt="{escape(section)}原型图" loading="lazy"><span><b>{number:02d}　{escape(section)}</b><small>{escape(label)} →</small></span></a>' for number, (slug, section, _, _) in enumerate(SCREENS, 1))
-(OUT / "index.html").write_text('<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MIAO 用户手册 · 界面原型</title><link rel="stylesheet" href="./prototype.css"></head><body class="gallery"><header><a href="../">← 返回用户手册</a><span>MIAO / 界面原型</span></header><main><p class="kicker">12 SCREENS / HTML + PNG</p><h1>从描述工作到团队使用</h1><p>每张图片对应一份可打开的 HTML 原型。画面使用示例数据，供产品与工程实现时参考交互层级和布局。</p><div class="gallery-grid">' + links + '</div></main></body></html>', encoding="utf-8")
+(OUT / "index.html").write_text('<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MIAO 用户手册 · 界面原型</title><link rel="stylesheet" href="/docs/prototypes/prototype.css"></head><body class="gallery"><header><a href="../">← 返回用户手册</a><span>MIAO / 界面原型</span></header><main><p class="kicker">12 SCREENS / HTML + PNG</p><h1>从描述工作到团队使用</h1><p>每张图片对应一份可打开的 HTML 原型。画面使用示例数据，供产品与工程实现时参考交互层级和布局。</p><div class="gallery-grid">' + links + '</div></main></body></html>', encoding="utf-8")
 print(f"Generated {len(SCREENS)} screens and gallery")
