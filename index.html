@@ -40,6 +40,15 @@
             <g class="miao-cat-body"><ellipse cx="36" cy="23" rx="15" ry="8.5" fill="currentColor"/><path d="M11 17c0-4.2 2.5-7.2 6-7.8L19 4l4 6 2.2 1.2c2.4 1.4 3.7 4.4 3 7.5l-1 3.6H13c-1.2-1.2-2-2.7-2-4.3Z" fill="currentColor"/><circle cx="14.2" cy="15.2" r="1" fill="#e5b93f"/><circle cx="10.7" cy="18.4" r=".85" fill="#d98f93"/></g>
             <g class="miao-cat-legs-front"><g transform="translate(29 25)"><path class="miao-cat-leg miao-cat-leg-near-front" d="M0 0 Q1 6 -3 12 L-5 13" fill="none" stroke="currentColor" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(44 25)"><path class="miao-cat-leg miao-cat-leg-near-hind" d="M0 0 Q1 6 -3 12 L-5 13" fill="none" stroke="currentColor" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></g>
           </svg>
+          <svg class="miao-cat-seated" viewBox="0 0 64 40" xmlns="http://www.w3.org/2000/svg" focusable="false">
+            <path class="miao-cat-seated-tail" d="M42 34C51 39 59 38 57 33c-1-3-5-2-6 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <ellipse cx="38" cy="30" rx="11" ry="8" fill="currentColor"/>
+            <path d="M24 17c8-2 12 2 14 9l7 10H24c-3-7-3-13 0-19Z" fill="currentColor"/>
+            <path d="M13 15c0-4 2-6 5-7l2-6 4 6 4 2c3 2 4 5 2 8l-2 4H17c-3-2-4-4-4-7Z" fill="currentColor"/>
+            <path d="M24 23v14h-4m10-13v13h-4" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="16" cy="13" r="1" fill="#e5b93f"/>
+            <circle cx="13" cy="16" r=".8" fill="#d98f93"/>
+          </svg>
         </div>
         </div>
         <figure class="home-preview-figure">
@@ -63,6 +72,16 @@
   </dialog>
   <script>
     document.getElementById('contact-cta').addEventListener('click', () => document.getElementById('wechat-dialog').showModal());
+    const solCat = document.querySelector('.miao-cat-sol');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      solCat.classList.add('is-sitting');
+    } else {
+      solCat.addEventListener('animationend', (event) => {
+        if (event.target === solCat && event.animationName === 'miao-cat-sol-to-center') {
+          solCat.classList.add('is-sitting');
+        }
+      });
+    }
     const rotatingProduct = document.getElementById('rotating-product');
     const productTypes = ['CRM', 'GEO', '增长', '裂变', '营销自动化', '客户管理', '会员运营', '项目协作'];
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
