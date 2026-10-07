@@ -18,8 +18,8 @@
   </header>
   <main class="landing-home">
     <section class="home-hero home-hero-compact" aria-labelledby="hero-title">
-      <h1 id="hero-title">5 分钟，搭建自己的<br /><span class="rotating-product" id="rotating-product" aria-live="polite">CRM</span> 系统</h1>
-      <p class="hero-subtitle">开源的企业 AI 工作台</p>
+      <h1 id="hero-title" class="hero-wordmark">miao.my make AI fast and simple</h1>
+      <p class="hero-subtitle">开源企业工作台</p>
       <a class="btn btn-neutral deploy-cta" href="https://miao.minapp.xin">马上使用</a>
       <div class="hero-visual">
         <div class="miao-cat-track" aria-hidden="true">
@@ -81,19 +81,6 @@
           solCat.classList.add('is-sitting');
         }
       });
-    }
-    const rotatingProduct = document.getElementById('rotating-product');
-    const productTypes = ['CRM', 'GEO', '增长', '裂变', '营销自动化', '客户管理', '会员运营', '项目协作'];
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      let productIndex = 0;
-      window.setInterval(() => {
-        rotatingProduct.classList.add('is-changing');
-        window.setTimeout(() => {
-          productIndex = (productIndex + 1) % productTypes.length;
-          rotatingProduct.textContent = productTypes[productIndex];
-          rotatingProduct.classList.remove('is-changing');
-        }, 180);
-      }, 2400);
     }
   </script>
 </body>
