@@ -28,6 +28,8 @@ python3 -m http.server 4173
 - `docs/product/`、`docs/architecture/`：旧文档地址，跳转到手册对应章节
 - `assets/mascots/`：官网使用的 MIAO 猫咪素材
 - `assets/scenes/`：AI 生成的工作场景示意图
+- `assets/css/app.css`：自托管的 Tailwind CSS 4 + daisyUI 5 编译产物，替代 CDN 引用；由 `scripts/build-css.sh` 重新生成，改动类名后在 HTML 中递增 `app.css?v=` 版本号
+- `assets/fonts/`：自托管的 Caveat woff2 字体（wordmark 使用）
 - `styles.css`：站点样式
 - `vercel.json`：静态路由与图片缓存设置
 
