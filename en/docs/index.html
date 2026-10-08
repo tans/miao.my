@@ -28,7 +28,6 @@
 <li><a href="#appendix-architecture">Appendix: architecture</a></li>
 </ol>
 <h2 id="miao-at-a-glance">MIAO at a glance</h2>
-<p><strong>Screen reference:</strong> <a href="/docs/prototypes/01-overview.html">HTML prototype</a> · <a href="/docs/prototypes/images/01-overview.png">PNG mockup</a> · <a href="/docs/prototypes/">all mockups</a></p>
 <p><img src="/docs/prototypes/images/01-overview.png" alt="Workspace overview after sign-in: app list and AI assistant" /></p>
 <p>MIAO is a server-side Agent workspace for internal business operations. After sign-in, the overview lists apps available in the current workspace. Published apps handle daily work; draft apps are waiting for more configuration. When you create or change an app, open the pinned <strong>AI assistant</strong> on the right to describe a goal, attach context or answer follow-up questions.</p>
 <p>The product has four clear entry points:</p>
@@ -71,7 +70,6 @@
 </tbody>
 </table>
 <h2 id="get-started">Get started</h2>
-<p><strong>Screen reference:</strong> <a href="/docs/prototypes/02-start.html">HTML prototype</a> · <a href="/docs/prototypes/images/02-start.png">PNG mockup</a></p>
 <p><img src="/docs/prototypes/images/02-start.png" alt="Getting started: sign-in, workspace and template selection" /></p>
 <ol type="1">
 <li>Sign in at the MIAO address provided by your organization. Registration may be open, invite-only or closed. Complete email verification when it is enabled.</li>
@@ -83,7 +81,6 @@
 <h3 id="prepare-your-first-request">Prepare your first request</h3>
 <p>Start with a bounded workflow that the team can repeat. State three things up front: <strong>who does the work, what must be recorded and what counts as complete.</strong> For example: “Sales record customers and the next contact date; owners review follow-ups each day; managers review this week’s progress.”</p>
 <h2 id="create-an-app">Create an app</h2>
-<p><strong>Screen reference:</strong> <a href="/docs/prototypes/03-create.html">HTML prototype</a> · <a href="/docs/prototypes/images/03-create.png">PNG mockup</a></p>
 <p><img src="/docs/prototypes/images/03-create.png" alt="Create an app: pinned assistant, run trace and proposal receipt" /></p>
 <ol type="1">
 <li>Open the assistant from the overview and choose <strong>Entire workspace</strong> or a specific app as the chat context.</li>
@@ -98,7 +95,6 @@
 <h3 id="run-records-and-confirmation">Run records and confirmation</h3>
 <p>Assistant runs can be queued, processing, awaiting confirmation, successful, failed or awaiting verification. Closing the page does not cancel a run; reopen the app or the run detail from a notification to continue reviewing it. If a write result is unknown, verify the current record first; MIAO does not replay the original write automatically.</p>
 <h2 id="preview-and-publish">Preview and publish</h2>
-<p><strong>Screen reference:</strong> <a href="/docs/prototypes/04-publish.html">HTML prototype</a> · <a href="/docs/prototypes/images/04-publish.png">PNG mockup</a></p>
 <p><img src="/docs/prototypes/images/04-publish.png" alt="Preview and publish: draft preview and release proposal" /></p>
 <ol type="1">
 <li>Open the draft preview and check navigation, lists, details, forms, actions and empty states page by page. Preview records are sample data.</li>
@@ -116,7 +112,6 @@
 <li>If a public page is enabled, its slug, status values, SEO fields and image authorization are checked.</li>
 </ul>
 <h2 id="daily-team-work">Daily team work</h2>
-<p><strong>Screen reference:</strong> <a href="/docs/prototypes/05-work.html">HTML prototype</a> · <a href="/docs/prototypes/images/05-work.png">PNG mockup</a></p>
 <p><img src="/docs/prototypes/images/05-work.png" alt="Daily team work: a published customer follow-up app" /></p>
 <p>Opening an app takes members to its published business pages. A page may include an overview, list, detail, form, status actions and background job entry points. Members work in the business UI rather than opening an Agent chat for every record.</p>
 <h3 id="find-and-process-records">Find and process records</h3>
@@ -131,7 +126,6 @@
 <p>The assistant can configure scheduled, due-date, status-change, new-record or authenticated external-event jobs. Jobs are saved as drafts first, and enabling or running them uses an explicit version. Recent runs, steps, write counts, notifications and failure reasons are available from <strong>Background jobs</strong>. In-app notifications call out runs that need confirmation, release results and member invites.</p>
 <p>Declarative collection jobs may read credential-free HTTP(S) sources, then map, filter, deduplicate, store and notify according to their declaration. Each run keeps a receipt. External page content is always untrusted data and cannot expand job authorization.</p>
 <h2 id="change-an-app-and-its-versions">Change an app and its versions</h2>
-<p><strong>Screen reference:</strong> <a href="/docs/prototypes/06-change.html">HTML prototype</a> · <a href="/docs/prototypes/images/06-change.png">PNG mockup</a></p>
 <p><img src="/docs/prototypes/images/06-change.png" alt="Change an app: chat, draft version and change summary" /></p>
 <p>Describe the page, field, action, state flow or public access you want to change. For example: “Add a contact result to customer details and move overdue customers to the top of the overview.” The AI assistant reads the current app context and creates a change summary and a new draft version.</p>
 <ol type="1">
@@ -141,7 +135,6 @@
 </ol>
 <p>Rolling back a UI version does not undo business records already entered by members. Archiving hides an app from the workspace list while keeping its data; restoring it requires confirmation before the next release. Permanent deletion confirms and removes the app and its business data.</p>
 <h2 id="data-files-and-exports">Data, files and exports</h2>
-<p><strong>Screen reference:</strong> <a href="/docs/prototypes/07-data.html">HTML prototype</a> · <a href="/docs/prototypes/images/07-data.png">PNG mockup</a></p>
 <p><img src="/docs/prototypes/images/07-data.png" alt="Data inspection: table, record details and authorized export" /></p>
 <p>Open <strong>View data table</strong> from the app actions. This view supports table-level search, filtering, sorting, pagination and necessary corrections. The assistant still manages app structure, pages and business rules. Team members normally see the business UI rather than the underlying table structure.</p>
 <p>File downloads re-check workspace, app, record and field permissions. Knowing a file address does not make it public; only image fields explicitly authorized by a public release use the public proxy path.</p>
@@ -153,7 +146,6 @@
 <li>Workspace exports contain only data the initiator can access. Store and transfer export files under the organization’s data policy.</li>
 </ul>
 <h2 id="members-and-permissions">Members and permissions</h2>
-<p><strong>Screen reference:</strong> <a href="/docs/prototypes/08-team.html">HTML prototype</a> · <a href="/docs/prototypes/images/08-team.png">PNG mockup</a></p>
 <p><img src="/docs/prototypes/images/08-team.png" alt="Members and permissions: workspace members, invites and app access" /></p>
 <p>Workspace administration includes <strong>Members and invites</strong>, <strong>Activity log</strong> and <strong>Workspace settings</strong>. Owners manage the space and app access, admins can help with invites and daily administration, and members use the apps granted to them. App permissions are separate: viewer, editor, manager and publisher. Bulk changes also require <code>can_batch</code>.</p>
 <table>
@@ -197,7 +189,6 @@
 <p>Invite links are bound to the invited email and expire after 24 hours. A removed member can still use other spaces with the same account; old pages, links and Agent runs re-check access.</p>
 <p>Private chat content between a person and the AI assistant is visible only to that person by default. App version summaries, job receipts and audit records follow their own permissions. The Agent cannot bypass the current member identity to write data.</p>
 <h2 id="governance">Governance</h2>
-<p><strong>Screen reference:</strong> <a href="/docs/prototypes/09-governance.html">HTML prototype</a> · <a href="/docs/prototypes/images/09-governance.png">PNG mockup</a></p>
 <p><img src="/docs/prototypes/images/09-governance.png" alt="Governance: apps, members, AI usage and activity" /></p>
 <h3 id="workspace-settings">Workspace settings</h3>
 <p>Owners can review member roles, AI usage and budgets, activity logs and authorized data exports in workspace settings. LLM and JEV usage are tracked separately; request count, token count and vendor billing are different measures.</p>
@@ -206,7 +197,6 @@
 <h3 id="self-hosting-responsibilities">Self-hosting responsibilities</h3>
 <p>The self-hosting operator owns the domain and HTTPS, registration and email policy, AI/Jev keys, platform-admin list, backup directory, retention period and recovery drills. Keep configuration keys server-side; never put plaintext secrets in screenshots, exports or Git. The current Go service runs as a single instance. In production, check the process, SQLite, public endpoints and an authenticated business flow separately.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
-<p><strong>Screen reference:</strong> <a href="/docs/prototypes/10-troubleshoot.html">HTML prototype</a> · <a href="/docs/prototypes/images/10-troubleshoot.png">PNG mockup</a></p>
 <p><img src="/docs/prototypes/images/10-troubleshoot.png" alt="Troubleshooting: jobs, notifications and support entry points" /></p>
 <h3 id="a-colleague-cannot-open-an-app">A colleague cannot open an app</h3>
 <p>Confirm the email and workspace, then ask the owner to check the app access list and viewer/editor role. A link does not grant access automatically.</p>
@@ -223,7 +213,6 @@
 <h3 id="a-release-delete-or-write-result-is-unknown">A release, delete or write result is unknown</h3>
 <p>Stop follow-up actions, then open the run detail and audit record. Compatible UI versions can be rolled back. Verify the current record through the verification endpoint before sending anything again.</p>
 <h2 id="worked-example">Worked example</h2>
-<p><strong>Screen reference:</strong> <a href="/docs/prototypes/11-example.html">HTML prototype</a> · <a href="/docs/prototypes/images/11-example.png">PNG mockup</a></p>
 <p><img src="/docs/prototypes/images/11-example.png" alt="Worked example: customer follow-up workspace, automation and assistant draft" /></p>
 <p>Using <strong>Customer follow-up</strong> as an example, a complete workflow looks like this:</p>
 <ol type="1">
@@ -237,7 +226,6 @@
 </ol>
 <p>The same pattern works for request intake, project issues and purchase requests: define the real business loop first, then extend it with tables, pages, actions, state flows and jobs.</p>
 <h2 id="appendix-architecture">Appendix: architecture</h2>
-<p><strong>Screen reference:</strong> <a href="/docs/prototypes/12-architecture.html">HTML prototype</a> · <a href="/docs/prototypes/images/12-architecture.png">PNG mockup</a></p>
 <p><img src="/docs/prototypes/images/12-architecture.png" alt="Architecture: browser, MIAO API, PocketBase, AI/Jev and backup boundaries" /></p>
 <p>MIAO currently uses one Go process for the HTTP API, embedded PocketBase, browser UI and background workers. The browser sends the current identity and workspace context; the server re-checks member, app and field permissions.</p>
 <table>

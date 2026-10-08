@@ -19,8 +19,6 @@
 
 ## 认识 MIAO
 
-**界面参考：**[HTML 原型](./prototypes/01-overview.html) · [原型图](./prototypes/images/01-overview.png) · [全部原型](./prototypes/)
-
 ![登录后的工作区概览：应用列表与固定小助手](./prototypes/images/01-overview.png)
 
 MIAO 是一个服务端 Agent 驱动的企业工作台。登录后进入当前工作区，概览页列出你有权访问的应用；已经发布的应用用于处理日常业务，草稿应用等待继续配置。创建或修改应用时，从右侧打开固定的 AI 小助手，用自然语言描述目标、补充文件或回答追问。
@@ -43,8 +41,6 @@ MIAO 是一个服务端 Agent 驱动的企业工作台。登录后进入当前�
 
 ## 开始使用
 
-**界面参考：**[HTML 原型](./prototypes/02-start.html) · [原型图](./prototypes/images/02-start.png)
-
 ![开始使用：登录、选择工作区和模板](./prototypes/images/02-start.png)
 
 1. 使用企业提供的 MIAO 地址登录。注册策略可能是开放、仅受邀或关闭；如果启用了邮箱验证，先完成验证。
@@ -59,8 +55,6 @@ MIAO 是一个服务端 Agent 驱动的企业工作台。登录后进入当前�
 推荐从一个边界清楚、能反复使用的流程开始，提前说明三件事：**谁在做、要记录什么、完成的标准是什么。**例如：“销售记录客户和下次联系日期；负责人每天查看待跟进客户；主管查看本周进展。”
 
 ## 创建应用
-
-**界面参考：**[HTML 原型](./prototypes/03-create.html) · [原型图](./prototypes/images/03-create.png)
 
 ![创建应用：固定小助手、运行记录和候选回执](./prototypes/images/03-create.png)
 
@@ -78,8 +72,6 @@ MIAO 是一个服务端 Agent 驱动的企业工作台。登录后进入当前�
 小助手运行可能处于排队、处理中、等待确认、成功、失败或待核实状态。关闭页面不会取消运行，重新打开应用或通知中的运行详情可以继续查看。写入结果未知时先核实当前记录，不会自动重放原写入。
 
 ## 预览与发布
-
-**界面参考：**[HTML 原型](./prototypes/04-publish.html) · [原型图](./prototypes/images/04-publish.png)
 
 ![预览与发布：草稿运行页和发布候选](./prototypes/images/04-publish.png)
 
@@ -99,8 +91,6 @@ MIAO 是一个服务端 Agent 驱动的企业工作台。登录后进入当前�
 - 若开启公开页面，已检查 slug、状态值、SEO 字段和图片授权。
 
 ## 团队日常使用
-
-**界面参考：**[HTML 原型](./prototypes/05-work.html) · [原型图](./prototypes/images/05-work.png)
 
 ![团队日常使用：已发布的客户跟进页面](./prototypes/images/05-work.png)
 
@@ -123,8 +113,6 @@ MIAO 是一个服务端 Agent 驱动的企业工作台。登录后进入当前�
 
 ## 修改应用与版本
 
-**界面参考：**[HTML 原型](./prototypes/06-change.html) · [原型图](./prototypes/images/06-change.png)
-
 ![修改应用：变更对话、草稿版本和差异摘要](./prototypes/images/06-change.png)
 
 打开应用后，通过小助手说明要改的页面、字段、动作、状态流或公开范围。例如：“在客户详情增加联系结果，并把逾期客户排在总览顶部。”AI 小助手会读取当前应用上下文，生成变更摘要和新的草稿版本。
@@ -136,8 +124,6 @@ MIAO 是一个服务端 Agent 驱动的企业工作台。登录后进入当前�
 界面版本回退不会撤销成员已经录入的业务记录。归档应用会从工作区列表隐藏但保留数据，恢复后需要重新确认后续发布；永久删除会要求确认并删除应用及其业务数据。
 
 ## 数据、附件与导出
-
-**界面参考：**[HTML 原型](./prototypes/07-data.html) · [原型图](./prototypes/images/07-data.png)
 
 ![数据检查：数据表、记录详情和授权导出](./prototypes/images/07-data.png)
 
@@ -153,8 +139,6 @@ MIAO 是一个服务端 Agent 驱动的企业工作台。登录后进入当前�
 - 工作区导出只包含发起者有权访问的数据。导出文件按企业内部数据政策保存和传递。
 
 ## 成员与权限
-
-**界面参考：**[HTML 原型](./prototypes/08-team.html) · [原型图](./prototypes/images/08-team.png)
 
 ![成员与权限：工作区成员、邀请和应用访问](./prototypes/images/08-team.png)
 
@@ -176,8 +160,6 @@ MIAO 是一个服务端 Agent 驱动的企业工作台。登录后进入当前�
 
 ## 企业治理
 
-**界面参考：**[HTML 原型](./prototypes/09-governance.html) · [原型图](./prototypes/images/09-governance.png)
-
 ![企业治理：应用、成员、AI 用量和操作日志](./prototypes/images/09-governance.png)
 
 ### 工作区设置
@@ -193,8 +175,6 @@ owner 可以在工作区设置中查看成员角色、AI 用量与预算、操�
 自托管部署方负责域名与 HTTPS、注册和邮件策略、AI/Jev 密钥、平台管理员名单、备份目录、保留天数和恢复演练。配置密钥保存在服务端；不要把明文密钥放进截图、导出文件或 Git 仓库。当前 Go 服务按单实例方式运行，正式环境仍应按部署手册分层检查进程、SQLite、公开端点和登录后的业务流。
 
 ## 常见问题
-
-**界面参考：**[HTML 原型](./prototypes/10-troubleshoot.html) · [原型图](./prototypes/images/10-troubleshoot.png)
 
 ![常见问题：后台任务、通知和排障入口](./prototypes/images/10-troubleshoot.png)
 
@@ -228,8 +208,6 @@ owner 可以在工作区设置中查看成员角色、AI 用量与预算、操�
 
 ## 完整示例
 
-**界面参考：**[HTML 原型](./prototypes/11-example.html) · [原型图](./prototypes/images/11-example.png)
-
 ![完整示例：客户跟进工作台、自动化运行和小助手草稿](./prototypes/images/11-example.png)
 
 以“客户跟进”为例，一条完整的工作闭环可以这样展开：
@@ -245,8 +223,6 @@ owner 可以在工作区设置中查看成员角色、AI 用量与预算、操�
 同一方法适用于需求收集、项目事项、采购申请等流程：先定义真实业务闭环，再用通用数据表、页面、动作、状态流和任务逐步扩展。
 
 ## 附录：技术架构
-
-**界面参考：**[HTML 原型](./prototypes/12-architecture.html) · [原型图](./prototypes/images/12-architecture.png)
 
 ![技术架构：浏览器、MIAO API、PocketBase、AI/Jev 与备份边界](./prototypes/images/12-architecture.png)
 

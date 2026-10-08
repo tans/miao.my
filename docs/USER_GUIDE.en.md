@@ -19,8 +19,6 @@ Turn team workflows into your own apps. This guide is for business owners, app b
 
 ## MIAO at a glance
 
-**Screen reference:** [HTML prototype](/docs/prototypes/01-overview.html) · [PNG mockup](/docs/prototypes/images/01-overview.png) · [all mockups](/docs/prototypes/)
-
 ![Workspace overview after sign-in: app list and AI assistant](/docs/prototypes/images/01-overview.png)
 
 MIAO is a server-side Agent workspace for internal business operations. After sign-in, the overview lists apps available in the current workspace. Published apps handle daily work; draft apps are waiting for more configuration. When you create or change an app, open the pinned **AI assistant** on the right to describe a goal, attach context or answer follow-up questions.
@@ -43,8 +41,6 @@ Administrative actions create persistent run records. For creation, writes, publ
 
 ## Get started
 
-**Screen reference:** [HTML prototype](/docs/prototypes/02-start.html) · [PNG mockup](/docs/prototypes/images/02-start.png)
-
 ![Getting started: sign-in, workspace and template selection](/docs/prototypes/images/02-start.png)
 
 1. Sign in at the MIAO address provided by your organization. Registration may be open, invite-only or closed. Complete email verification when it is enabled.
@@ -59,8 +55,6 @@ After you switch workspaces, the app list, chat context, notifications and data 
 Start with a bounded workflow that the team can repeat. State three things up front: **who does the work, what must be recorded and what counts as complete.** For example: “Sales record customers and the next contact date; owners review follow-ups each day; managers review this week’s progress.”
 
 ## Create an app
-
-**Screen reference:** [HTML prototype](/docs/prototypes/03-create.html) · [PNG mockup](/docs/prototypes/images/03-create.png)
 
 ![Create an app: pinned assistant, run trace and proposal receipt](/docs/prototypes/images/03-create.png)
 
@@ -78,8 +72,6 @@ Drafts are rendered by the controlled schema v3 / json-render runtime. The platf
 Assistant runs can be queued, processing, awaiting confirmation, successful, failed or awaiting verification. Closing the page does not cancel a run; reopen the app or the run detail from a notification to continue reviewing it. If a write result is unknown, verify the current record first; MIAO does not replay the original write automatically.
 
 ## Preview and publish
-
-**Screen reference:** [HTML prototype](/docs/prototypes/04-publish.html) · [PNG mockup](/docs/prototypes/images/04-publish.png)
 
 ![Preview and publish: draft preview and release proposal](/docs/prototypes/images/04-publish.png)
 
@@ -99,8 +91,6 @@ Preview does not silently write production records. Publishing is a confirmed op
 - If a public page is enabled, its slug, status values, SEO fields and image authorization are checked.
 
 ## Daily team work
-
-**Screen reference:** [HTML prototype](/docs/prototypes/05-work.html) · [PNG mockup](/docs/prototypes/images/05-work.png)
 
 ![Daily team work: a published customer follow-up app](/docs/prototypes/images/05-work.png)
 
@@ -123,8 +113,6 @@ Declarative collection jobs may read credential-free HTTP(S) sources, then map, 
 
 ## Change an app and its versions
 
-**Screen reference:** [HTML prototype](/docs/prototypes/06-change.html) · [PNG mockup](/docs/prototypes/images/06-change.png)
-
 ![Change an app: chat, draft version and change summary](/docs/prototypes/images/06-change.png)
 
 Describe the page, field, action, state flow or public access you want to change. For example: “Add a contact result to customer details and move overdue customers to the top of the overview.” The AI assistant reads the current app context and creates a change summary and a new draft version.
@@ -136,8 +124,6 @@ Describe the page, field, action, state flow or public access you want to change
 Rolling back a UI version does not undo business records already entered by members. Archiving hides an app from the workspace list while keeping its data; restoring it requires confirmation before the next release. Permanent deletion confirms and removes the app and its business data.
 
 ## Data, files and exports
-
-**Screen reference:** [HTML prototype](/docs/prototypes/07-data.html) · [PNG mockup](/docs/prototypes/images/07-data.png)
 
 ![Data inspection: table, record details and authorized export](/docs/prototypes/images/07-data.png)
 
@@ -153,8 +139,6 @@ File downloads re-check workspace, app, record and field permissions. Knowing a 
 - Workspace exports contain only data the initiator can access. Store and transfer export files under the organization’s data policy.
 
 ## Members and permissions
-
-**Screen reference:** [HTML prototype](/docs/prototypes/08-team.html) · [PNG mockup](/docs/prototypes/images/08-team.png)
 
 ![Members and permissions: workspace members, invites and app access](/docs/prototypes/images/08-team.png)
 
@@ -176,8 +160,6 @@ Private chat content between a person and the AI assistant is visible only to th
 
 ## Governance
 
-**Screen reference:** [HTML prototype](/docs/prototypes/09-governance.html) · [PNG mockup](/docs/prototypes/images/09-governance.png)
-
 ![Governance: apps, members, AI usage and activity](/docs/prototypes/images/09-governance.png)
 
 ### Workspace settings
@@ -193,8 +175,6 @@ Platform admins open a separate admin area from the account menu to view users, 
 The self-hosting operator owns the domain and HTTPS, registration and email policy, AI/Jev keys, platform-admin list, backup directory, retention period and recovery drills. Keep configuration keys server-side; never put plaintext secrets in screenshots, exports or Git. The current Go service runs as a single instance. In production, check the process, SQLite, public endpoints and an authenticated business flow separately.
 
 ## Troubleshooting
-
-**Screen reference:** [HTML prototype](/docs/prototypes/10-troubleshoot.html) · [PNG mockup](/docs/prototypes/images/10-troubleshoot.png)
 
 ![Troubleshooting: jobs, notifications and support entry points](/docs/prototypes/images/10-troubleshoot.png)
 
@@ -228,8 +208,6 @@ Stop follow-up actions, then open the run detail and audit record. Compatible UI
 
 ## Worked example
 
-**Screen reference:** [HTML prototype](/docs/prototypes/11-example.html) · [PNG mockup](/docs/prototypes/images/11-example.png)
-
 ![Worked example: customer follow-up workspace, automation and assistant draft](/docs/prototypes/images/11-example.png)
 
 Using **Customer follow-up** as an example, a complete workflow looks like this:
@@ -245,8 +223,6 @@ Using **Customer follow-up** as an example, a complete workflow looks like this:
 The same pattern works for request intake, project issues and purchase requests: define the real business loop first, then extend it with tables, pages, actions, state flows and jobs.
 
 ## Appendix: architecture
-
-**Screen reference:** [HTML prototype](/docs/prototypes/12-architecture.html) · [PNG mockup](/docs/prototypes/images/12-architecture.png)
 
 ![Architecture: browser, MIAO API, PocketBase, AI/Jev and backup boundaries](/docs/prototypes/images/12-architecture.png)
 

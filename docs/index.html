@@ -28,7 +28,6 @@
 <li><a href="#附录技术架构">附录：技术架构</a></li>
 </ol>
 <h2 id="认识-miao">认识 MIAO</h2>
-<p><strong>界面参考：</strong><a href="./prototypes/01-overview.html">HTML 原型</a> · <a href="./prototypes/images/01-overview.png">原型图</a> · <a href="./prototypes/">全部原型</a></p>
 <p><img src="./prototypes/images/01-overview.png" alt="登录后的工作区概览：应用列表与固定小助手" /></p>
 <p>MIAO 是一个服务端 Agent 驱动的企业工作台。登录后进入当前工作区，概览页列出你有权访问的应用；已经发布的应用用于处理日常业务，草稿应用等待继续配置。创建或修改应用时，从右侧打开固定的 AI 小助手，用自然语言描述目标、补充文件或回答追问。</p>
 <p>当前产品有四个清晰入口：</p>
@@ -71,7 +70,6 @@
 </tbody>
 </table>
 <h2 id="开始使用">开始使用</h2>
-<p><strong>界面参考：</strong><a href="./prototypes/02-start.html">HTML 原型</a> · <a href="./prototypes/images/02-start.png">原型图</a></p>
 <p><img src="./prototypes/images/02-start.png" alt="开始使用：登录、选择工作区和模板" /></p>
 <ol type="1">
 <li>使用企业提供的 MIAO 地址登录。注册策略可能是开放、仅受邀或关闭；如果启用了邮箱验证，先完成验证。</li>
@@ -83,7 +81,6 @@
 <h3 id="第一个需求怎么准备">第一个需求怎么准备</h3>
 <p>推荐从一个边界清楚、能反复使用的流程开始，提前说明三件事：**谁在做、要记录什么、完成的标准是什么。**例如：“销售记录客户和下次联系日期；负责人每天查看待跟进客户；主管查看本周进展。”</p>
 <h2 id="创建应用">创建应用</h2>
-<p><strong>界面参考：</strong><a href="./prototypes/03-create.html">HTML 原型</a> · <a href="./prototypes/images/03-create.png">原型图</a></p>
 <p><img src="./prototypes/images/03-create.png" alt="创建应用：固定小助手、运行记录和候选回执" /></p>
 <ol type="1">
 <li>在概览页打开小助手，选择“整个工作区”或一个具体应用作为对话上下文。</li>
@@ -98,7 +95,6 @@
 <h3 id="运行记录与确认">运行记录与确认</h3>
 <p>小助手运行可能处于排队、处理中、等待确认、成功、失败或待核实状态。关闭页面不会取消运行，重新打开应用或通知中的运行详情可以继续查看。写入结果未知时先核实当前记录，不会自动重放原写入。</p>
 <h2 id="预览与发布">预览与发布</h2>
-<p><strong>界面参考：</strong><a href="./prototypes/04-publish.html">HTML 原型</a> · <a href="./prototypes/images/04-publish.png">原型图</a></p>
 <p><img src="./prototypes/images/04-publish.png" alt="预览与发布：草稿运行页和发布候选" /></p>
 <ol type="1">
 <li>打开草稿预览，逐页检查导航、列表、详情、表单、操作按钮和空状态。预览中的记录是示例数据。</li>
@@ -116,7 +112,6 @@
 <li>若开启公开页面，已检查 slug、状态值、SEO 字段和图片授权。</li>
 </ul>
 <h2 id="团队日常使用">团队日常使用</h2>
-<p><strong>界面参考：</strong><a href="./prototypes/05-work.html">HTML 原型</a> · <a href="./prototypes/images/05-work.png">原型图</a></p>
 <p><img src="./prototypes/images/05-work.png" alt="团队日常使用：已发布的客户跟进页面" /></p>
 <p>打开应用后，默认进入已发布的业务页面。页面可能包含总览、列表、详情、表单、状态操作和后台任务入口；成员直接在业务界面工作，不必为每一条记录进入 Agent 对话。</p>
 <h3 id="查找与处理记录">查找与处理记录</h3>
@@ -131,7 +126,6 @@
 <p>应用可以通过小助手配置定时、到期、状态变化、新记录或鉴权外部事件触发的后台任务。任务先保存为草稿，启用和运行使用明确的版本；最近运行、步骤、写入数量、通知和失败原因可以在应用的“后台任务”入口查看。站内通知会提示需要确认的运行、发布结果和成员邀请。</p>
 <p>声明式采集脚本可以读取无凭据的 HTTP(S) 来源，按声明进行字段映射、过滤、稳定去重、入库和通知。每次运行保存回执；外部页面内容始终视为不可信数据，不能借此扩大任务授权。</p>
 <h2 id="修改应用与版本">修改应用与版本</h2>
-<p><strong>界面参考：</strong><a href="./prototypes/06-change.html">HTML 原型</a> · <a href="./prototypes/images/06-change.png">原型图</a></p>
 <p><img src="./prototypes/images/06-change.png" alt="修改应用：变更对话、草稿版本和差异摘要" /></p>
 <p>打开应用后，通过小助手说明要改的页面、字段、动作、状态流或公开范围。例如：“在客户详情增加联系结果，并把逾期客户排在总览顶部。”AI 小助手会读取当前应用上下文，生成变更摘要和新的草稿版本。</p>
 <ol type="1">
@@ -141,7 +135,6 @@
 </ol>
 <p>界面版本回退不会撤销成员已经录入的业务记录。归档应用会从工作区列表隐藏但保留数据，恢复后需要重新确认后续发布；永久删除会要求确认并删除应用及其业务数据。</p>
 <h2 id="数据附件与导出">数据、附件与导出</h2>
-<p><strong>界面参考：</strong><a href="./prototypes/07-data.html">HTML 原型</a> · <a href="./prototypes/images/07-data.png">原型图</a></p>
 <p><img src="./prototypes/images/07-data.png" alt="数据检查：数据表、记录详情和授权导出" /></p>
 <p>从应用操作区打开“查看数据表”。这里用于按表查看记录、搜索、筛选、排序、分页和必要修正；应用结构、页面和业务规则仍由小助手管理。普通成员进入应用时默认看到业务界面，不会先看到表结构。</p>
 <p>附件下载需要重新检查工作区、应用、记录和字段权限。知道文件地址不会让附件变成公开资源；只有公开发布中明确授权的图片字段走公开代理路径。</p>
@@ -153,7 +146,6 @@
 <li>工作区导出只包含发起者有权访问的数据。导出文件按企业内部数据政策保存和传递。</li>
 </ul>
 <h2 id="成员与权限">成员与权限</h2>
-<p><strong>界面参考：</strong><a href="./prototypes/08-team.html">HTML 原型</a> · <a href="./prototypes/images/08-team.png">原型图</a></p>
 <p><img src="./prototypes/images/08-team.png" alt="成员与权限：工作区成员、邀请和应用访问" /></p>
 <p>工作区管理入口包含“成员与邀请”“操作日志”和“工作区设置”。owner 管理空间和应用访问，admin 可以协助邀请和日常管理，member 使用被授予的应用。应用权限独立分为 viewer、editor、manager、publisher；批量修改另需 <code>can_batch</code>。</p>
 <table>
@@ -197,7 +189,6 @@
 <p>邀请链接与受邀邮箱绑定，24 小时内有效，撤销或过期后失效。成员被移出工作区后，全局账号仍可使用其他空间；旧页面、链接和 Agent 运行都会重新检查权限。</p>
 <p>个人与 AI 小助手的对话正文默认仅本人可见；应用版本摘要、任务回执、审计记录按其各自权限读取。Agent 不能绕过当前成员身份执行写入。</p>
 <h2 id="企业治理">企业治理</h2>
-<p><strong>界面参考：</strong><a href="./prototypes/09-governance.html">HTML 原型</a> · <a href="./prototypes/images/09-governance.png">原型图</a></p>
 <p><img src="./prototypes/images/09-governance.png" alt="企业治理：应用、成员、AI 用量和操作日志" /></p>
 <h3 id="工作区设置">工作区设置</h3>
 <p>owner 可以在工作区设置中查看成员角色、AI 用量与预算、操作日志和授权数据导出。LLM 与 JEV 用量分开统计；请求数、token 数和供应商账单不是同一口径。</p>
@@ -206,7 +197,6 @@
 <h3 id="自托管责任">自托管责任</h3>
 <p>自托管部署方负责域名与 HTTPS、注册和邮件策略、AI/Jev 密钥、平台管理员名单、备份目录、保留天数和恢复演练。配置密钥保存在服务端；不要把明文密钥放进截图、导出文件或 Git 仓库。当前 Go 服务按单实例方式运行，正式环境仍应按部署手册分层检查进程、SQLite、公开端点和登录后的业务流。</p>
 <h2 id="常见问题">常见问题</h2>
-<p><strong>界面参考：</strong><a href="./prototypes/10-troubleshoot.html">HTML 原型</a> · <a href="./prototypes/images/10-troubleshoot.png">原型图</a></p>
 <p><img src="./prototypes/images/10-troubleshoot.png" alt="常见问题：后台任务、通知和排障入口" /></p>
 <h3 id="同事打不开应用">同事打不开应用</h3>
 <p>确认邮箱和工作区正确，再请 owner 检查应用访问名单和 viewer/editor 角色。链接不会自动授予权限。</p>
@@ -223,7 +213,6 @@
 <h3 id="误发布误删或写入结果未知">误发布、误删或写入结果未知</h3>
 <p>先停止后续操作，打开运行详情和审计记录。兼容的界面版本可以回退；未知写入先用核实接口检查当前记录，不要直接重复发送原请求。</p>
 <h2 id="完整示例">完整示例</h2>
-<p><strong>界面参考：</strong><a href="./prototypes/11-example.html">HTML 原型</a> · <a href="./prototypes/images/11-example.png">原型图</a></p>
 <p><img src="./prototypes/images/11-example.png" alt="完整示例：客户跟进工作台、自动化运行和小助手草稿" /></p>
 <p>以“客户跟进”为例，一条完整的工作闭环可以这样展开：</p>
 <ol type="1">
@@ -237,7 +226,6 @@
 </ol>
 <p>同一方法适用于需求收集、项目事项、采购申请等流程：先定义真实业务闭环，再用通用数据表、页面、动作、状态流和任务逐步扩展。</p>
 <h2 id="附录技术架构">附录：技术架构</h2>
-<p><strong>界面参考：</strong><a href="./prototypes/12-architecture.html">HTML 原型</a> · <a href="./prototypes/images/12-architecture.png">原型图</a></p>
 <p><img src="./prototypes/images/12-architecture.png" alt="技术架构：浏览器、MIAO API、PocketBase、AI/Jev 与备份边界" /></p>
 <p>MIAO 当前由一个 Go 进程提供 HTTP API、嵌入式 PocketBase、浏览器 UI 和后台 worker。浏览器只发送当前身份和工作区上下文；服务端重新检查成员、应用和字段权限。</p>
 <table>
