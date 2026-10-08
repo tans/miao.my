@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MIAO is an open source business workspace for building internal apps and managing everyday work with an AI assistant." />
+  <meta name="theme-color" content="#ffffff" />
+  <title>MIAO | Open source business workspace</title>
+  <link rel="icon" type="image/png" href="/assets/mascots/cat-logo-head.png" />
+  <link rel="preload" href="/assets/fonts/caveat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link href="/assets/css/app.css?v=1" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="navbar site-nav">
+    <div class="navbar-start"><a class="brand" href="/en/" aria-label="MIAO home"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong></a></div>
+    <nav class="navbar-end" aria-label="Main navigation"><a class="nav-link" href="/en/docs/">Docs</a><a class="nav-link" href="/">中文</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub ↗</a></nav>
+  </header>
+  <main class="landing-home">
+    <section class="home-hero home-hero-compact" aria-labelledby="hero-title">
+      <h1 id="hero-title">Open source business workspace</h1>
+      <p class="hero-wordmark">build app fast and simple <span class="hero-wordmark-brand">- miao.my</span></p>
+      <a class="btn btn-neutral deploy-cta" href="https://miao.minapp.xin">Open MIAO</a>
+      <div class="hero-visual">
+        <figure class="home-preview-figure">
+          <img class="home-preview-image" src="/docs/prototypes/images/01-overview.png" alt="MIAO workspace with app navigation, published apps and the AI assistant" />
+          <figcaption class="home-preview-caption"><span>Current workspace preview</span><a href="/en/docs/">Read the user guide →</a></figcaption>
+        </figure>
+      </div>
+      <ul class="feature-list" aria-label="Product features"><li>Simple and fast</li><li>Open source</li><li>AI ready</li></ul>
+      <button class="btn btn-neutral deploy-cta" id="contact-cta" type="button" aria-haspopup="dialog">Talk to us about deployment</button>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="/en/" aria-label="MIAO home"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong></a><span>Open source business workspace</span><nav aria-label="Footer navigation"><a href="/en/docs/">Docs</a><a href="/">中文</a><a href="https://github.com/tans/miao">GitHub ↗</a></nav></footer>
+  <dialog class="modal contact-modal" id="wechat-dialog" aria-labelledby="wechat-title">
+    <div class="modal-box"><h2 id="wechat-title">Contact us on WeChat</h2><p>WeChat ID</p><strong class="wechat-id">tianshe00</strong><form method="dialog" class="modal-action"><button class="btn btn-neutral">Close</button></form></div>
+    <form method="dialog" class="modal-backdrop"><button aria-label="Close dialog">Close</button></form>
+  </dialog>
+  <script>document.getElementById('contact-cta').addEventListener('click', () => document.getElementById('wechat-dialog').showModal());</script>
+</body>
+</html>

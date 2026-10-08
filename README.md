@@ -1,6 +1,6 @@
 # MIAO 官网与文档
 
-MIAO 是开源企业内部工作台。本仓库提供静态官网和面向企业使用者的单页用户手册，可直接作为 Vercel 项目部署。完整应用单独自托管，源码见 [`tans/miao`](https://github.com/tans/miao)。
+MIAO 是开源企业内部工作台。本仓库提供中英双语静态官网、用户手册和英文产品示意图，可直接作为 Vercel 项目部署。完整应用单独自托管，源码见 [`tans/miao`](https://github.com/tans/miao)。
 
 ## 本地预览
 
@@ -21,10 +21,12 @@ python3 -m http.server 4173
 ## 目录
 
 - `index.html`：官网
-- `docs/USER_GUIDE.md`：用户手册正文，唯一内容源
-- `docs/index.html`：手册静态页面，由 `python3 scripts/build-docs.py` 生成（需要 Pandoc）
-- `docs/prototypes/`：12 张独立 HTML 界面原型、同名 PNG 预览与图库；`scripts/build-prototypes.py` 生成 HTML
-- `scripts/render-prototypes.py`：从 HTML 导出 1440×900 PNG（需要 WeasyPrint、PyMuPDF 和中文字体）
+- `en/index.html`：英文官网
+- `docs/USER_GUIDE.md`：中文用户手册正文
+- `docs/USER_GUIDE.en.md`：英文用户手册正文
+- `docs/index.html`、`en/docs/index.html`：双语手册静态页面，由 `python3 scripts/build-docs.py` 生成（需要 Pandoc）
+- `docs/prototypes/`：12 张独立英文 HTML 界面原型、同名 PNG 预览与图库；`scripts/build-prototypes.py` 生成 HTML
+- `scripts/render-prototypes.py`：从英文 HTML 导出 1440×900 PNG（需要 WeasyPrint、PyMuPDF 和字体）
 - `docs/product/`、`docs/architecture/`：旧文档地址，跳转到手册对应章节
 - `assets/mascots/`：官网使用的 MIAO 猫咪素材
 - `assets/scenes/`：AI 生成的工作场景示意图

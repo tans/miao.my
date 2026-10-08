@@ -7,7 +7,7 @@
   <link rel="preload" href="/assets/fonts/caveat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin /><link href="/assets/css/app.css?v=1" rel="stylesheet" type="text/css" /><link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong><span class="brand-divider"></span><span class="brand-caption">开源的企业 AI 工作台</span></a></div><nav class="navbar-end" aria-label="主导航"><a class="nav-link" href="#目录">手册目录</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub ↗</a></nav></header>
+  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong><span class="brand-divider"></span><span class="brand-caption">开源的企业 AI 工作台</span></a></div><nav class="navbar-end" aria-label="主导航"><a class="nav-link" href="#目录">手册目录</a><a class="nav-link" href="/en/docs/">English</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub ↗</a></nav></header>
   <main class="docs-main guide-main">
     <article class="docs-article guide-article">
 <h1 id="miao-用户手册">MIAO 用户手册</h1>
@@ -30,7 +30,7 @@
 <h2 id="认识-miao">认识 MIAO</h2>
 <p><strong>界面参考：</strong><a href="./prototypes/01-overview.html">HTML 原型</a> · <a href="./prototypes/images/01-overview.png">原型图</a> · <a href="./prototypes/">全部原型</a></p>
 <p><img src="./prototypes/images/01-overview.png" alt="登录后的工作区概览：应用列表与固定小助手" /></p>
-<p>MIAO 是一个服务端 Agent 驱动的企业工作台。登录后进入当前工作区，概览页列出你有权访问的应用；已经发布的应用用于处理日常业务，草稿应用等待继续配置。创建或修改应用时，从右侧打开固定的小助手 fx，用自然语言描述目标、补充文件或回答追问。</p>
+<p>MIAO 是一个服务端 Agent 驱动的企业工作台。登录后进入当前工作区，概览页列出你有权访问的应用；已经发布的应用用于处理日常业务，草稿应用等待继续配置。创建或修改应用时，从右侧打开固定的 AI 小助手，用自然语言描述目标、补充文件或回答追问。</p>
 <p>当前产品有四个清晰入口：</p>
 <ol type="1">
 <li>概览与模板：打开已有应用，或从模板创建一个新的起点。</li>
@@ -88,7 +88,7 @@
 <ol type="1">
 <li>在概览页打开小助手，选择“整个工作区”或一个具体应用作为对话上下文。</li>
 <li>描述目标、参与人、要保存的数据、可见范围和完成条件。可以附加 CSV、XLSX、文本、Markdown、PDF 或图片作为参考资料。</li>
-<li>fx 会追问必要问题，并通过持久化运行记录展示正在进行的阶段、候选操作和是否需要写入确认。</li>
+<li>AI 小助手会追问必要问题，并通过持久化运行记录展示正在进行的阶段、候选操作和是否需要写入确认。</li>
 <li>检查候选回执中的应用名称、页面、数据表、业务动作、状态流和权限。确认后才会生成草稿或写入数据。</li>
 </ol>
 <blockquote>
@@ -133,7 +133,7 @@
 <h2 id="修改应用与版本">修改应用与版本</h2>
 <p><strong>界面参考：</strong><a href="./prototypes/06-change.html">HTML 原型</a> · <a href="./prototypes/images/06-change.png">原型图</a></p>
 <p><img src="./prototypes/images/06-change.png" alt="修改应用：变更对话、草稿版本和差异摘要" /></p>
-<p>打开应用后，通过小助手说明要改的页面、字段、动作、状态流或公开范围。例如：“在客户详情增加联系结果，并把逾期客户排在总览顶部。”fx 会读取当前应用上下文，生成变更摘要和新的草稿版本。</p>
+<p>打开应用后，通过小助手说明要改的页面、字段、动作、状态流或公开范围。例如：“在客户详情增加联系结果，并把逾期客户排在总览顶部。”AI 小助手会读取当前应用上下文，生成变更摘要和新的草稿版本。</p>
 <ol type="1">
 <li>先阅读受影响的页面、表、字段、动作和成员范围。</li>
 <li>预览草稿，确认新增、修改、迁移和删除边界；涉及批量写入时先审阅计划。</li>
@@ -195,7 +195,7 @@
 </tbody>
 </table>
 <p>邀请链接与受邀邮箱绑定，24 小时内有效，撤销或过期后失效。成员被移出工作区后，全局账号仍可使用其他空间；旧页面、链接和 Agent 运行都会重新检查权限。</p>
-<p>个人与 fx 的对话正文默认仅本人可见；应用版本摘要、任务回执、审计记录按其各自权限读取。Agent 不能绕过当前成员身份执行写入。</p>
+<p>个人与 AI 小助手的对话正文默认仅本人可见；应用版本摘要、任务回执、审计记录按其各自权限读取。Agent 不能绕过当前成员身份执行写入。</p>
 <h2 id="企业治理">企业治理</h2>
 <p><strong>界面参考：</strong><a href="./prototypes/09-governance.html">HTML 原型</a> · <a href="./prototypes/images/09-governance.png">原型图</a></p>
 <p><img src="./prototypes/images/09-governance.png" alt="企业治理：应用、成员、AI 用量和操作日志" /></p>
@@ -216,7 +216,7 @@
 <p>先检查字段提示、权限和网络状态。发生并发冲突时重新读取最新记录，再重新提交；不要用刷新丢弃未提交输入。</p>
 <h3 id="后台任务一直等待或失败">后台任务一直等待或失败</h3>
 <p>打开应用的“后台任务”查看运行状态、版本、步骤和错误回执。等待确认的运行需要由具备权限的成员处理；来源超时、预算不足或脚本被暂停时不会自动重放未知写入。</p>
-<h3 id="fx-无法回答或额度用尽">fx 无法回答或额度用尽</h3>
+<h3 id="ai-小助手无法回答或额度用尽">AI 小助手无法回答或额度用尽</h3>
 <p>查看工作区 AI 用量与预算、平台后台的 AI 服务状态和最近请求。模型不可用时，已发布应用、确定性 CRUD、历史回执和可用的采集结果仍可继续访问。</p>
 <h3 id="找不到数据表或公开页面">找不到数据表或公开页面</h3>
 <p>“查看数据表”只在应用声明 <code>data_management</code> 能力时显示；没有该入口时仍可由小助手按权限查询底层数据。公开页面需要正式版本、公开策略、数据源字段和发布状态同时满足。</p>
@@ -227,7 +227,7 @@
 <p><img src="./prototypes/images/11-example.png" alt="完整示例：客户跟进工作台、自动化运行和小助手草稿" /></p>
 <p>以“客户跟进”为例，一条完整的工作闭环可以这样展开：</p>
 <ol type="1">
-<li>发起：负责人在小助手中说明销售、主管、客户、沟通记录和下一次行动，fx 追问可见范围和逾期定义。</li>
+<li>发起：负责人在小助手中说明销售、主管、客户、沟通记录和下一次行动，AI 小助手追问可见范围和逾期定义。</li>
 <li>草稿：候选创建客户表、跟进记录表、状态流和总览页面；负责人确认后生成草稿。</li>
 <li>发布：负责人预览新增、编辑、状态转换和公开范围，具有 publisher 权限的成员确认发布。</li>
 <li>使用：销售在已发布页面新增客户、记录沟通、推进状态；主管按总览查看本周待跟进和逾期项。</li>
@@ -255,7 +255,7 @@
 <td>只读取当前账号获授权的数据；不执行用户源码</td>
 </tr>
 <tr>
-<td>小助手 fx 与持久化 Engine</td>
+<td>AI 小助手与持久化 Engine</td>
 <td>处理需求、候选、确认、查询和受控写入</td>
 <td>对话按账号隔离；模型文字不替代写入回执</td>
 </tr>
@@ -289,6 +289,6 @@
     </article>
     <p class="guide-back"><a href="#目录">返回目录 ↑</a></p>
   </main>
-  <footer class="site-footer"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong></a><span>开源的企业 AI 工作台</span><nav aria-label="页脚导航"><a href="#目录">手册目录</a><a href="/">官网首页</a></nav></footer>
+  <footer class="site-footer"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong></a><span>开源的企业 AI 工作台</span><nav aria-label="页脚导航"><a href="#目录">手册目录</a><a href="/en/docs/">English</a><a href="/">官网首页</a></nav></footer>
 </body>
 </html>
