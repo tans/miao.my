@@ -13,6 +13,8 @@ npm i --no-fund --no-audit tailwindcss@4 daisyui@5 @tailwindcss/cli@4 >/dev/null
 cat > input.css <<EOF
 @import "tailwindcss" source(none);
 @source "$root/index.html";
+@source "$root/en/index.html";
+@source "$root/showcases.html";
 @source "$root/docs/index.html";
 @source "$root/docs/template.html";
 @plugin "daisyui";
