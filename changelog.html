@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MIAO 版本更新日志：记录 MIAO 应用每次发布的功能、改进与修复。" />
+  <title>更新日志 · MIAO</title><link rel="icon" type="image/png" href="/assets/mascots/cat-logo-head.png" />
+  <link rel="preload" href="/assets/fonts/caveat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin /><link href="/assets/css/app.css?v=1" rel="stylesheet" type="text/css" /><link rel="stylesheet" href="/styles.css" />
+  <style>
+    .changelog-main{width:min(760px,calc(100% - 56px));margin:0 auto;padding:66px 0 100px}
+    .changelog-eyebrow{margin:0 0 14px;color:#6d7178;font-family:"Geist Mono",ui-monospace,monospace;font-size:10px}
+    .changelog-main h1{margin:0;font-size:clamp(38px,5vw,54px);font-weight:580;line-height:1.14;letter-spacing:-.06em;color:#090a0b}
+    .changelog-lead{max-width:610px;margin:17px 0 0;color:#696d74;font-size:14px;line-height:1.8}
+    .changelog-list{margin-top:46px;border-top:1px solid #dfe1e4}
+    .changelog-entry{padding:34px 0 30px;border-bottom:1px solid #dfe1e4}
+    .changelog-version{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+    .changelog-version h2{margin:0;font-size:22px;font-weight:570;letter-spacing:-.04em;color:#17191d}
+    .changelog-date{color:#858990;font-family:"Geist Mono",ui-monospace,monospace;font-size:11px}
+    .changelog-tag{padding:3px 8px;border:1px solid #e6e7e9;border-radius:4px;color:#555960;font-family:"Geist Mono",ui-monospace,monospace;font-size:10px;white-space:nowrap}
+    .changelog-entry ul{margin:14px 0 0;padding-left:20px}
+    .changelog-entry li{margin:7px 0;color:#555960;font-size:13px;line-height:1.75}
+    .changelog-entry li strong{color:#222429;font-weight:560}
+    .changelog-note{margin-top:28px;color:#81858c;font-size:11px}
+    @media(max-width:700px){.changelog-main{width:calc(100% - 40px);padding-top:47px}.changelog-main h1{font-size:36px}}
+  </style>
+</head>
+<body>
+  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong><span class="brand-divider"></span><span class="brand-caption">开源的企业 AI 工作台</span></a></div><nav class="navbar-end" aria-label="主导航"><a class="nav-link" href="/docs/">文档</a><a class="nav-link" href="/en/">English</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub ↗</a></nav></header>
+  <main class="changelog-main">
+    <p class="changelog-eyebrow">CHANGELOG</p>
+    <h1>更新日志</h1>
+    <p class="changelog-lead">记录 MIAO 应用的版本更新：新功能、改进与修复。MIAO 以发布日期标识版本，可随时在 <a href="https://github.com/tans/miao">GitHub 仓库</a>查看全部变更。</p>
+    <div class="changelog-list">
+
+      <article class="changelog-entry">
+        <div class="changelog-version"><h2 id="v0-0-1">v0.0.1</h2><span class="changelog-date">2026-10-10</span><span class="changelog-tag">当前版本</span></div>
+        <ul>
+          <li><strong>首个打包版本。</strong>版本号定为 0.0.1，二进制包可从 GitHub Releases 下载，安装无需 Go 工具链和 npm 依赖。</li>
+          <li>本地 API 测试套件独立到 miao-test 仓库。</li>
+          <li>修复：拒绝旧版 LLM 配置重置；恢复受控 LLM 决策提案。</li>
+          <li>界面：工作区侧栏更紧凑；小助手支持显示/隐藏切换。</li>
+          <li>业务配置视图改为只读，精简只读设置加载。</li>
+        </ul>
+      </article>
+
+      <article class="changelog-entry">
+        <div class="changelog-version"><h2 id="2026-10-09">2026-10-09</h2><span class="changelog-date">构建 3388d67</span></div>
+        <ul>
+          <li><strong>应用图标与版本切换。</strong>新增应用图标和本地图标选择器；应用运行时工具栏可直接切换版本。</li>
+          <li>自托管 daisyUI 与 Tailwind 浏览器资源，减少前端启动资源传输。</li>
+          <li>发布对话式 UI 草稿无需二次确认；移除应用运行时下的草稿与版本历史区块。</li>
+          <li>修复：表单去重并持久化运行指标、应用设置渲染、工作区选择器越界、助手加载与模型错误提示、清理失败的助手重试。</li>
+          <li>禁用旧版 LLM Agent 流程；Jev 评估全部改用 Typesafe。</li>
+        </ul>
+      </article>
+
+      <article class="changelog-entry">
+        <div class="changelog-version"><h2 id="2026-10-08">2026-10-08</h2></div>
+        <ul>
+          <li><strong>版本发布与 SSE 流式更新。</strong>支持发布应用变更并切换版本；助手和应用运行时更新改为 SSE 流式推送。</li>
+          <li>Agent 运行接入后台任务；平台标题可配置。</li>
+          <li>修复：删除应用时保留数据表、无需登录闪动地恢复登录态、遗留数据目录归一到初始 schema、运行时包元数据归档。</li>
+        </ul>
+      </article>
+
+      <article class="changelog-entry">
+        <div class="changelog-version"><h2 id="2026-10-07">2026-10-07</h2><span class="changelog-tag">大版本日</span></div>
+        <ul>
+          <li><strong>工作台全面成型。</strong>小助手固定为第三栏深色终端风格停靠列；工作区切换器改为下拉菜单；图标统一为 Feather 图标集。</li>
+          <li><strong>界面与文案全量本地化。</strong>助手提示、导入附件、应用设置、采集结果、用量通知、平台管理、英文工作台翻译全部完成；支持账号语言偏好。</li>
+          <li>通过对话链发布和编辑 UI；助手按阶段展示运行轨迹；邀请改为邮件直发 24 小时链接。</li>
+          <li>采集（collection）工作流补全：外部 HTTP 源读取、Typesafe Jev 提供端点、通知独立重试。</li>
+          <li>概览卡片显示应用使用统计；生产发布切换脚本。</li>
+        </ul>
+      </article>
+
+      <article class="changelog-entry">
+        <div class="changelog-version"><h2 id="2026-10-03—06">2026-10-03 – 10-06</h2></div>
+        <ul>
+          <li><strong>受控 json-render 运行时。</strong>后端 harness 与 json-render 渲染运行时上线，草稿通过 harness 组合与校验。</li>
+          <li><strong>业务动作与工作流。</strong>通用事务性业务动作、输入声明校验、工作流状态机、受限外部连接器。</li>
+          <li>后台任务接入共享 Runtime；发布只读公开应用页；Jev 决策改用固定版本评估器。</li>
+          <li>修复：附件/外发迁移、自动化重试、AI 配额事务内预留、账号注销事务化等一大批稳定性问题。</li>
+        </ul>
+      </article>
+
+      <article class="changelog-entry">
+        <div class="changelog-version"><h2 id="2026-09-28—10-02">2026-09-28 – 10-02</h2><span class="changelog-tag">架构重构</span></div>
+        <ul>
+          <li><strong>换到 Go + PocketBase。</strong>移除 Mongo/DSH 技术栈，应用数据与账号持久化到内嵌 PocketBase，服务器迁移为 Go 单二进制。</li>
+          <li><strong>Agent 优先的工作台。</strong>重构为 Agent 驱动的应用运行时：版本化应用运行、界面草稿历史、兼容历史版本恢复、持久化私人对话。</li>
+          <li>持久后台任务（Bun 运行时）；成员邀请与企业 fx 网关。</li>
+        </ul>
+      </article>
+
+      <article class="changelog-entry">
+        <div class="changelog-version"><h2 id="2026-08-21—09-03">2026-08-21 – 09-03</h2><span class="changelog-tag">起点</span></div>
+        <ul>
+          <li><strong>项目启动。</strong>核心 API、MongoDB 运行时、引导工作区 UI 与本体（ontology）设计内核。</li>
+          <li>内置 DeepSeek Harness Agent、MCP 会话与权限追踪、Agent 执行轨迹按会话索引。</li>
+          <li>租户文件资产、备份恢复脚本、Docker 部署与 nginx 反代。</li>
+        </ul>
+      </article>
+
+    </div>
+    <p class="changelog-note">更早的每次代码变更见 <a href="https://github.com/tans/miao/commits/main">GitHub 提交历史</a>。</p>
+  </main>
+  <footer class="site-footer"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong></a><span>开源的企业 AI 工作台</span><nav aria-label="页脚导航"><a href="/showcases.html">Showcases</a><a href="/docs/">文档</a><a href="/changelog.html">更新日志</a><a href="/en/">English</a></nav></footer>
+</body>
+</html>
