@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="选择 MIAO 的本地评估、单机生产或源码贡献路径。">
+  <title>开始使用 · MIAO</title>
+  <link rel="icon" type="image/png" href="/assets/mascots/cat-logo-head.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link btn btn-ghost btn-sm" href="#main-content">跳到主要内容</a>
+  <header class="navbar site-nav">
+    <div class="navbar-start"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt=""><strong>miao.my</strong></a></div>
+    <nav class="navbar-end" aria-label="主导航"><a class="nav-link" href="/docs/">文档</a><a class="nav-link" href="/self-hosting/">自托管</a><a class="nav-link" href="/get-started/" aria-current="page">开始使用</a><a class="nav-link" href="/en/get-started/">English</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub ↗</a></nav>
+  </header>
+  <main class="start-main" id="main-content">
+    <p class="section-kicker">GET STARTED · THREE PATHS</p>
+    <h1>从适合你的起点开始</h1>
+    <p class="start-lede">MIAO 是开源、可自托管的工作台。先选择你要验证的事情：在本地了解产品、把单个实例交给团队，或参与源码和公开 Issue。页面只引用仓库已有的安装与运维事实。</p>
+    <div class="start-notice"><strong>先说清楚边界</strong><span>这里没有 SaaS 套餐、云 SLA、自动扩容或企业支持承诺。生产域名、模型、邮件、备份恢复和反向代理都需要目标环境单独验收。</span></div>
+    <section class="start-grid" aria-label="三条开始路径">
+      <article class="start-card">
+        <p class="section-kicker">01 · LOCAL EVALUATION</p>
+        <h2>本地评估</h2>
+        <p>适合想先创建 workspace、查看示意和 API 入口的使用者。源码安装需要 Go 工具链；本地运行不会自动变成生产服务。</p>
+        <dl class="start-meta"><div><dt>前置条件</dt><dd>仓库源码、Go 1.27.1 工具链；Node.js/npm 只在构建浏览器 bundle 时需要。</dd></div><div><dt>实际产物</dt><dd>本地 MIAO 进程、嵌入的 UI/PocketBase 和本地数据目录。</dd></div><div><dt>升级与支持</dt><dd>跟随源码和 Release 记录；没有云端托管或生产 SLA。</dd></div></dl>
+        <div class="start-actions"><a class="btn btn-neutral" href="https://github.com/tans/miao#self-hosting">查看源码安装</a><a href="/docs/">阅读用户指南 →</a></div>
+        <span class="status ready">源码路径已记录</span>
+      </article>
+      <article class="start-card start-card-featured">
+        <p class="section-kicker">02 · SINGLE-SERVER PRODUCTION</p>
+        <h2>单机生产</h2>
+        <p>适合把一个版本部署到自己的 Linux 或 macOS 主机。Go binary、嵌入式 UI、PocketBase migration 和数据目录一起管理。</p>
+        <dl class="start-meta"><div><dt>前置条件</dt><dd>支持的 x64/ARM64 主机、PM2、curl、openssl，以及由部署者维护的 HTTPS 反向代理。</dd></div><div><dt>实际产物</dt><dd>版本化 binary、PM2 进程、配置文件和由部署者保管的数据目录。</dd></div><div><dt>升级与回滚</dt><dd>升级前备份；PM2 管理进程切换。数据库不会自动回滚，恢复需按运维手册演练。</dd></div></dl>
+        <div class="start-actions"><a class="btn btn-neutral" href="https://github.com/tans/miao/releases">查看 Releases</a><a href="/self-hosting/">查看自托管边界 →</a></div>
+        <span class="status verify">需要目标环境验收</span>
+      </article>
+      <article class="start-card">
+        <p class="section-kicker">03 · CONTRIBUTE</p>
+        <h2>参与开发</h2>
+        <p>适合想修复问题、补充文档或讨论下一步能力的贡献者。公开 Issue 是事实入口，计划内容不会自动变成当前产品能力。</p>
+        <dl class="start-meta"><div><dt>前置条件</dt><dd>GitHub 账号、源码仓库和一条清楚的问题或改动说明。</dd></div><div><dt>实际产物</dt><dd>Issue、Pull Request、文档修订或可复现的源码变更。</dd></div><div><dt>维护边界</dt><dd>先对齐产品边界和验收证据；未公开的内部验证环境不作为访客前置条件。</dd></div></dl>
+        <div class="start-actions"><a class="btn btn-neutral" href="https://github.com/tans/miao/issues">打开公开 Issues</a><a href="https://github.com/tans/miao/blob/main/AGENTS.md">阅读贡献约定 →</a></div>
+        <span class="status ready">公开协作入口</span>
+      </article>
+    </section>
+    <section class="start-next" aria-labelledby="next-title"><p class="section-kicker">NEXT CHECK</p><h2 id="next-title">选好路径之后</h2><div class="start-next-grid"><a href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md"><strong>运维手册</strong><span>安装、配置、健康检查、升级、备份和恢复的事实来源 ↗</span></a><a href="/changelog.html"><strong>更新日志</strong><span>区分 GitHub Release、源码记录和现场验收状态 ↗</span></a><a href="/community/"><strong>社区入口</strong><span>公开 Issue、Discussion、Release 和支持边界 ↗</span></a></div></section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt=""><strong>miao.my</strong></a><nav aria-label="页脚导航"><a href="/docs/">文档</a><a href="/self-hosting/">自托管</a><a href="/en/get-started/">English</a><a href="https://github.com/tans/miao">GitHub ↗</a></nav></footer>
+</body>
+</html>
