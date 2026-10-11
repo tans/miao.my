@@ -1,142 +1,44 @@
 <!doctype html>
-<html lang="zh-CN" data-theme="light">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MIAO 产品选择指南：用公开事实判断 MIAO 是否适合团队的工作。" />
-  <title>产品选择指南 · MIAO</title><link rel="icon" type="image/png" href="/assets/mascots/cat-logo-head.png" />
+  <meta name="description" content="MIAO user guide: create workspaces, build apps with the AI assistant, run team workflows, manage permissions and govern data." />
+  <title>User Guide · MIAO</title><link rel="icon" type="image/png" href="/assets/mascots/cat-logo-head.png" />
   <link rel="preload" href="/assets/fonts/caveat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin /><link href="/assets/css/app.css?v=1" rel="stylesheet" type="text/css" /><link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <a class="skip-link btn btn-ghost btn-sm" href="#main-content">跳到主要内容</a>
-  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong><span class="brand-divider"></span><span class="brand-caption">开源的企业 AI 工作台</span></a></div><nav class="navbar-end" aria-label="主导航"><a class="nav-link" href="#miao-产品选择指南">指南目录</a><a class="nav-link" href="/en/guide/">English</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub ↗</a></nav></header>
-  <main class="docs-main guide-main" id="main-content">
+  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="/" aria-label="MIAO home"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong><span class="brand-divider"></span><span class="brand-caption">Open source business workspace</span></a></div><nav class="navbar-end" aria-label="Main navigation"><a class="nav-link" href="#contents">Contents</a><a class="nav-link" href="/zh/docs/">中文</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub ↗</a></nav></header>
+  <main class="docs-main guide-main">
     <article class="docs-article guide-article">
 <h1 id="miao-产品选择指南">MIAO 产品选择指南</h1>
 <p>这是一份事实导向的选择指南，帮助团队判断 MIAO 是否适合当前工作。它不是竞品排名，也不暗示 MIAO 正在复制 Budibase 的产品线。结论只描述当前公开源码、文档和已记录的边界；计划中的能力不算当前能力。</p>
 <h2 id="快速开始">快速开始</h2>
-<ul>
-<li><a href="https://github.com/tans/miao#self-hosting">安装与自托管</a>：部署单个 Go binary，并由部署方负责数据目录、HTTPS、备份和恢复。</li>
-<li><a href="./USER_GUIDE.md#创建应用">第一次创建应用</a>：登录工作区后，让小助手生成受控草稿，再由有权成员预览和确认。</li>
-<li><a href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md">运维与恢复</a> · <a href="https://github.com/tans/miao/tree/main/docs/generated">生成 API 文档</a></li>
-</ul>
+<ul><li><a href="https://github.com/tans/miao#self-hosting">安装与自托管</a>：部署单个 Go binary，并由部署方负责数据目录、HTTPS、备份和恢复。</li><li><a href="./USER_GUIDE.md#创建应用">第一次创建应用</a>：登录工作区后，让小助手生成受控草稿，再由有权成员预览和确认。</li><li><a href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md">运维与恢复</a> · <a href="https://github.com/tans/miao/tree/main/docs/generated">生成 API 文档</a></li></ul>
 <h2 id="能力矩阵">能力矩阵</h2>
-<table>
-<thead>
-<tr>
-<th>能力</th>
-<th>当前可用</th>
-<th>现场验收</th>
-<th>计划中</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Agent 创建应用、受控 JSON UI、版本发布</td>
-<td>已实现；源码与用户手册</td>
-<td><a href="https://github.com/tans/miao/issues/50">#50 产品与现场验收</a></td>
-<td><a href="https://github.com/tans/miao/issues/53">#53 执行总表</a></td>
-</tr>
-<tr>
-<td>状态流、真实记录、权限与后台任务</td>
-<td>已实现；运维文档</td>
-<td><a href="https://github.com/tans/miao/issues/63">#63 三场景闭环</a></td>
-<td><a href="https://github.com/tans/miao/issues/64">#64 最终验证</a></td>
-</tr>
-<tr>
-<td>声明式采集、公开只读页、图片授权</td>
-<td>已实现；运维文档</td>
-<td><a href="https://github.com/tans/miao/issues/63">#63 三场景闭环</a></td>
-<td><a href="https://github.com/tans/miao/issues/62">#62 真实环境准备</a></td>
-</tr>
-<tr>
-<td>备份、恢复、HTTPS、邮件与 AI 服务配置</td>
-<td>运维责任已记录</td>
-<td><a href="https://github.com/tans/miao/issues/62">#62 真实环境准备</a></td>
-<td><a href="https://github.com/tans/miao/issues/64">#64 最终验证</a></td>
-</tr>
-<tr>
-<td>OCR、多语言扩展、通用拖拽编辑器</td>
-<td>不承诺</td>
-<td>不适用</td>
-<td>不作当前产品承诺</td>
-</tr>
-</tbody>
-</table>
+<table><thead><tr><th>能力</th><th>当前可用</th><th>现场验收</th><th>计划中</th></tr></thead><tbody>
+<tr><td>Agent 创建应用、受控 JSON UI、版本发布</td><td>已实现；源码与用户手册</td><td><a href="https://github.com/tans/miao/issues/50">#50 产品与现场验收</a></td><td><a href="https://github.com/tans/miao/issues/53">#53 执行总表</a></td></tr>
+<tr><td>状态流、真实记录、权限与后台任务</td><td>已实现；运维文档</td><td><a href="https://github.com/tans/miao/issues/63">#63 三场景闭环</a></td><td><a href="https://github.com/tans/miao/issues/64">#64 最终验证</a></td></tr>
+<tr><td>声明式采集、公开只读页、图片授权</td><td>已实现；运维文档</td><td><a href="https://github.com/tans/miao/issues/63">#63 三场景闭环</a></td><td><a href="https://github.com/tans/miao/issues/62">#62 真实环境准备</a></td></tr>
+<tr><td>备份、恢复、HTTPS、邮件与 AI 服务配置</td><td>运维责任已记录</td><td><a href="https://github.com/tans/miao/issues/62">#62 真实环境准备</a></td><td><a href="https://github.com/tans/miao/issues/64">#64 最终验证</a></td></tr>
+<tr><td>OCR、多语言扩展、通用拖拽编辑器</td><td>不承诺</td><td>不适用</td><td>不作当前产品承诺</td></tr>
+</tbody></table>
 <h2 id="边界矩阵">边界矩阵</h2>
-<table>
-<thead>
-<tr>
-<th>场景</th>
-<th>当前边界</th>
-<th>状态</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>模型离线</td>
-<td>已发布应用、确定性 CRUD、历史运行回执和已有采集结果仍可用；Agent 新建/修改和依赖模型的操作不可用</td>
-<td>当前可用，目标环境需现场验收</td>
-</tr>
-<tr>
-<td>附件</td>
-<td>单文件最多 5 MB；支持 PNG、JPEG、GIF、WebP、PDF 和纯文本</td>
-<td>当前可用</td>
-</tr>
-<tr>
-<td>CSV/XLSX</td>
-<td>每次读取前 100 行；每批导入最多 100 行，需预览并确认</td>
-<td>当前可用</td>
-</tr>
-<tr>
-<td>公开页面</td>
-<td>仅公开已发布版本明确授权的页面、记录字段和图片；只读，不开放附件、关系、业务动作或写入</td>
-<td>当前可用，目标环境需现场验收</td>
-</tr>
-<tr>
-<td>应用界面</td>
-<td>schema v3/json-render 受控组件，已发布界面最多 12 个验证页面；不执行用户源码、SQL 或任意代码</td>
-<td>当前可用</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><a href="https://github.com/tans/miao/blob/main/PRODUCT.md">MIAO 产品资料</a></li>
-<li><a href="https://github.com/tans/miao/blob/main/README.md">MIAO README：能力与边界</a></li>
-<li><a href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md">MIAO 运维文档</a></li>
-<li><a href="https://budibase.com/">Budibase 官网</a></li>
-<li><a href="https://github.com/Budibase/budibase">Budibase 开源仓库</a></li>
-</ul>
+<table><thead><tr><th>场景</th><th>当前边界</th><th>状态</th></tr></thead><tbody>
+<tr><td>模型离线</td><td>已发布应用、确定性 CRUD、历史运行回执和已有采集结果仍可用；Agent 新建/修改和依赖模型的操作不可用</td><td>当前可用，目标环境需现场验收</td></tr>
+<tr><td>附件</td><td>单文件最多 5 MB；支持 PNG、JPEG、GIF、WebP、PDF 和纯文本</td><td>当前可用</td></tr>
+<tr><td>CSV/XLSX</td><td>每次读取前 100 行；每批导入最多 100 行，需预览并确认</td><td>当前可用</td></tr>
+<tr><td>公开页面</td><td>仅公开已发布版本明确授权的页面、记录字段和图片；只读，不开放附件、关系、业务动作或写入</td><td>当前可用，目标环境需现场验收</td></tr>
+<tr><td>应用界面</td><td>schema v3/json-render 受控组件，已发布界面最多 12 个验证页面；不执行用户源码、SQL 或任意代码</td><td>当前可用</td></tr>
+</tbody></table>
+<ul><li><a href="https://github.com/tans/miao/blob/main/PRODUCT.md">MIAO 产品资料</a></li><li><a href="https://github.com/tans/miao/blob/main/README.md">MIAO README：能力与边界</a></li><li><a href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md">MIAO 运维文档</a></li><li><a href="https://budibase.com/">Budibase 官网</a></li><li><a href="https://github.com/Budibase/budibase">Budibase 开源仓库</a></li></ul>
 <h2 id="先看结论">先看结论</h2>
-<table>
-<thead>
-<tr>
-<th>如果团队需要</th>
-<th>结论</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>用自然语言描述内部流程，再由 Agent 生成受控的业务应用</td>
-<td><strong>适合 MIAO</strong></td>
-</tr>
-<tr>
-<td>在单机或自托管环境中保留数据，接受自己负责备份、HTTPS 和升级</td>
-<td><strong>适合 MIAO</strong></td>
-</tr>
-<tr>
-<td>受控页面、真实业务记录、状态流、后台任务和可审计的发布确认</td>
-<td><strong>适合 MIAO</strong></td>
-</tr>
-<tr>
-<td>拖拽优先的通用画布、任意代码或 SQL、复杂门户和匿名写入</td>
-<td><strong>当前不支持</strong></td>
-</tr>
-<tr>
-<td>需要更广泛的页面编排、云托管选项或外部产品集成</td>
-<td><strong>需要评估</strong></td>
-</tr>
-</tbody>
-</table>
+<table><thead><tr><th>如果团队需要</th><th>结论</th></tr></thead><tbody>
+<tr><td>用自然语言描述内部流程，再由 Agent 生成受控的业务应用</td><td><strong>适合 MIAO</strong></td></tr>
+<tr><td>在单机或自托管环境中保留数据，接受自己负责备份、HTTPS 和升级</td><td><strong>适合 MIAO</strong></td></tr>
+<tr><td>受控页面、真实业务记录、状态流、后台任务和可审计的发布确认</td><td><strong>适合 MIAO</strong></td></tr>
+<tr><td>拖拽优先的通用画布、任意代码或 SQL、复杂门户和匿名写入</td><td><strong>当前不支持</strong></td></tr>
+<tr><td>需要更广泛的页面编排、云托管选项或外部产品集成</td><td><strong>需要评估</strong></td></tr>
+</tbody></table>
 <h2 id="六个判断维度">六个判断维度</h2>
 <h3 id="1-创建方式agent-led-还是拖拽配置优先">1. 创建方式：Agent-led 还是拖拽/配置优先</h3>
 <p><strong>MIAO：适合 MIAO。</strong> MIAO 的产品定位是 agent-first：用户先描述工作，服务端 Agent 通过受限能力生成页面、数据结构和动作候选，再由成员预览和确认。Agent 没有 shell 访问，也不执行用户提交的任意应用源码。</p>
@@ -169,18 +71,11 @@
 <p><strong>当前不支持。</strong> 本指南不声称任何特定客户、价格、SLA、合规认证或部署结果，也不把原型截图当作生产验收证据。MIAO 仓库明确说明客户证明、采用数据、价格和部署承诺没有验证资料。</p>
 <p>来源：<a href="https://github.com/tans/miao/blob/main/README.md#license">README License</a>、<a href="https://github.com/tans/miao/blob/main/PRODUCT.md#evidence-on-hand">PRODUCT.md Evidence on Hand</a>、<a href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md">Operations guide</a>。</p>
 <h2 id="建议的验收顺序">建议的验收顺序</h2>
-<ol type="1">
-<li>用一个真实但边界清楚的内部流程验证“描述 → 草稿 → 预览 → 发布”。</li>
-<li>用真实角色验证记录读取、字段权限、状态流和冲突处理。</li>
-<li>在隔离环境验证备份、恢复、HTTPS、邮件、AI 密钥和日志策略。</li>
-<li>用一个只读公开页面验证页面、字段、图片和撤销发布边界。</li>
-<li>再决定是否需要更多页面、外部写入、云托管或更复杂的自动化。</li>
-</ol>
+<ol><li>用一个真实但边界清楚的内部流程验证“描述 → 草稿 → 预览 → 发布”。</li><li>用真实角色验证记录读取、字段权限、状态流和冲突处理。</li><li>在隔离环境验证备份、恢复、HTTPS、邮件、AI 密钥和日志策略。</li><li>用一个只读公开页面验证页面、字段、图片和撤销发布边界。</li><li>再决定是否需要更多页面、外部写入、云托管或更复杂的自动化。</li></ol>
 <p>本页的结论可能随公开源码和文档变化。实施前请以对应仓库的当前版本、运维文档和本组织的安全评审为准。</p>
-
     </article>
-    <p class="guide-back"><a href="#miao-产品选择指南">返回目录 ↑</a></p>
+    <p class="guide-back"><a href="#contents">Back to contents ↑</a></p>
   </main>
-  <footer class="site-footer"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong></a><span>开源的企业 AI 工作台</span><nav aria-label="页脚导航"><a href="#miao-产品选择指南">指南目录</a><a href="/en/guide/">English</a><a href="/">官网首页</a></nav></footer>
+  <footer class="site-footer"><a class="brand" href="/" aria-label="MIAO home"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong></a><span>Open source business workspace</span><nav aria-label="Footer navigation"><a href="#contents">Contents</a><a href="/zh/docs/">中文</a><a href="/">Website</a></nav></footer>
 </body>
 </html>
