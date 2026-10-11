@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MIAO is an open source business workspace for building internal apps and managing everyday work with an AI assistant." />
+  <meta name="description" content="MIAO is an open-source, self-hostable Agent workspace for internal operations teams: describe work, shape controlled drafts, collaborate on records, and operate authorized background jobs." />
   <meta name="theme-color" content="#ffffff" />
   <title>MIAO | Open source business workspace</title>
   <link rel="icon" type="image/png" href="/assets/mascots/cat-logo-head.png" />
@@ -11,27 +11,48 @@
   <link href="/assets/css/app.css?v=1" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
-<body>
+<body class="home-page">
   <header class="navbar site-nav">
     <div class="navbar-start"><a class="brand" href="/en/" aria-label="MIAO home"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong></a></div>
-    <nav class="navbar-end" aria-label="Main navigation"><a class="nav-link" href="/en/docs/">Docs</a><a class="nav-link" href="/changelog.html">Changelog</a><a class="nav-link" href="/">中文</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub ↗</a></nav>
+    <nav class="navbar-end" aria-label="Main navigation"><a class="nav-link" href="/en/docs/">Docs</a><a class="nav-link" href="/en/changelog.html">Changelog</a><a class="nav-link" href="/">中文</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub ↗</a></nav>
   </header>
   <main class="landing-home">
     <section class="home-hero home-hero-compact" aria-labelledby="hero-title">
-      <h1 id="hero-title">Open source business workspace</h1>
-      <p class="hero-wordmark">build app fast and simple <span class="hero-wordmark-brand">- miao.my</span></p>
-      <div class="hero-actions"><a class="btn btn-neutral deploy-cta" href="https://miao.minapp.xin">Open MIAO</a><a class="btn btn-outline" href="/showcases.html" lang="zh-CN">Showcases</a></div>
+      <h1 id="hero-title">An Agent workspace for internal team operations</h1>
+      <p class="hero-description">For teams managing customers, orders and daily operations: describe work in natural language, let a server-side Agent shape a controlled draft, collaborate on records, then run authorized background jobs.</p>
+      <div class="hero-actions"><a class="btn btn-neutral" href="/en/docs/#get-started">Get started</a><a class="btn btn-outline" href="https://github.com/tans/miao">Source / self-host ↗</a></div>
+      <nav class="story-nav" aria-label="Four product steps"><a href="#describe">01 Describe</a><a href="#shape">02 Shape</a><a href="#use">03 Use</a><a href="#operate">04 Operate</a></nav>
       <div class="hero-visual">
         <figure class="home-preview-figure">
           <img class="home-preview-image" src="/docs/prototypes/images/01-overview.png" alt="MIAO workspace with app navigation, published apps and the AI assistant" />
-          <figcaption class="home-preview-caption"><span>Current workspace preview</span><a href="/en/docs/">Read the user guide →</a></figcaption>
+          <figcaption class="home-preview-caption"><span>Static workspace prototype · illustrative data, not live customer data</span><a href="/docs/prototypes/01-overview.html">Open prototype →</a></figcaption>
         </figure>
       </div>
-      <ul class="feature-list" aria-label="Product features"><li>Simple and fast</li><li>Open source</li><li>AI ready</li></ul>
+      <p class="story-note">Open source and self-hostable. AI requires a configured model service; permissions and confirmation gates control publishing and writes.</p>
       <button class="btn btn-neutral deploy-cta" id="contact-cta" type="button" aria-haspopup="dialog">Talk to us about deployment</button>
     </section>
+    <section class="product-story" aria-labelledby="story-title">
+      <h2 id="story-title">From a request to an internal app that keeps running</h2>
+      <p class="story-note">These interfaces are static product prototypes. All records, counts and statuses are illustrative.</p>
+      <article class="story-step" id="describe" aria-labelledby="describe-title">
+        <div class="story-copy"><p class="section-kicker">01 · Describe</p><h3 id="describe-title">Describe the work and its boundaries</h3><p>Tell the assistant who will use the app, which fields matter and how statuses should change. Attach files or answer follow-up questions. Start with a concrete workflow such as customer follow-up or order handling.</p><p class="story-limit">Current boundary: requests need clarification; a conversation cannot bypass approval and become a published app.</p><div class="story-actions"><a class="btn btn-neutral" href="/en/docs/#prepare-your-first-request">Prepare your first request</a><a href="/docs/prototypes/02-start.html">Static prototype →</a><a href="/en/docs/#create-an-app">Creation guide →</a></div></div>
+        <figure><a href="/docs/prototypes/02-start.html"><img src="/docs/prototypes/images/02-start.png" width="1440" height="900" loading="lazy" alt="Static request prototype with workspace entry and natural-language input" /></a><figcaption>Request entry · static prototype / illustrative data</figcaption></figure>
+      </article>
+      <article class="story-step" id="shape" aria-labelledby="shape-title">
+        <div class="story-copy"><p class="section-kicker">02 · Shape</p><h3 id="shape-title">Shape controlled structures and review the draft</h3><p>A server-side Agent generates data structures and an interface draft. Review allowed fields, business actions, state transitions and member access, then preview and confirm publication.</p><p class="story-limit">Current boundary: controlled schemas and UI components; previews do not implicitly write production records or execute arbitrary user source code.</p><div class="story-actions"><a class="btn btn-neutral" href="/en/docs/#preview-and-publish">Review the release workflow</a><a href="/docs/prototypes/03-create.html">Static prototype →</a><a href="/en/docs/#appendix-architecture">Architecture guide →</a></div></div>
+        <figure><a href="/docs/prototypes/03-create.html"><img src="/docs/prototypes/images/03-create.png" width="1440" height="900" loading="lazy" alt="Static app creation prototype showing the assistant, draft structure and run records" /></a><figcaption>App draft · static prototype / illustrative data</figcaption></figure>
+      </article>
+      <article class="story-step" id="use" aria-labelledby="use-title">
+        <div class="story-copy"><p class="section-kicker">03 · Use</p><h3 id="use-title">Handle everyday work in the workspace</h3><p>Teams search and edit records, complete forms and move work through statuses in published apps. Inspect underlying data through tables, record details and authorized exports.</p><p class="story-limit">Current boundary: colleagues must sign in and have access; knowing a link grants no record or attachment permissions.</p><div class="story-actions"><a class="btn btn-neutral" href="/en/docs/#daily-team-work">Explore team workflows</a><a href="/docs/prototypes/05-work.html">Static prototype →</a><a href="/en/docs/#data-files-and-exports">Data guide →</a></div></div>
+        <figure><a href="/docs/prototypes/05-work.html"><img src="/docs/prototypes/images/05-work.png" width="1440" height="900" loading="lazy" alt="Static daily work prototype showing app records, business statuses and actions" /></a><figcaption>Daily work · static prototype / illustrative data</figcaption></figure>
+      </article>
+      <article class="story-step" id="operate" aria-labelledby="operate-title">
+        <div class="story-copy"><p class="section-kicker">04 · Operate</p><h3 id="operate-title">Keep authorized work running</h3><p>Configure scheduled or event-triggered background jobs, declarative collection and notifications. Inspect run receipts and failure reasons. Public read-only pages expose only explicitly authorized record fields and images.</p><p class="story-limit">Current boundary: collection reads credential-free HTTP(S) sources only; jobs cannot expand authorization. Self-hosters manage model configuration, backups and operations.</p><div class="story-actions"><a class="btn btn-neutral" href="/en/docs/#background-jobs-notifications-and-automation">Explore background jobs</a><a href="/docs/prototypes/10-troubleshoot.html">Static prototype →</a><a href="/en/docs/#self-hosting-responsibilities">Operations guide →</a></div></div>
+        <figure><a href="/docs/prototypes/10-troubleshoot.html"><img src="/docs/prototypes/images/10-troubleshoot.png" width="1440" height="900" loading="lazy" alt="Static operations prototype showing background jobs, run receipts and failure reasons" /></a><figcaption>Operations · static prototype / illustrative data</figcaption></figure>
+      </article>
+    </section>
   </main>
-  <footer class="site-footer"><a class="brand" href="/en/" aria-label="MIAO home"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong></a><span>Open source business workspace</span><nav aria-label="Footer navigation"><a href="/en/docs/">Docs</a><a href="/changelog.html">Changelog</a><a href="/">中文</a><a href="https://github.com/tans/miao">GitHub ↗</a></nav></footer>
+  <footer class="site-footer"><a class="brand" href="/en/" aria-label="MIAO home"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong></a><span>Open source business workspace</span><nav aria-label="Footer navigation"><a href="/en/docs/">Docs</a><a href="/en/changelog.html">Changelog</a><a href="/">中文</a><a href="https://github.com/tans/miao">GitHub ↗</a></nav></footer>
   <dialog class="modal contact-modal" id="wechat-dialog" aria-labelledby="wechat-title">
     <div class="modal-box"><h2 id="wechat-title">Contact us on WeChat</h2><p>WeChat ID</p><strong class="wechat-id">tianshe00</strong><form method="dialog" class="modal-action"><button class="btn btn-neutral">Close</button></form></div>
     <form method="dialog" class="modal-backdrop"><button aria-label="Close dialog">Close</button></form>
