@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MIAO product decision guide: use public facts to decide whether MIAO fits your team's work." />
+  <title>Product Decision Guide · MIAO</title><link rel="icon" type="image/png" href="/assets/mascots/cat-logo-head.png" />
+  <link rel="preload" href="/assets/fonts/caveat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin /><link href="/assets/css/app.css?v=1" rel="stylesheet" type="text/css" /><link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <a class="skip-link btn btn-ghost btn-sm" href="#main-content">Skip to content</a>
+  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="/en/" aria-label="MIAO home"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong><span class="brand-divider"></span><span class="brand-caption">Open source business workspace</span></a></div><nav class="navbar-end" aria-label="Main navigation"><a class="nav-link" href="#miao-product-decision-guide">Guide contents</a><a class="nav-link" href="/guide/">中文</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub ↗</a></nav></header>
+  <main class="docs-main guide-main" id="main-content">
+    <article class="docs-article guide-article">
+<h1 id="miao-product-decision-guide">MIAO product decision guide</h1>
+<p>This factual guide helps a team decide whether MIAO fits its current work. It is not a competitor ranking and does not suggest that MIAO is reproducing Budibase's product line. The conclusions describe public source, documentation and recorded boundaries; planned capabilities are not current capabilities.</p>
+<h2 id="quick-start">Quick start</h2>
+<ul>
+<li><a href="https://github.com/tans/miao#self-hosting">Install and self-host</a>: deploy one Go binary; the operator owns the data directory, HTTPS, backups and recovery.</li>
+<li><a href="./USER_GUIDE.en.md#create-an-app">Create your first app</a>: sign in, ask the assistant for a controlled draft, then preview and confirm with an authorized member.</li>
+<li><a href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md">Operations and recovery</a> · <a href="https://github.com/tans/miao/tree/main/docs/generated">Generated API reference</a></li>
+</ul>
+<h2 id="capability-matrix">Capability matrix</h2>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Available now</th>
+<th>Field validation</th>
+<th>Planned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent app creation, controlled JSON UI and version releases</td>
+<td>Implemented; source and user guide</td>
+<td><a href="https://github.com/tans/miao/issues/50">#50 product and field acceptance</a></td>
+<td><a href="https://github.com/tans/miao/issues/53">#53 execution plan</a></td>
+</tr>
+<tr>
+<td>State flows, real records, permissions and background jobs</td>
+<td>Implemented; operations guide</td>
+<td><a href="https://github.com/tans/miao/issues/63">#63 three-scenario workflow</a></td>
+<td><a href="https://github.com/tans/miao/issues/64">#64 final verification</a></td>
+</tr>
+<tr>
+<td>Declarative collection, public read-only pages and image grants</td>
+<td>Implemented; operations guide</td>
+<td><a href="https://github.com/tans/miao/issues/63">#63 three-scenario workflow</a></td>
+<td><a href="https://github.com/tans/miao/issues/62">#62 target environment</a></td>
+</tr>
+<tr>
+<td>Backups, recovery, HTTPS, mail and AI service configuration</td>
+<td>Operational responsibility documented</td>
+<td><a href="https://github.com/tans/miao/issues/62">#62 target environment</a></td>
+<td><a href="https://github.com/tans/miao/issues/64">#64 final verification</a></td>
+</tr>
+<tr>
+<td>OCR, language expansion and a general drag-and-drop editor</td>
+<td>Not promised</td>
+<td>Not applicable</td>
+<td>No current product commitment</td>
+</tr>
+</tbody>
+</table>
+<h2 id="boundaries">Boundaries</h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Current boundary</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model offline</td>
+<td>Published apps, deterministic CRUD, historical run receipts and existing collection results remain available; new Agent creation/changes and model-dependent operations do not</td>
+<td>Available now; validate in target environment</td>
+</tr>
+<tr>
+<td>Attachments</td>
+<td>Up to 5 MB per file; PNG, JPEG, GIF, WebP, PDF and plain text</td>
+<td>Available now</td>
+</tr>
+<tr>
+<td>CSV/XLSX</td>
+<td>Reads are limited to the first 100 rows; each import batch is at most 100 rows and requires review and confirmation</td>
+<td>Available now</td>
+</tr>
+<tr>
+<td>Public pages</td>
+<td>Only explicitly granted pages, record fields and images in a published version; read-only, with no attachments, relations, business actions or writes</td>
+<td>Available now; validate in target environment</td>
+</tr>
+<tr>
+<td>App UI</td>
+<td>Controlled schema v3/json-render components, up to 12 validated published pages; no user source, SQL or arbitrary code execution</td>
+<td>Available now</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a href="https://github.com/tans/miao/blob/main/PRODUCT.md">MIAO product reference</a></li>
+<li><a href="https://github.com/tans/miao/blob/main/README.md">MIAO README: capabilities and boundaries</a></li>
+<li><a href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md">MIAO operations guide</a></li>
+<li><a href="https://budibase.com/">Budibase website</a></li>
+<li><a href="https://github.com/Budibase/budibase">Budibase open-source repository</a></li>
+</ul>
+<h2 id="quick-read">Quick read</h2>
+<table>
+<thead>
+<tr>
+<th>If the team needs</th>
+<th>Conclusion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Describe an internal workflow in plain language, then shape a controlled app with an Agent</td>
+<td><strong>MIAO fits</strong></td>
+</tr>
+<tr>
+<td>Keep data self-hosted in a single deployment while owning backups, HTTPS and upgrades</td>
+<td><strong>MIAO fits</strong></td>
+</tr>
+<tr>
+<td>Controlled pages, real records, state flows, background jobs and auditable release confirmation</td>
+<td><strong>MIAO fits</strong></td>
+</tr>
+<tr>
+<td>A drag-and-drop general canvas, arbitrary code or SQL, complex portals or anonymous writes</td>
+<td><strong>Not currently supported</strong></td>
+</tr>
+<tr>
+<td>Broader page composition, a hosted option or extensive external integrations</td>
+<td><strong>Evaluate</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="six-decision-dimensions">Six decision dimensions</h2>
+<h3 id="1-creation-agent-led-or-drag-and-dropconfiguration-first">1. Creation: Agent-led or drag-and-drop/configuration-first</h3>
+<p><strong>MIAO: fits.</strong> MIAO is positioned as agent-first: a user describes the work, and the server-side Agent proposes pages, data structures and actions through constrained capabilities. A member previews and confirms the result. The Agent has no shell access and does not execute arbitrary application source submitted by a user.</p>
+<p><strong>Evaluate.</strong> If the team needs a visual canvas, form builder or low-code component catalog as its primary creation method, validate that interaction model and migration cost separately against a general low-code platform. Budibase's public materials are the source of truth for its positioning: <a href="https://budibase.com/">website</a> and <a href="https://github.com/Budibase/budibase">repository</a>. This guide does not rank the products on experience, performance or price.</p>
+<p><strong>Not currently supported.</strong> MIAO is not an arbitrary source, SQL or shell execution environment, and it does not claim to cover every general page type with a canvas.</p>
+<p>Sources: <a href="https://github.com/tans/miao/blob/main/PRODUCT.md">PRODUCT.md</a>, <a href="https://github.com/tans/miao/blob/main/README.md#product-boundaries">README Product boundaries</a>.</p>
+<h3 id="2-deployment-pocketbase-plus-one-go-binary-or-multi-servicehosted">2. Deployment: PocketBase plus one Go binary or multi-service/hosted</h3>
+<p><strong>MIAO: fits.</strong> MIAO embeds PocketBase in one Go process. PocketBase and the MIAO API handle identity, application data and access checks; the README lists self-hosting one Go binary as a capability. The operator owns the data directory, backups, recovery, domain, HTTPS, mail and AI/Jev keys.</p>
+<p><strong>Evaluate.</strong> If the team prefers a vendor-hosted service, managed database, horizontal scaling or a multi-service platform, evaluate its operations capacity and recovery procedure. Budibase's deployment shape and components should be checked in its <a href="https://github.com/Budibase/budibase">official material and repository</a>; this guide does not make an architecture value judgment.</p>
+<p><strong>Not currently supported.</strong> This guide does not promise MIAO hosted service, SLA, automatic scaling or zero-operations delivery.</p>
+<p>Sources: <a href="https://github.com/tans/miao/blob/main/README.md#self-hosting">README Self-hosting</a>, <a href="https://github.com/tans/miao/blob/main/PRODUCT.md">PRODUCT.md</a>.</p>
+<h3 id="3-pages-controlled-json-ui-and-up-to-12-validated-pages">3. Pages: controlled JSON UI and up to 12 validated pages</h3>
+<p><strong>MIAO: fits.</strong> UI schema v3 uses controlled json-render components. Page data sources bind to real resources, declared actions are validated server-side, and the product boundaries state that published interfaces support up to 12 validated pages and fixed field actions.</p>
+<p><strong>Evaluate.</strong> If an app needs many free-form pages, a complex marketing site, arbitrary components or more than 12 pages, validate the page limit, relations, files and actions with a real workflow. Refer to each low-code product's public material for its general canvas capabilities; do not infer them from this guide.</p>
+<p><strong>Not currently supported.</strong> MIAO does not run arbitrary frontend source submitted by users and does not currently promise a general page canvas.</p>
+<p>Sources: <a href="https://github.com/tans/miao/blob/main/README.md#product-boundaries">README Product boundaries</a>, <a href="https://github.com/tans/miao/blob/main/PRODUCT.md">PRODUCT.md</a>.</p>
+<h3 id="4-publishing-public-read-only-pages-and-field-grants-or-an-external-write-portal">4. Publishing: public read-only pages and field grants or an external write portal</h3>
+<p><strong>MIAO: fits.</strong> A release can select pages, data sources and fields, then expose an anonymous read-only page through explicit table and field read grants. Anonymous runtime uses only the current published version and exposes no writes, attachments, relations or business actions; member access remains server-enforced.</p>
+<p><strong>Evaluate.</strong> For a public directory, status lookup or curated data view, validate pages, fields and image authorization. If the requirement includes visitor submission, customer self-editing, file upload or a complex portal workflow, evaluate authentication, abuse controls and the write loop separately.</p>
+<p><strong>Not currently supported.</strong> MIAO's anonymous publication is not an external write portal. A public link must not be treated as workspace access.</p>
+<p>Sources: <a href="https://github.com/tans/miao/blob/main/PRODUCT.md">PRODUCT.md</a>, <a href="https://github.com/tans/miao/blob/main/README.md#why-miao">README Why MIAO</a>.</p>
+<h3 id="5-work-loop-real-records-state-flows-jobs-and-collection-receipts">5. Work loop: real records, state flows, jobs and collection receipts</h3>
+<p><strong>MIAO: fits.</strong> MIAO stores real business records in PocketBase and checks workspace, app and record permissions through the API. A user-defined state machine can bind to any application table. Background jobs can be triggered by time, records or authenticated external events, with attempts, permissions and idempotent receipts. Agent and collection HTTP(S) reads are bounded by budgets and authorization scope.</p>
+<p><strong>Evaluate.</strong> If the team needs multi-system orchestration, a large connector catalog, a complex event bus or high-volume automation, validate the actual workflow and operational target. Do not infer a complete automation platform from “background jobs.” Budibase's public positioning can be checked in its <a href="https://budibase.com/">website</a> and <a href="https://github.com/Budibase/budibase">repository</a>.</p>
+<p><strong>Not currently supported.</strong> MIAO does not promise arbitrary network writes, arbitrary SQL, unlimited imports or automation without authorization boundaries. CSV/XLSX imports and each import batch are currently limited to 100 rows.</p>
+<p>Sources: <a href="https://github.com/tans/miao/blob/main/PRODUCT.md">PRODUCT.md</a>, <a href="https://github.com/tans/miao/blob/main/README.md#features">README Features</a>.</p>
+<h3 id="6-governance-license-data-ownership-key-location-and-acceptance-evidence">6. Governance: license, data ownership, key location and acceptance evidence</h3>
+<p><strong>MIAO: fits.</strong> MIAO source is licensed under Apache License 2.0. In a self-hosted deployment, the data directory is under the operator's control, who also owns backup and recovery. Long-lived AI credentials stay on the server and the browser calls an authenticated proxy. Release, write and background runs retain confirmation or run receipts, so acceptance can be written as repeatable business-flow checks.</p>
+<p><strong>Evaluate.</strong> The organization should still review Apache 2.0, third-party dependencies and MIAO trademark restrictions, then define its own retention, backup, recovery, key rotation and access-audit policy. Budibase's license and deployment terms should be taken directly from its <a href="https://github.com/Budibase/budibase">repository</a> and official material.</p>
+<p><strong>Not currently supported.</strong> This guide makes no claim about particular customers, prices, SLAs, compliance certifications or deployment outcomes, and it does not treat prototype screenshots as production acceptance evidence. The MIAO repository explicitly says customer proof, adoption data, pricing and deployment claims are not verified materials.</p>
+<p>Sources: <a href="https://github.com/tans/miao/blob/main/README.md#license">README License</a>, <a href="https://github.com/tans/miao/blob/main/PRODUCT.md#evidence-on-hand">PRODUCT.md Evidence on Hand</a>, <a href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md">Operations guide</a>.</p>
+<h2 id="suggested-acceptance-order">Suggested acceptance order</h2>
+<ol type="1">
+<li>Use one real but bounded internal workflow to validate “describe → draft → preview → publish.”</li>
+<li>Validate record access, field permissions, state transitions and conflict handling with real roles.</li>
+<li>In an isolated environment, validate backups, recovery, HTTPS, mail, AI keys and logging policy.</li>
+<li>Validate one read-only public page, including page, field, image and unpublish boundaries.</li>
+<li>Then decide whether more pages, external writes, hosted deployment or broader automation are needed.</li>
+</ol>
+<p>This page may change as public source and documentation change. Before implementation, use the corresponding repository version, operations guide and the organization's security review as the authority.</p>
+
+    </article>
+    <p class="guide-back"><a href="#miao-product-decision-guide">Back to contents ↑</a></p>
+  </main>
+  <footer class="site-footer"><a class="brand" href="/en/" aria-label="MIAO home"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong></a><span>Open source business workspace</span><nav aria-label="Footer navigation"><a href="#miao-product-decision-guide">Guide contents</a><a href="/guide/">中文</a><a href="/en/">Website</a></nav></footer>
+</body>
+</html>

@@ -2,6 +2,32 @@
 
 Turn team workflows into your own apps. This guide is for business owners, app builders, workspace admins and team members. It follows the current MIAO workspace from sign-in through app creation, release, daily use and governance. The screenshots and HTML pages are **illustrative prototypes** with sample data; they explain the current product shape and boundaries and do not represent a live account.
 
+## Capability and boundary matrix
+
+These states describe only what the website can trace to code, documentation or a public Issue. “Needs field verification” does not mean production business acceptance.
+
+| Capability | State | Evidence | Boundary |
+| --- | --- | --- | --- |
+| Agent-assisted app building and controlled JSON UI | Current in code | [Product boundaries](https://github.com/tans/miao/blob/main/PRODUCT.md) · [Source](https://github.com/tans/miao) | Server-side schema, field and action validation; no arbitrary user source, SQL or shell execution. |
+| UI drafts, publishing and version switching | Current in code | [Preview and publish](#preview-and-publish) · [Release Issue](https://github.com/tans/miao/issues/79) | Rolling back a UI version does not undo business records or schema already written. |
+| State flows, business actions and background jobs | Current in code | [Background jobs](#background-jobs-notifications-and-automation) · [Operations guide](https://github.com/tans/miao/blob/main/docs/OPERATIONS.md) | Declared actions run with budgets, timeouts and server-side permissions; real model, mail and long-running execution still need field verification. |
+| Credential-free HTTP(S) reads and declarative collection | Needs field verification | [Integrations](/en/integrations/) · [External reads source](https://github.com/tans/miao/blob/main/internal/httpapi/external_fetch.go) · [SSRF Issue #93](https://github.com/tans/miao/issues/93) | Not general OAuth, a credential vault or arbitrary code execution; operators should restrict egress. |
+| Public read-only publishing | Current in code | [Public publishing source](https://github.com/tans/miao/blob/main/internal/httpapi/publications.go) · [Product boundaries](https://github.com/tans/miao/blob/main/PRODUCT.md) | Returns only published pages, records, fields and images on the allowlist; no general public write-back. |
+| Workspace, app and field permissions | Current in code | [Members and permissions](#members-and-permissions) · [Operations guide](https://github.com/tans/miao/blob/main/docs/OPERATIONS.md) | The server rechecks membership, app roles and field authorization; knowing a URL grants no data access. |
+| Backup, restore, upgrades and rollback | Needs field verification | [Operations guide](https://github.com/tans/miao/blob/main/docs/OPERATIONS.md) · [Self-hosting](/en/self-hosting/) | Back up before upgrades; database rollback is not automatic and recovery must be rehearsed in the target environment. |
+| Visual branches, loops, retries and dry runs | Planned | [Issue #116](https://github.com/tans/miao/issues/116) | Planned work is not a current product capability. |
+
+## Data and deployment limits
+
+| Limit | Current boundary | Evidence |
+| --- | --- | --- |
+| File uploads | Up to 5 MB per file | [README product boundaries](https://github.com/tans/miao#product-boundaries) |
+| CSV/XLSX reads and imports | Up to 100 rows per read and import batch | [README product boundaries](https://github.com/tans/miao#product-boundaries) |
+| Controlled UI | Up to 12 validated pages with fixed field actions | [README product boundaries](https://github.com/tans/miao#product-boundaries) |
+| Record-level filtering and field masking | Planned, tracked for implementation | [Issue #118](https://github.com/tans/miao/issues/118) |
+| Saved views and controlled filtering/sorting | Planned, tracked for implementation | [Issue #119](https://github.com/tans/miao/issues/119) |
+| Self-hosting shape | One Go process with embedded UI, migrations and PocketBase; no multi-node HA, cloud SLA or certification promise | [Operations guide](https://github.com/tans/miao/blob/main/docs/OPERATIONS.md) |
+
 ## Contents
 
 1. [MIAO at a glance](#miao-at-a-glance)

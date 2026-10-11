@@ -19,8 +19,8 @@ def build(source, template, target, replacements=None):
     print(target)
 
 
-build(root / "zh" / "docs" / "USER_GUIDE.md", root / "zh" / "docs" / "template.html", root / "docs" / "index.html")
-build(root / "docs" / "USER_GUIDE.en.md", root / "docs" / "template.html", root / "en" / "docs" / "index.html", {
+build(root / "docs" / "USER_GUIDE.md", root / "docs" / "template.html", root / "docs" / "index.html")
+build(root / "docs" / "USER_GUIDE.en.md", root / "docs" / "template.en.html", root / "en" / "docs" / "index.html", {
     "lang=\"zh-CN\"": "lang=\"en\"",
     "MIAO 用户手册：从创建工作区、通过 Agent 建立应用，到团队使用、权限管理、数据治理与企业运营。": "MIAO user guide: create workspaces, build apps with the AI assistant, run team workflows, manage permissions and govern data.",
     "用户手册：从创建工作区、通过 Agent 建立应用，到团队使用、权限管理、数据治理与企业运营。": "MIAO user guide: create workspaces, build apps with the AI assistant, run team workflows, manage permissions and govern data.",
@@ -45,7 +45,7 @@ build(
 )
 build(
     root / "docs" / "DECISION_GUIDE.en.md",
-    root / "docs" / "template.html",
+    root / "docs" / "template.en.html",
     root / "en" / "guide" / "index.html",
     {
         "MIAO user guide: create workspaces, build apps with the AI assistant, run team workflows, manage permissions and govern data.": "MIAO product decision guide: use public facts to decide whether MIAO fits your team's work.",
