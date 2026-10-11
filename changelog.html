@@ -19,22 +19,23 @@
     .changelog-entry ul{margin:14px 0 0;padding-left:20px}
     .changelog-entry li{margin:7px 0;color:#555960;font-size:13px;line-height:1.75}
     .changelog-entry li strong{color:#222429;font-weight:560}
-    .changelog-note{margin-top:28px;color:#81858c;font-size:11px}
+    .changelog-note{margin-top:28px;color:#81858c;font-size:11px}.changelog-ops{display:grid;gap:7px;margin:28px 0 0;padding:16px 18px;border:1px solid #e1e4e6;border-radius:7px;background:#fafbfb;color:#666b72;font-size:11px;line-height:1.6}.changelog-ops strong{color:#24272b;font-size:12px}.changelog-ops a{color:#30343a;font-weight:550}.changelog-entry code{padding:2px 4px;border-radius:3px;background:#f1f2f3;font-family:"Geist Mono",ui-monospace,monospace;font-size:.9em}
     @media(max-width:700px){.changelog-main{width:calc(100% - 40px);padding-top:47px}.changelog-main h1{font-size:36px}}
   </style>
 </head>
 <body>
-  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong><span class="brand-divider"></span><span class="brand-caption">开源的企业 AI 工作台</span></a></div><nav class="navbar-end" aria-label="主导航"><a class="nav-link" href="/docs/">文档</a><a class="nav-link" href="/en/">English</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub ↗</a></nav></header>
+  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong><span class="brand-divider"></span><span class="brand-caption">开源的企业 AI 工作台</span></a></div><nav class="navbar-end" aria-label="主导航"><a class="nav-link" href="/docs/">文档</a><a class="nav-link" href="/en/changelog.html">English</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub ↗</a></nav></header>
   <main class="changelog-main">
     <p class="changelog-eyebrow">CHANGELOG</p>
     <h1>更新日志</h1>
-    <p class="changelog-lead">记录 MIAO 应用的版本更新：新功能、改进与修复。MIAO 以发布日期标识版本，可随时在 <a href="https://github.com/tans/miao">GitHub 仓库</a>查看全部变更。</p>
+    <p class="changelog-lead">记录 MIAO 应用的版本更新：新功能、改进与修复。只有 GitHub Release 才代表可下载交付；源码提交和现场部署不会被写成已发布版本。查看 <a href="/en/changelog.html">English changelog</a> 或 <a href="https://github.com/tans/miao/releases">全部 Releases</a>。</p>
+    <aside class="changelog-ops" aria-label="发布说明"><strong>发布说明</strong><span>单体发布：Go binary + 嵌入式 UI + PocketBase migration。</span><span>升级前先备份；生产切换由 PM2 管理，健康检查失败会回到上一个 binary。</span><span>数据库不会自动回滚，恢复前请保留备份并在隔离环境演练。</span><a href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md">阅读运维文档 ↗</a></aside>
     <div class="changelog-list">
 
       <article class="changelog-entry">
-        <div class="changelog-version"><h2 id="v0-0-1">v0.0.1</h2><span class="changelog-date">2026-10-10</span><span class="changelog-tag">当前版本</span><a class="changelog-tag" href="https://github.com/tans/miao/releases/tag/v0.0.1">Release ↗</a></div>
+        <div class="changelog-version"><h2 id="v0-0-1">v0.0.1</h2><span class="changelog-date">2026-10-10</span><span class="changelog-tag">已打包</span><a class="changelog-tag" href="https://github.com/tans/miao/releases/tag/v0.0.1">Release ↗</a><a class="changelog-tag" href="https://github.com/tans/miao/commit/aca7ce5">Commit ↗</a></div>
         <ul>
-          <li><strong>首个打包版本。</strong>版本号定为 0.0.1，二进制包可从 <a href="https://github.com/tans/miao/releases/tag/v0.0.1">GitHub Release</a> 下载，安装无需 Go 工具链和 npm 依赖。</li>
+          <li><strong>首个打包版本。</strong>二进制包可从 GitHub Release 下载，安装无需 Go 工具链和 npm 依赖。SHA-256 以 Release 附件中的同名 <code>.sha256</code> 为准。</li>
           <li>本地 API 测试套件独立到 miao-test 仓库。</li>
           <li>修复：拒绝旧版 LLM 配置重置；恢复受控 LLM 决策提案。</li>
           <li>界面：工作区侧栏更紧凑；小助手支持显示/隐藏切换。</li>
@@ -104,6 +105,6 @@
     </div>
     <p class="changelog-note">更早的每次代码变更见 <a href="https://github.com/tans/miao/commits/main">GitHub 提交历史</a>。</p>
   </main>
-  <footer class="site-footer"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong></a><span>开源的企业 AI 工作台</span><nav aria-label="页脚导航"><a href="/showcases.html">Showcases</a><a href="/docs/">文档</a><a href="/changelog.html">更新日志</a><a href="/en/">English</a></nav></footer>
+  <footer class="site-footer"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong></a><span>开源的企业 AI 工作台</span><nav aria-label="页脚导航"><a href="/showcases.html">Showcases</a><a href="/docs/">文档</a><a href="/changelog.html">更新日志</a><a href="/en/changelog.html">English</a></nav></footer>
 </body>
 </html>
