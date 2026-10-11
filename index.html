@@ -55,7 +55,7 @@
         </div>
         <figure class="home-preview-figure">
           <img class="home-preview-image" src="/docs/prototypes/images/01-overview.png" alt="MIAO 工作台示意图：工作区导航、应用列表与固定小助手" />
-          <figcaption class="home-preview-caption"><span>工作台静态原型 · 示意数据，非实时客户数据</span><a href="/docs/prototypes/01-overview.html">打开原型 →</a></figcaption>
+          <figcaption class="home-preview-caption"><span>工作台预览</span><a href="/docs/prototypes/01-overview.html">查看工作台 →</a></figcaption>
         </figure>
       </div>
       <p class="story-note">开源、可自托管。AI 功能需配置模型服务；发布和写入受权限与确认门控制。</p>
@@ -63,22 +63,21 @@
     </section>
     <section class="product-story" aria-labelledby="story-title">
       <h2 id="story-title">从一个需求，到持续运行的内部应用</h2>
-      <p class="story-note">以下界面为静态产品原型，所有记录、数量和状态均为示意内容。</p>
       <article class="story-step" id="describe" aria-labelledby="describe-title">
-        <div class="story-copy"><p class="section-kicker">01 · Describe</p><h3 id="describe-title">描述工作，也描述边界</h3><p>告诉小助手谁在使用、需要哪些字段、怎样流转状态，并补充文件或回答追问。从客户跟进、订单处理等具体工作开始。</p><p class="story-limit">当前边界：需求需要澄清；对话不会跳过审批直接成为正式应用。</p><div class="story-actions"><a class="btn btn-neutral" href="/docs/#第一个需求怎么准备">准备第一个需求</a><a href="/docs/prototypes/02-start.html">静态原型 →</a><a href="/docs/#创建应用">创建文档 →</a></div></div>
-        <figure><a href="/docs/prototypes/02-start.html"><img src="/docs/prototypes/images/02-start.png" width="1440" height="900" loading="lazy" alt="描述需求的静态原型：工作区入口与自然语言需求输入" /></a><figcaption>需求入口 · 静态原型 / 示意数据</figcaption></figure>
+        <div class="story-copy"><p class="section-kicker">01 · Describe</p><h3 id="describe-title">描述工作，也描述边界</h3><p>告诉小助手谁在使用、需要哪些字段、怎样流转状态，并补充文件或回答追问。从客户跟进、订单处理等具体工作开始。</p><p class="story-limit">当前边界：需求需要澄清；对话不会跳过审批直接成为正式应用。</p><div class="story-actions"><a class="btn btn-neutral" href="/docs/#第一个需求怎么准备">准备第一个需求</a><a href="/docs/prototypes/02-start.html">查看界面 →</a><a href="/docs/#创建应用">创建文档 →</a></div></div>
+        <figure><a href="/docs/prototypes/02-start.html"><img src="/docs/prototypes/images/02-start.png" width="1440" height="900" loading="lazy" alt="描述需求的静态原型：工作区入口与自然语言需求输入" /></a><figcaption>需求入口</figcaption></figure>
       </article>
       <article class="story-step" id="shape" aria-labelledby="shape-title">
-        <div class="story-copy"><p class="section-kicker">02 · Shape</p><h3 id="shape-title">生成受控结构，检查界面草稿</h3><p>服务端 Agent 生成数据结构和界面草稿。检查字段白名单、业务动作、状态转换与成员范围，再预览和确认发布。</p><p class="story-limit">当前边界：使用受控 schema 和界面组件；预览不隐式写入正式记录，不执行任意用户源码。</p><div class="story-actions"><a class="btn btn-neutral" href="/docs/#预览与发布">检查发布流程</a><a href="/docs/prototypes/03-create.html">静态原型 →</a><a href="/docs/#附录技术架构">架构文档 →</a></div></div>
-        <figure><a href="/docs/prototypes/03-create.html"><img src="/docs/prototypes/images/03-create.png" width="1440" height="900" loading="lazy" alt="生成应用的静态原型：小助手、草稿结构与运行记录" /></a><figcaption>应用草稿 · 静态原型 / 示意数据</figcaption></figure>
+        <div class="story-copy"><p class="section-kicker">02 · Shape</p><h3 id="shape-title">生成受控结构，检查界面草稿</h3><p>服务端 Agent 生成数据结构和界面草稿。检查字段白名单、业务动作、状态转换与成员范围，再预览和确认发布。</p><p class="story-limit">当前边界：使用受控 schema 和界面组件；预览不隐式写入正式记录，不执行任意用户源码。</p><div class="story-actions"><a class="btn btn-neutral" href="/docs/#预览与发布">检查发布流程</a><a href="/docs/prototypes/03-create.html">查看界面 →</a><a href="/docs/#附录技术架构">架构文档 →</a></div></div>
+        <figure><a href="/docs/prototypes/03-create.html"><img src="/docs/prototypes/images/03-create.png" width="1440" height="900" loading="lazy" alt="生成应用的静态原型：小助手、草稿结构与运行记录" /></a><figcaption>应用结构</figcaption></figure>
       </article>
       <article class="story-step" id="use" aria-labelledby="use-title">
-        <div class="story-copy"><p class="section-kicker">03 · Use</p><h3 id="use-title">在工作区里处理真实工作</h3><p>团队在已发布应用中搜索和编辑记录、处理表单与状态流；需要检查底层数据时，进入数据表、记录详情与授权导出。</p><p class="story-limit">当前边界：同事必须登录并获得访问权限；知道链接不会获得记录或附件权限。</p><div class="story-actions"><a class="btn btn-neutral" href="/docs/#团队日常使用">了解团队协作</a><a href="/docs/prototypes/05-work.html">静态原型 →</a><a href="/docs/#数据附件与导出">数据文档 →</a></div></div>
-        <figure><a href="/docs/prototypes/05-work.html"><img src="/docs/prototypes/images/05-work.png" width="1440" height="900" loading="lazy" alt="团队工作静态原型：应用记录、业务状态与操作入口" /></a><figcaption>日常工作 · 静态原型 / 示意数据</figcaption></figure>
+        <div class="story-copy"><p class="section-kicker">03 · Use</p><h3 id="use-title">在工作区里处理真实工作</h3><p>团队在已发布应用中搜索和编辑记录、处理表单与状态流；需要检查底层数据时，进入数据表、记录详情与授权导出。</p><p class="story-limit">当前边界：同事必须登录并获得访问权限；知道链接不会获得记录或附件权限。</p><div class="story-actions"><a class="btn btn-neutral" href="/docs/#团队日常使用">了解团队协作</a><a href="/docs/prototypes/05-work.html">查看界面 →</a><a href="/docs/#数据附件与导出">数据文档 →</a></div></div>
+        <figure><a href="/docs/prototypes/05-work.html"><img src="/docs/prototypes/images/05-work.png" width="1440" height="900" loading="lazy" alt="团队工作静态原型：应用记录、业务状态与操作入口" /></a><figcaption>日常工作</figcaption></figure>
       </article>
       <article class="story-step" id="operate" aria-labelledby="operate-title">
-        <div class="story-copy"><p class="section-kicker">04 · Operate</p><h3 id="operate-title">让授权的工作持续运行</h3><p>配置定时或事件触发的后台任务、声明式采集和通知，查看运行回执与失败原因。公开只读页仅展示明确授权的记录字段和图片。</p><p class="story-limit">当前边界：采集只读取无凭据的 HTTP(S) 来源；任务不能扩大授权。自托管者负责模型配置、备份和运维。</p><div class="story-actions"><a class="btn btn-neutral" href="/docs/#后台任务通知和自动化">了解后台任务</a><a href="/docs/prototypes/10-troubleshoot.html">静态原型 →</a><a href="/docs/#自托管责任">运维文档 →</a></div></div>
-        <figure><a href="/docs/prototypes/10-troubleshoot.html"><img src="/docs/prototypes/images/10-troubleshoot.png" width="1440" height="900" loading="lazy" alt="运行排障静态原型：后台任务、运行回执与失败原因" /></a><figcaption>运行与排障 · 静态原型 / 示意数据</figcaption></figure>
+        <div class="story-copy"><p class="section-kicker">04 · Operate</p><h3 id="operate-title">让授权的工作持续运行</h3><p>配置定时或事件触发的后台任务、声明式采集和通知，查看运行回执与失败原因。公开只读页仅展示明确授权的记录字段和图片。</p><p class="story-limit">当前边界：采集只读取无凭据的 HTTP(S) 来源；任务不能扩大授权。自托管者负责模型配置、备份和运维。</p><div class="story-actions"><a class="btn btn-neutral" href="/docs/#后台任务通知和自动化">了解后台任务</a><a href="/docs/prototypes/10-troubleshoot.html">查看界面 →</a><a href="/docs/#自托管责任">运维文档 →</a></div></div>
+        <figure><a href="/docs/prototypes/10-troubleshoot.html"><img src="/docs/prototypes/images/10-troubleshoot.png" width="1440" height="900" loading="lazy" alt="运行排障静态原型：后台任务、运行回执与失败原因" /></a><figcaption>运行与排障</figcaption></figure>
       </article>
     </section>
   </main>
