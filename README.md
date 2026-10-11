@@ -23,9 +23,10 @@ python3 -m http.server 4173
 - `index.html`：官网
 - `en/index.html`：英文官网
 - `showcases.html`、`showcases.css`、`showcases.js`：中文滚动产品展示，使用组件演示 8 个工作场景
-- `docs/USER_GUIDE.md`：中文用户手册正文
+- `zh/docs/USER_GUIDE.md`：中文用户手册正文
 - `docs/USER_GUIDE.en.md`：英文用户手册正文
-- `docs/index.html`、`en/docs/index.html`：双语手册静态页面，由 `python3 scripts/build-docs.py` 生成（需要 Pandoc）
+- `docs/DECISION_GUIDE.md`、`docs/DECISION_GUIDE.en.md`：双语产品选择指南正文
+- `docs/index.html`、`en/docs/index.html`、`guide/index.html`、`en/guide/index.html`：双语文档静态页面，由 `python3 scripts/build-docs.py` 生成（需要 Pandoc）
 - `docs/prototypes/`：12 张独立英文 HTML 界面原型、同名 PNG 预览与图库；`scripts/build-prototypes.py` 生成 HTML
 - `scripts/render-prototypes.py`：从英文 HTML 导出 1440×900 PNG（需要 WeasyPrint、PyMuPDF 和字体）
 - `docs/product/`、`docs/architecture/`：旧文档地址，跳转到手册对应章节

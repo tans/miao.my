@@ -19,8 +19,18 @@ def build(source, template, target, replacements=None):
     print(target)
 
 
-build(root / "docs" / "USER_GUIDE.md", root / "docs" / "template.html", root / "docs" / "index.html")
-build(root / "docs" / "USER_GUIDE.en.md", root / "docs" / "template.en.html", root / "en" / "docs" / "index.html")
+build(root / "zh" / "docs" / "USER_GUIDE.md", root / "zh" / "docs" / "template.html", root / "docs" / "index.html")
+build(root / "docs" / "USER_GUIDE.en.md", root / "docs" / "template.html", root / "en" / "docs" / "index.html", {
+    "lang=\"zh-CN\"": "lang=\"en\"",
+    "MIAO 用户手册：从创建工作区、通过 Agent 建立应用，到团队使用、权限管理、数据治理与企业运营。": "MIAO user guide: create workspaces, build apps with the AI assistant, run team workflows, manage permissions and govern data.",
+    "用户手册：从创建工作区、通过 Agent 建立应用，到团队使用、权限管理、数据治理与企业运营。": "MIAO user guide: create workspaces, build apps with the AI assistant, run team workflows, manage permissions and govern data.",
+    "用户手册 · MIAO": "User Guide · MIAO",
+    "href=\"/\" aria-label=\"MIAO 首页\"": "href=\"/\" aria-label=\"MIAO home\"",
+    "开源的企业 AI 工作台": "Open source business workspace",
+    "href=\"#目录\">手册目录</a>": "href=\"#contents\">Contents</a>",
+    "href=\"/en/docs/\">English": "href=\"/docs/\">中文",
+    "href=\"#目录\">返回目录 ↑</a>": "href=\"#contents\">Back to contents ↑</a>",
+})
 build(
     root / "docs" / "DECISION_GUIDE.md",
     root / "docs" / "template.html",
@@ -30,20 +40,18 @@ build(
         "<title>用户手册 · MIAO</title>": "<title>产品选择指南 · MIAO</title>",
         'href="#目录">手册目录</a>': 'href="#miao-产品选择指南">指南目录</a>',
         'href="/en/docs/">English': 'href="/en/guide/">English',
-        'href="#目录">返回目录 ↑': 'href="#miao-产品选择指南">返回目录 ↑',
-        'href="#目录">手册目录</a>': 'href="#miao-产品选择指南">指南目录</a>',
+        'href="#目录">返回目录 ↑</a>': 'href="#miao-产品选择指南">返回目录 ↑</a>',
     },
 )
 build(
     root / "docs" / "DECISION_GUIDE.en.md",
-    root / "docs" / "template.en.html",
+    root / "docs" / "template.html",
     root / "en" / "guide" / "index.html",
     {
         "MIAO user guide: create workspaces, build apps with the AI assistant, run team workflows, manage permissions and govern data.": "MIAO product decision guide: use public facts to decide whether MIAO fits your team's work.",
         "<title>User Guide · MIAO</title>": "<title>Product Decision Guide · MIAO</title>",
         'href="#contents">Contents</a>': 'href="#miao-product-decision-guide">Guide contents</a>',
         'href="/docs/">中文': 'href="/guide/">中文',
-        'href="#contents">返回目录 ↑': 'href="#miao-product-decision-guide">Back to contents ↑',
-        'href="#contents">Contents</a>': 'href="#miao-product-decision-guide">Guide contents</a>',
+        'href="#contents">Back to contents ↑</a>': 'href="#miao-product-decision-guide">Back to contents ↑</a>',
     },
 )
