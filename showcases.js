@@ -10,16 +10,47 @@
   const sceneName = document.getElementById('scene-name');
   const assistantCopy = document.getElementById('assistant-copy');
   const assistantSuggestion = document.getElementById('assistant-suggestion');
-  const labels = {
-    workbench: ['总览', '同一份工作散落在表格、群聊和流程里，谁都没看全。', '从下面问一句话开始'],
-    factory: ['一个具体的问题', '只说你想要什么，我会先读工作台的上下文，再生成变更预览。', '点击下方提问试试'],
-    sales: ['客户成交', '报价后面多出了一个审批节点，云杉制造正在等审批。', '查看这个变化'],
-    projects: ['项目管理', '审批节点同步成了跟办任务，和发布项目连在一起。', '查看这个变化'],
-    orders: ['订单售后', '服务工单自动建好，这条链路走完整了。', '查看这个变化'],
-    ai: ['AI 协同', '三步链路完成。可以查看变更，也可以随时回退。', '查看版本记录'],
-    launch: ['版本记录', '这次变更已写入 v1.4，影响范围和回退路径都记着。', '查看变更详情'],
-    network: ['工作台', '三个应用共享同一套数据，这次的改变是下次的地基。', '继续搭建'],
+  const english = document.documentElement.lang.toLowerCase().startsWith('en');
+  const copy = english ? {
+    labels: {
+      workbench: ['Overview', 'The same work is split across spreadsheets, chats and flows. No one sees the whole picture.', 'Ask one sentence below'],
+      factory: ['A concrete question', 'Say what you need. I will read the workspace context and prepare a change preview.', 'Try the prompt below'],
+      sales: ['Customer deals', 'An approval step now sits behind the quote. Cedar Manufacturing is waiting for a decision.', 'See this change'],
+      projects: ['Project management', 'The approval step became a follow-up task linked to the product launch.', 'See this change'],
+      orders: ['After-sales', 'A service ticket was created automatically. The workflow now reaches support.', 'See this change'],
+      ai: ['AI collaboration', 'The three-step workflow is complete. Review the change or roll it back at any time.', 'Open release history'],
+      launch: ['Release history', 'This change is recorded in v1.4 with its impact and rollback path.', 'Review the change'],
+      network: ['Workspace', 'Three apps share the same data. This change becomes the foundation for the next one.', 'Keep building'],
+    },
+    prompt: 'Turn the customer quote into an approval step.',
+    preview: '<b>I read the current customer-deal flow. Here is the proposed change:</b><div class="thread-impact"><span>Customer deals<small>+ quote approval</small></span><span>Project management<small>+ follow-up task</small></span><span>After-sales<small>+ service ticket</small></span></div><p>Permissions stay the same. You can roll this back at any time.</p><button type="button" class="btn btn-neutral btn-xs thread-confirm">Confirm change</button>',
+    running: 'Running',
+    complete: '<b>Done. The quote is now an approval step.</b><p>All three apps are synced and the change is recorded in release history.</p><div class="thread-actions"><button type="button" class="btn btn-neutral btn-xs thread-review">Review change</button><button type="button" class="btn btn-ghost btn-xs thread-rollback">Roll back</button></div>',
+    rolledBack: '<b>Rolled back to the previous state.</b><p>Confirm again whenever you are ready.</p>',
+    promptHint: 'Try a question',
+    confirm: 'Confirm change',
+    runningButton: 'Running…',
+  } : {
+    labels: {
+      workbench: ['总览', '同一份工作散落在表格、群聊和流程里，谁都没看全。', '从下面问一句话开始'],
+      factory: ['一个具体的问题', '只说你想要什么，我会先读工作台的上下文，再生成变更预览。', '点击下方提问试试'],
+      sales: ['客户成交', '报价后面多出了一个审批节点，云杉制造正在等审批。', '查看这个变化'],
+      projects: ['项目管理', '审批节点同步成了跟办任务，和发布项目连在一起。', '查看这个变化'],
+      orders: ['订单售后', '服务工单自动建好，这条链路走完整了。', '查看这个变化'],
+      ai: ['AI 协同', '三步链路完成。可以查看变更，也可以随时回退。', '查看版本记录'],
+      launch: ['版本记录', '这次变更已写入 v1.4，影响范围和回退路径都记着。', '查看变更详情'],
+      network: ['工作台', '三个应用共享同一套数据，这次的改变是下次的地基。', '继续搭建'],
+    },
+    prompt: '把客户报价变成可审批的步骤。',
+    preview: '<b>我读了客户成交的当前流程，准备这样改：</b><div class="thread-impact"><span>客户成交<small>+ 报价审批节点</small></span><span>项目管理<small>+ 跟办任务</small></span><span>订单售后<small>+ 服务工单</small></span></div><p>权限保持不变，随时可以回退。</p><button type="button" class="btn btn-neutral btn-xs thread-confirm">确认执行</button>',
+    running: '正在执行',
+    complete: '<b>完成。报价现在是可审批的步骤。</b><p>3 个应用已同步，变更已记入版本记录。</p><div class="thread-actions"><button type="button" class="btn btn-neutral btn-xs thread-review">查看变更</button><button type="button" class="btn btn-ghost btn-xs thread-rollback">回退</button></div>',
+    rolledBack: '<b>已回退到变更前的状态。</b><p>随时可以重新确认执行。</p>',
+    promptHint: '试试问一句',
+    confirm: '确认执行',
+    runningButton: '执行中…',
   };
+  const labels = copy.labels;
   let current = null;
   let demoLock = false;
 
@@ -43,7 +74,7 @@
     progressFill.style.transform = `scaleX(${(index + 1) / steps.length})`;
     sceneName.textContent = labels[scene][0];
     assistantCopy.textContent = labels[scene][1];
-    assistantSuggestion.textContent = labels[scene][2];
+      assistantSuggestion.textContent = labels[scene][2];
   }
 
   setScene('workbench');
@@ -83,7 +114,9 @@
     projects: document.querySelector('.demo-change-projects'),
     orders: document.querySelector('.demo-change-orders'),
   };
-  const TOUR = [['sales', '客户成交'], ['projects', '项目管理'], ['orders', '订单售后']];
+  const TOUR = english
+    ? [['sales', 'Customer deals'], ['projects', 'Project management'], ['orders', 'After-sales']]
+    : [['sales', '客户成交'], ['projects', '项目管理'], ['orders', '订单售后']];
   let state = 'idle';
   let confirmBtn = null;
   let statusText = null;
@@ -102,7 +135,7 @@
   async function runTour(hold) {
     demoLock = true;
     for (const [scene, name] of TOUR) {
-      if (statusText) statusText.textContent = '正在执行 · ' + name;
+      if (statusText) statusText.textContent = `${copy.running} · ${name}`;
       setScene(scene);
       changes[scene].hidden = false;
       flash(changes[scene]);
@@ -116,24 +149,25 @@
     chip.disabled = true;
     thread.hidden = false;
     assistantBody.classList.add('is-demo-on');
-    addMsg('user', '把客户报价变成可审批的步骤。');
+    addMsg('user', copy.prompt);
     await wait(650);
-    addMsg('ai', '<b>我读了客户成交的当前流程，准备这样改：</b><div class="thread-impact"><span>客户成交<small>+ 报价审批节点</small></span><span>项目管理<small>+ 跟办任务</small></span><span>订单售后<small>+ 服务工单</small></span></div><p>权限保持不变，随时可以回退。</p><button type="button" class="btn btn-neutral btn-xs thread-confirm">确认执行</button>');
+    addMsg('ai', copy.preview);
     confirmBtn = thread.querySelector('.thread-confirm');
+    confirmBtn?.focus();
   }
 
   async function runDemo() {
     if (state !== 'preview') return;
     state = 'running';
     confirmBtn.disabled = true;
-    confirmBtn.textContent = '执行中…';
-    const status = addMsg('status', '<div class="thread-status"><i></i><b>正在执行 · 客户成交</b></div>');
+    confirmBtn.textContent = copy.runningButton;
+    const status = addMsg('status', `<div class="thread-status" role="status"><i></i><b>${copy.running} · ${labels.sales[0]}</b></div>`);
     statusText = status.querySelector('b');
     await wait(450);
     await runTour(950);
     status.remove();
     statusText = null;
-    addMsg('ai', '<b>完成。报价现在是可审批的步骤。</b><p>3 个应用已同步，变更已记入版本记录。</p><div class="thread-actions"><button type="button" class="btn btn-neutral btn-xs thread-review">查看变更</button><button type="button" class="btn btn-ghost btn-xs thread-rollback">回退</button></div>');
+    addMsg('ai', copy.complete);
     state = 'done';
     chip.disabled = false;
   }
@@ -157,10 +191,17 @@
     else if (event.target.closest('.thread-rollback')) {
       hideChanges();
       confirmBtn.disabled = false;
-      confirmBtn.textContent = '确认执行';
+      confirmBtn.textContent = copy.confirm;
       state = 'preview';
       chip.disabled = true;
-      addMsg('ai', '<b>已回退到变更前的状态。</b><p>随时可以重新确认执行。</p>');
+      addMsg('ai', copy.rolledBack);
+      thread.querySelector('.thread-confirm')?.focus();
     }
   });
+
+  chip.setAttribute('aria-controls', 'assistant-thread');
+  chip.setAttribute('aria-expanded', 'false');
+  chip.textContent = copy.prompt;
+  chip.addEventListener('click', () => chip.setAttribute('aria-expanded', 'true'), { capture: true });
+  document.querySelector('.input-hint').firstChild.textContent = copy.promptHint;
 })();
