@@ -46,12 +46,23 @@ elif name == "showcases":
 else:
     sources = {"zh": root / (name + ".html"), "en": root / "en" / (name + ".html")}
 
-# text and attr values that already exist in [site] reuse their site key
-site_values = {}
+# text and attr values that already exist in [site] reuse their site key.
+# A value may only reuse a site key when every locale containing it maps to
+# the same key: locale-relative values such as "/" (zh site.base vs en
+# site.switch_href) or "zh-CN" (site.lang vs site.switch_lang) would render
+# the wrong locale's value, so they stay literal or become page keys.
+per_locale_site = {}
 for loc in ("zh", "en"):
+    m = {}
     for k, v in tomllib.load(open(root / "copy" / f"{loc}.toml", "rb"))["site"].items():
         if isinstance(v, str):
-            site_values.setdefault(v, "site." + k)
+            m.setdefault(v, "site." + k)
+    per_locale_site[loc] = m
+site_values = per_locale_site["zh"]
+unsafe_site_values = set()
+for v in set().union(*(set(m) for m in per_locale_site.values())):
+    if len({m[v] for m in per_locale_site.values() if v in m}) > 1:
+        unsafe_site_values.add(v)
 
 COPY_ATTRS = {"content", "title", "aria-label", "alt", "placeholder", "value"}
 SENTINEL = "\x00K:"
@@ -63,13 +74,14 @@ LANG_ATTR = re.compile(r"(?<![-\w])lang\s*=")
 
 
 class Extractor:
-    def __init__(self):
+    def __init__(self, site_map):
+        self.site_map = site_map
         self.copy = {}
         self.n = 0
 
     def key(self, text):
-        if text in site_values:
-            return site_values[text]
+        if text in self.site_map and text not in unsafe_site_values:
+            return self.site_map[text]
         self.n += 1
         k = f"p{self.n:03d}"
         self.copy[k] = text
@@ -92,11 +104,11 @@ class Extractor:
                 new = "{{site.switch_href}}"
             elif attr == "href":
                 new = SENTINEL + val + "\x00"
-            elif attr in COPY_ATTRS and val in site_values:
+            elif attr in COPY_ATTRS and val in self.site_map and val not in unsafe_site_values:
                 # only copy attrs may reuse a [site] value; fixed attrs such
                 # as hreflang carry language codes that mean different site
                 # keys per locale and must stay literal
-                new = "{{" + site_values[val] + "}}"
+                new = "{{" + self.site_map[val] + "}}"
             elif attr in COPY_ATTRS and val.strip():
                 new = SENTINEL + val + "\x00"
             else:
@@ -132,7 +144,7 @@ class Extractor:
 
 parsed = {}
 for loc in ("zh", "en"):
-    ex = Extractor()
+    ex = Extractor(per_locale_site[loc])
     parsed[loc] = (ex.run(sources[loc].read_text(encoding="utf-8")), ex)
 
 # resolve sentinels positionally
