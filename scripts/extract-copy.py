@@ -19,6 +19,9 @@ entities, indentation) survives byte-for-byte except for substitutions:
   sentinel tokens resolved after both locales parse: identical raws stay
   hardcoded, hrefs differing only by the locale base become
   {{site.base}}<rest>, everything else becomes h001/h002... or a001... keys
+- only copy attrs whose value matches a [site] value reuse that site key;
+  fixed attrs like hreflang stay literal (their values are language codes
+  that map to different site keys per locale)
 - the html lang attribute uses {{site.lang}}
 
 Rename keys and split long values into short phrases afterwards, then run
@@ -89,7 +92,10 @@ class Extractor:
                 new = "{{site.switch_href}}"
             elif attr == "href":
                 new = SENTINEL + val + "\x00"
-            elif val in site_values:
+            elif attr in COPY_ATTRS and val in site_values:
+                # only copy attrs may reuse a [site] value; fixed attrs such
+                # as hreflang carry language codes that mean different site
+                # keys per locale and must stay literal
                 new = "{{" + site_values[val] + "}}"
             elif attr in COPY_ATTRS and val.strip():
                 new = SENTINEL + val + "\x00"
