@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "Geist", "Helvetica Neue", Arial, "PingFang SC",
+    "Microsoft YaHei", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-paper: #f8faf7;
+  --color-ink: #050606;
+  --color-muted: #62676d;
+  --color-subtle: #858990;
+  --color-line: #e4e7e9;
+  --color-soft: #f2f4f1;
+  --color-green: #9fe870;
+
+  --color-primary: #050606;
+  --color-primary-foreground: #fafafa;
+  --color-background: #f8faf7;
+  --color-foreground: #050606;
+  --color-muted-foreground: #62676d;
+  --color-border: #e4e7e9;
+  --color-ring: #0270f3;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  * {
+    border-color: var(--color-line);
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background: var(--color-paper);
+    -webkit-font-smoothing: antialiased;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    color: #050606;
+    background: #c7f1af;
+  }
+}
