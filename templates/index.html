@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="{{site.lang}}" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{index.meta1}}{{index.meta2}}{{index.meta3}}{{index.meta4}}" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>{{index.title}}</title>
+  <link rel="icon" type="image/png" href="/assets/mascots/cat-logo-head.png" />
+  <link rel="preload" href="/assets/fonts/caveat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link href="/assets/css/app.css?v=3" rel="stylesheet" type="text/css" />
+</head>
+<body class="home-page">
+  <a class="skip-link btn btn-ghost btn-sm" href="#main-content">{{site.skip}}</a>
+  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="{{site.home_href}}" aria-label="{{site.brand_label}}"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong><span class="brand-divider"></span><span class="brand-caption">{{site.tagline}}</span></a></div><nav class="navbar-end" aria-label="{{site.nav_label}}"><a class="nav-link" href="{{site.base}}docs/">{{site.docs}}</a><a class="nav-link" href="{{site.base}}guide/">{{site.guide}}</a><a class="nav-link" href="{{site.base}}examples.html">{{site.examples}}</a><a class="nav-link" href="{{site.base}}get-started/">{{site.get_started}}</a><details class="nav-more"><summary class="nav-link">{{site.more}}</summary><div class="nav-menu"><a class="nav-link" href="{{site.base}}product/agents/">{{site.agents}}</a><a class="nav-link" href="{{site.base}}community/">{{site.community}}</a><a class="nav-link" href="{{site.base}}self-hosting/">{{site.self_hosting}}</a><a class="nav-link" href="{{site.base}}integrations/">{{site.integrations}}</a><a class="nav-link" href="{{site.base}}changelog.html">{{site.changelog}}</a><a class="nav-link" href="{{site.showcases_href}}">{{site.showcases}}</a></div></details><a class="nav-link" href="{{site.switch_href}}" lang="{{site.switch_lang}}">{{site.switch}}</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub <svg class="icon-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></nav></header>
+  <main class="landing-home" id="main-content">
+    <section class="home-hero home-hero-compact" aria-labelledby="hero-title">
+      <h1 id="hero-title">{{index.hero_title}}</h1>
+      <p class="hero-description">{{index.hero_lead1}}{{index.hero_lead2}}{{index.hero_lead3}}{{index.hero_lead4}}</p>
+      <div class="hero-actions"><a class="btn btn-neutral" href="{{index.cta_start_href}}">{{index.cta_start}}</a><a class="btn btn-outline" href="{{index.cta_guide_href}}">{{index.cta_guide}}</a><a class="btn btn-outline" href="https://github.com/tans/miao">{{index.cta_source}} <svg class="icon-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+<a class="btn btn-outline" href="{{index.cta_costs_href}}">{{index.cta_costs}}</a></div>
+      <nav class="story-nav" aria-label="{{index.story_nav_label}}"><a href="#describe">{{index.step1_nav}}</a><a href="#shape">{{index.step2_nav}}</a><a href="#use">{{index.step3_nav}}</a><a href="#operate">{{index.step4_nav}}</a></nav>
+      <div class="hero-visual">
+        <div class="miao-cat-track" aria-hidden="true">
+        <div class="miao-cat miao-cat-luna">
+          <span class="miao-cat-label">luna</span>
+          <svg class="miao-cat-figure" viewBox="0 0 64 40" xmlns="http://www.w3.org/2000/svg" focusable="false">
+            <g class="miao-cat-tail"><path d="M47 23Q54 21 56 14" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><g class="miao-cat-tail-tip"><path d="M56 14Q60 5 55 7" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></g></g>
+            <g class="miao-cat-legs-back"><g transform="translate(26 25)"><path class="miao-cat-leg miao-cat-leg-far-front" d="M0 0 Q1 6 -3 12 L-5 13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(41 25)"><path class="miao-cat-leg miao-cat-leg-far-hind" d="M0 0 Q1 6 -3 12 L-5 13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></g></g>
+            <g class="miao-cat-body"><ellipse cx="36" cy="23" rx="15" ry="8.5" fill="currentColor"/><path d="M11 17c0-4.2 2.5-7.2 6-7.8L19 4l4 6 2.2 1.2c2.4 1.4 3.7 4.4 3 7.5l-1 3.6H13c-1.2-1.2-2-2.7-2-4.3Z" fill="currentColor"/><circle cx="14.2" cy="15.2" r="1" fill="#e5b93f"/><circle cx="10.7" cy="18.4" r=".85" fill="#d98f93"/></g>
+            <g class="miao-cat-legs-front"><g transform="translate(29 25)"><path class="miao-cat-leg miao-cat-leg-near-front" d="M0 0 Q1 6 -3 12 L-5 13" fill="none" stroke="currentColor" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(44 25)"><path class="miao-cat-leg miao-cat-leg-near-hind" d="M0 0 Q1 6 -3 12 L-5 13" fill="none" stroke="currentColor" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></g>
+          </svg>
+        </div>
+        <div class="miao-cat miao-cat-sol">
+          <span class="miao-cat-label">sol</span>
+          <svg class="miao-cat-figure" viewBox="0 0 64 40" xmlns="http://www.w3.org/2000/svg" focusable="false">
+            <g class="miao-cat-tail"><path d="M47 23Q54 21 56 14" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><g class="miao-cat-tail-tip"><path d="M56 14Q60 5 55 7" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></g></g>
+            <g class="miao-cat-legs-back"><g transform="translate(26 25)"><path class="miao-cat-leg miao-cat-leg-far-front" d="M0 0 Q1 6 -3 12 L-5 13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(41 25)"><path class="miao-cat-leg miao-cat-leg-far-hind" d="M0 0 Q1 6 -3 12 L-5 13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></g></g>
+            <g class="miao-cat-body"><ellipse cx="36" cy="23" rx="15" ry="8.5" fill="currentColor"/><path d="M11 17c0-4.2 2.5-7.2 6-7.8L19 4l4 6 2.2 1.2c2.4 1.4 3.7 4.4 3 7.5l-1 3.6H13c-1.2-1.2-2-2.7-2-4.3Z" fill="currentColor"/><circle cx="14.2" cy="15.2" r="1" fill="#e5b93f"/><circle cx="10.7" cy="18.4" r=".85" fill="#d98f93"/></g>
+            <g class="miao-cat-legs-front"><g transform="translate(29 25)"><path class="miao-cat-leg miao-cat-leg-near-front" d="M0 0 Q1 6 -3 12 L-5 13" fill="none" stroke="currentColor" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(44 25)"><path class="miao-cat-leg miao-cat-leg-near-hind" d="M0 0 Q1 6 -3 12 L-5 13" fill="none" stroke="currentColor" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></g>
+          </svg>
+          <svg class="miao-cat-seated" viewBox="0 0 64 40" xmlns="http://www.w3.org/2000/svg" focusable="false">
+            <path class="miao-cat-seated-tail" d="M42 34C51 39 59 38 57 33c-1-3-5-2-6 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <ellipse cx="38" cy="30" rx="11" ry="8" fill="currentColor"/>
+            <path d="M24 17c8-2 12 2 14 9l7 10H24c-3-7-3-13 0-19Z" fill="currentColor"/>
+            <path d="M13 15c0-4 2-6 5-7l2-6 4 6 4 2c3 2 4 5 2 8l-2 4H17c-3-2-4-4-4-7Z" fill="currentColor"/>
+            <path d="M24 23v14h-4m10-13v13h-4" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="16" cy="13" r="1" fill="#e5b93f"/>
+            <circle cx="13" cy="16" r=".8" fill="#d98f93"/>
+          </svg>
+        </div>
+        </div>
+        <figure class="home-preview-figure">
+          <img class="home-preview-image" src="{{index.preview_image}}" alt="{{index.preview_alt}}" />
+          <figcaption class="home-preview-caption"><span>{{index.preview_caption}}</span><a href="{{index.preview_href}}">{{index.preview_link}}</a></figcaption>
+        </figure>
+      </div>
+      <p class="story-note">{{index.note1}}{{index.note2}}{{index.note3}}</p>
+      <button class="btn btn-neutral deploy-cta" id="contact-cta" type="button" aria-haspopup="dialog">{{index.contact}}</button>
+    </section>
+    <section class="product-story" aria-labelledby="story-title">
+      <h2 id="story-title">{{index.story_title}}</h2>
+      <article class="story-step" id="describe" aria-labelledby="describe-title">
+        <div class="story-copy"><p class="section-kicker">{{index.describe.kicker}}</p><h3 id="describe-title">{{index.describe.title}}</h3><p>{{index.describe.body1}}{{index.describe.body2}}{{index.describe.body3}}{{index.describe.body4}}</p><p class="story-limit">{{index.describe.limit1}}{{index.describe.limit2}}{{index.describe.limit3}}</p><div class="story-actions"><a class="btn btn-neutral" href="{{index.describe.a1_href}}">{{index.describe.a1}}</a><a href="{{index.describe.a2_href}}">{{index.describe.a2}}</a><a href="{{index.describe.a3_href}}">{{index.describe.a3}}</a></div></div>
+        <figure><a href="{{index.describe.a2_href}}"><img src="/docs/prototypes/images/02-start.png" width="1440" height="900" loading="lazy" alt="{{index.describe.img_alt}}" /></a><figcaption>{{index.describe.caption}}</figcaption></figure>
+      </article>
+      <article class="story-step" id="shape" aria-labelledby="shape-title">
+        <div class="story-copy"><p class="section-kicker">{{index.shape.kicker}}</p><h3 id="shape-title">{{index.shape.title}}</h3><p>{{index.shape.body1}}{{index.shape.body2}}{{index.shape.body3}}{{index.shape.body4}}</p><p class="story-limit">{{index.shape.limit1}}{{index.shape.limit2}}{{index.shape.limit3}}{{index.shape.limit4}}</p><div class="story-actions"><a class="btn btn-neutral" href="{{index.shape.a1_href}}">{{index.shape.a1}}</a><a href="{{index.shape.a2_href}}">{{index.shape.a2}}</a><a href="{{index.shape.a3_href}}">{{index.shape.a3}}</a></div></div>
+        <figure><a href="{{index.shape.a2_href}}"><img src="/docs/prototypes/images/03-create.png" width="1440" height="900" loading="lazy" alt="{{index.shape.img_alt}}" /></a><figcaption>{{index.shape.caption}}</figcaption></figure>
+      </article>
+      <article class="story-step" id="use" aria-labelledby="use-title">
+        <div class="story-copy"><p class="section-kicker">{{index.use.kicker}}</p><h3 id="use-title">{{index.use.title}}</h3><p>{{index.use.body1}}{{index.use.body2}}{{index.use.body3}}{{index.use.body4}}</p><p class="story-limit">{{index.use.limit1}}{{index.use.limit2}}{{index.use.limit3}}</p><div class="story-actions"><a class="btn btn-neutral" href="{{index.use.a1_href}}">{{index.use.a1}}</a><a href="{{index.use.a2_href}}">{{index.use.a2}}</a><a href="{{index.use.a3_href}}">{{index.use.a3}}</a></div></div>
+        <figure><a href="{{index.use.a2_href}}"><img src="/docs/prototypes/images/05-work.png" width="1440" height="900" loading="lazy" alt="{{index.use.img_alt}}" /></a><figcaption>{{index.use.caption}}</figcaption></figure>
+      </article>
+      <article class="story-step" id="operate" aria-labelledby="operate-title">
+        <div class="story-copy"><p class="section-kicker">{{index.operate.kicker}}</p><h3 id="operate-title">{{index.operate.title}}</h3><p>{{index.operate.body1}}{{index.operate.body2}}{{index.operate.body3}}{{index.operate.body4}}</p><p class="story-limit">{{index.operate.limit1}}{{index.operate.limit2}}{{index.operate.limit3}}{{index.operate.limit4}}</p><div class="story-actions"><a class="btn btn-neutral" href="{{index.operate.a1_href}}">{{index.operate.a1}}</a><a href="{{index.operate.a2_href}}">{{index.operate.a2}}</a><a href="{{index.operate.a3_href}}">{{index.operate.a3}}</a></div></div>
+        <figure><a href="{{index.operate.a2_href}}"><img src="/docs/prototypes/images/10-troubleshoot.png" width="1440" height="900" loading="lazy" alt="{{index.operate.img_alt}}" /></a><figcaption>{{index.operate.caption}}</figcaption></figure>
+      </article>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="{{site.home_href}}" aria-label="{{site.brand_label}}"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong></a><span>{{site.tagline}}</span><nav aria-label="{{site.footer_label}}"><a href="{{site.base}}">{{site.footer_home}}</a><a href="{{site.base}}docs/">{{site.footer_docs}}</a><a href="{{site.base}}guide/">{{site.footer_guide}}</a><a href="{{site.base}}examples.html">{{site.footer_examples}}</a><a href="{{site.base}}get-started/">{{site.footer_get_started}}</a><a href="{{site.base}}community/">{{site.footer_community}}</a><a href="{{site.base}}self-hosting/">{{site.footer_self_hosting}}</a><a href="{{site.switch_href}}">{{site.footer_switch}}</a><a href="https://github.com/tans/miao">GitHub <svg class="icon-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></nav></footer>
+  <dialog class="modal contact-modal" id="wechat-dialog" aria-labelledby="wechat-title">
+    <div class="modal-box">
+      <h2 id="wechat-title">{{index.dialog.title}}</h2>
+      <p>{{index.dialog.wechat}}</p>
+      <strong class="wechat-id">tianshe00</strong>
+      <form method="dialog" class="modal-action"><button class="btn btn-neutral">{{index.dialog.ok}}</button></form>
+    </div>
+    <form method="dialog" class="modal-backdrop"><button aria-label="{{index.dialog.close_label}}">{{index.dialog.close}}</button></form>
+  </dialog>
+  <script>
+    document.getElementById('contact-cta').addEventListener('click', () => document.getElementById('wechat-dialog').showModal());
+    const solCat = document.querySelector('.miao-cat-sol');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      solCat.classList.add('is-sitting');
+    } else {
+      solCat.addEventListener('animationend', (event) => {
+        if (event.target === solCat && event.animationName === 'miao-cat-sol-to-center') {
+          solCat.classList.add('is-sitting');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
