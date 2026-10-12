@@ -111,8 +111,16 @@ class Extractor:
             elif skip or not part.strip():
                 out.append(part)
             else:
+                # indentation (whitespace containing newlines) stays literal so
+                # pretty-printed pages round-trip byte-for-byte; pure space
+                # padding moves into the value so per-locale spacing around
+                # inline tags does not diverge the templates
                 wm = re.match(r"^(\s*)(.*?)(\s*)$", part, re.S)
-                out.append(wm.group(1) + "{{" + self.key(wm.group(2)) + "}}" + wm.group(3))
+                lead, core, trail = wm.group(1), wm.group(2), wm.group(3)
+                lead_lit = lead if "\n" in lead else ""
+                trail_lit = trail if "\n" in trail else ""
+                value = lead[len(lead_lit):] + core + trail[: len(trail) - len(trail_lit)]
+                out.append(lead_lit + "{{" + self.key(value) + "}}" + trail_lit)
         return "".join(out)
 
 
