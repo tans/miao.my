@@ -229,3 +229,59 @@ ops_desc = "安装、配置、健康检查、升级、备份和恢复的事实�
 changelog_desc = "区分 GitHub Release、源码记录和现场验收状态 ↗"
 community_title = "社区入口"
 community_desc = "公开 Issue、Discussion、Release 和支持边界 ↗"
+
+[community]
+title = "社区与支持 · MIAO"
+meta1 = "MIAO 社区、支持与安全反馈入口："
+meta2 = "从文档、Issue、发布记录到自托管排障。"
+kicker = "COMMUNITY / SUPPORT"
+h1 = "遇到问题，从一条可复现的信息开始。"
+lede1 = "这里是 MIAO 的公开协作入口："
+lede2 = "先读文档，再选择合适的 Issue、讨论或发布记录。"
+lede3 = "MIAO 是开源、自托管项目，社区协作不等同于企业 SLA。"
+cta_issues = "查看 Issues"
+cta_docs = "先读文档"
+routes_title = "选择正确的入口"
+
+[community.bug]
+kicker = "BUG"
+title = "报告可复现的问题"
+body = "请附上最小复现步骤、MIAO 版本或 commit、浏览器/系统环境，以及已脱敏的错误片段。"
+link = "新建 Issue ↗"
+
+[community.idea]
+kicker = "IDEA"
+title = "提出功能建议"
+body1 = "说明要解决的工作问题、受影响的角色和可接受的边界。"
+body2 = "先确认它不是现有文档或开放 Issue。"
+link = "参加 Discussions ↗"
+
+[community.self_hosting]
+kicker = "SELF-HOSTING"
+title = "排查部署问题"
+body1 = "先看自托管、运维和发布文档，"
+body2 = "再提供部署方式、commit、日志摘要和可复现命令。"
+link = "查看自托管文档"
+
+[community.releases]
+kicker = "RELEASES"
+title = "确认版本与变更"
+body1 = "使用发布记录和 changelog 对齐版本、兼容性和回滚边界，"
+body2 = "不把本地成功当成生产验收。"
+link = "查看 Releases ↗"
+
+[community.security]
+kicker = "SECURITY"
+title = "安全问题不要公开粘贴。"
+body1 = "不要在 Issue、Discussion 或日志中提交 token、密码、内部地址、"
+body2 = "完整生产数据或未脱敏附件。"
+body3 = "优先使用 GitHub Security Advisories 的私密报告入口；"
+body4 = "如果仓库没有显示该入口，请先联系维护者确认私密通道。"
+cta = "打开私密安全报告"
+
+[community.boundary]
+title = "支持边界"
+li1 = "公开支持：文档、可复现问题、代码协作和发布说明。"
+li2 = "自托管责任：模型配置、备份、凭据、网络和现场运维由部署方负责。"
+li3 = "上游服务：模型、Jev、邮件或付费 API 的配额与授权需要单独验收。"
+li4 = "响应预期：Issue 会按可复现性、影响范围和维护者时间排序，不承诺企业 SLA。"

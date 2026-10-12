@@ -229,3 +229,59 @@ ops_desc = "Installation, configuration, health checks, upgrades, backups and re
 changelog_desc = "Separate GitHub Releases, source records and field-acceptance status ↗"
 community_title = "Community hub"
 community_desc = "Public Issues, Discussions, Releases and support boundaries ↗"
+
+[community]
+title = "Community and support · MIAO"
+meta1 = "MIAO community, support and security entry points: "
+meta2 = "docs, issues, releases and self-hosting boundaries."
+kicker = "COMMUNITY / SUPPORT"
+h1 = "Start with a reproducible signal."
+lede1 = "This is MIAO’s public collaboration map: "
+lede2 = "read the docs first, then choose the right issue, discussion or release record. "
+lede3 = "MIAO is open source and self-hosted; community collaboration is not an enterprise SLA."
+cta_issues = "Browse issues"
+cta_docs = "Read the docs"
+routes_title = "Choose the right route"
+
+[community.bug]
+kicker = "BUG"
+title = "Report a reproducible problem"
+body = "Include minimal reproduction steps, the MIAO version or commit, browser/system details and a redacted error excerpt."
+link = "Open an issue ↗"
+
+[community.idea]
+kicker = "IDEA"
+title = "Suggest a capability"
+body1 = "Describe the work problem, affected roles and acceptable boundaries. "
+body2 = "Check the docs and open issues first."
+link = "Join discussions ↗"
+
+[community.self_hosting]
+kicker = "SELF-HOSTING"
+title = "Debug a deployment"
+body1 = "Start with the self-hosting and operations docs, "
+body2 = "then share the deployment mode, commit, log summary and a reproducible command."
+link = "Read self-hosting docs"
+
+[community.releases]
+kicker = "RELEASES"
+title = "Confirm versions and changes"
+body1 = "Use releases and the changelog to align versions, compatibility and rollback boundaries. "
+body2 = "Local success is not production acceptance."
+link = "Browse releases ↗"
+
+[community.security]
+kicker = "SECURITY"
+title = "Do not paste security issues in public."
+body1 = "Never include tokens, passwords, internal addresses, complete production data "
+body2 = "or unredacted attachments in an issue, discussion or log. "
+body3 = "Prefer GitHub Security Advisories; "
+body4 = "if the repository does not show a private report entry, contact the maintainers to confirm a private channel."
+cta = "Open private security report"
+
+[community.boundary]
+title = "Support boundaries"
+li1 = "Public support: docs, reproducible problems, code collaboration and release notes."
+li2 = "Self-hosting responsibility: model configuration, backups, credentials, networking and on-site operations stay with the deployer."
+li3 = "Upstream services: model, Jev, mail and paid API quotas or authorization require separate acceptance."
+li4 = "Response expectations: issues are triaged by reproducibility, impact and maintainer time; no enterprise SLA is promised."
