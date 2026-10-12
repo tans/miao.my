@@ -1,8 +1,8 @@
 #!/bin/sh
-# 重新生成 assets/css/app.css（自托管的 Tailwind CSS 4 + daisyUI 5 编译产物，
-# 扫描 index.html 与 docs 页面实际用到的类，替代 jsdelivr CDN）。
-# 产物提交进仓库；类名变化后重跑一次，并在 HTML 里递增 app.css?v= 的版本号。
-# 需要 node/npm。
+# 重新生成 assets/css/app.css（Tailwind CSS 4 + daisyUI 5 编译产物）。
+# 站点样式全部内联在这个构建里（styles/showcases/examples/integrations 已并入），
+# 不再维护单独的 CSS 文件。类名或页面变化后重跑一次，
+# 并在 HTML 里递增 app.css?v= 的版本号。需要 node/npm。
 set -e
 root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 tmp=$(mktemp -d)
@@ -10,14 +10,16 @@ trap 'rm -rf "$tmp"' EXIT
 cd "$tmp"
 npm init -y >/dev/null
 npm i --no-fund --no-audit tailwindcss@4 daisyui@5 @tailwindcss/cli@4 >/dev/null
-cat > input.css <<EOF
-@import "tailwindcss" source(none);
-@source "$root/index.html";
-@source "$root/en/index.html";
-@source "$root/showcases.html";
-@source "$root/docs/index.html";
-@source "$root/docs/template.html";
-@plugin "daisyui";
-EOF
+{
+  echo '@import "tailwindcss" source(none);'
+  echo '@plugin "daisyui";'
+  echo "@import \"$root/styles.css\";"
+  echo "@import \"$root/showcases.css\";"
+  echo "@import \"$root/examples.css\";"
+  echo "@import \"$root/integrations/integrations.css\";"
+  # 扫描全部公开页面（含 zh/en 镜像与原型），保证用到的工具类都被编译
+  (cd "$root" && find . -name '*.html' -not -path './_temp/*' | sed 's|^\./||') \
+    | while read -r f; do echo "@source \"$root/$f\";"; done
+} > input.css
 npx @tailwindcss/cli -i input.css -o "$root/assets/css/app.css" --minify
 echo "wrote $root/assets/css/app.css"

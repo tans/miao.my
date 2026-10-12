@@ -22,7 +22,7 @@ python3 -m http.server 4173
 
 - `index.html`：官网
 - `en/index.html`：英文官网
-- `showcases.html`、`showcases.css`、`showcases.js`：中文滚动产品展示，使用组件演示 8 个工作场景
+- `showcases.html`、`showcases.js`：中文滚动产品展示，使用组件演示 8 个工作场景（样式在 `showcases.css`，已并入 `app.css` 构建）
 - `zh/docs/USER_GUIDE.md`：中文用户手册正文
 - `docs/USER_GUIDE.en.md`：英文用户手册正文
 - `docs/DECISION_GUIDE.md`、`docs/DECISION_GUIDE.en.md`：双语产品选择指南正文
@@ -32,9 +32,9 @@ python3 -m http.server 4173
 - `docs/product/`、`docs/architecture/`：旧文档地址，跳转到手册对应章节
 - `assets/mascots/`：官网使用的 MIAO 猫咪素材
 - `assets/scenes/`：AI 生成的工作场景示意图
-- `assets/css/app.css`：自托管的 Tailwind CSS 4 + daisyUI 5 编译产物，替代 CDN 引用；由 `scripts/build-css.sh` 重新生成，改动类名后在 HTML 中递增 `app.css?v=` 版本号
+- `assets/css/app.css`：唯一的站点样式表。Tailwind CSS 4 + daisyUI 5 编译产物，`styles.css`/`showcases.css`/`examples.css`/`integrations/integrations.css` 作为构建输入一并编译进来，页面不再单独 link 这些文件；替代 CDN 引用。由 `scripts/build-css.sh` 重新生成，改动类名后在 HTML 中递增 `app.css?v=` 版本号
 - `assets/fonts/`：自托管的 Caveat woff2 字体（wordmark 使用）
-- `styles.css`：站点样式
+- `styles.css` 等：站点样式的构建输入（编译进 `app.css`，不再被页面直接引用）
 - `vercel.json`：静态路由与图片缓存设置
 
 场景图由内置 ImageGen 生成，提示词：

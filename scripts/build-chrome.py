@@ -5,6 +5,12 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 
+GITHUB_ICON = ('<svg class="icon-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"'
+               ' stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+               '<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0'
+               ' 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0'
+               ' 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>')
+
 
 def route_for(path: Path) -> str:
     relative = path.relative_to(ROOT).as_posix()
@@ -106,13 +112,13 @@ def chrome(path: Path) -> tuple[str, str]:
         f'<span class="brand-divider"></span><span class="brand-caption">{tagline}</span></a></div>'
         f'<nav class="navbar-end" aria-label="{aria}">{direct_html}'
         f'<details class="nav-more"><summary class="nav-link">{more_label}</summary><div class="nav-menu">{more_html}</div></details>'
-        f'{language}<a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub ↗</a></nav>'
+        f'{language}<a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub {GITHUB_ICON}</a></nav>'
         '</header>'
     )
     footer = (
         f'<footer class="site-footer{footer_extra}">'
         f'<a class="brand" href="{root}" aria-label="{brand_label}"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong></a>'
-        f'<span>{tagline}</span><nav aria-label="{footer_aria}">{footer_html}<a href="https://github.com/tans/miao">GitHub ↗</a></nav>'
+        f'<span>{tagline}</span><nav aria-label="{footer_aria}">{footer_html}<a href="https://github.com/tans/miao">GitHub {GITHUB_ICON}</a></nav>'
         '</footer>'
     )
     return header, footer
