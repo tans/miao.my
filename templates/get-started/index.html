@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="{{site.lang}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{get-started.meta1}}{{get-started.meta2}}">
+  <title>{{get-started.title}}</title>
+  <link href="/assets/css/app.css?v=4" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="/assets/mascots/cat-logo-head.png">
+</head>
+<body>
+  <a class="skip-link btn btn-ghost btn-sm" href="#main-content">{{site.skip}}</a>
+  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="{{site.base}}" aria-label="{{site.brand_label}}"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong><span class="brand-divider"></span><span class="brand-caption">{{site.tagline}}</span></a></div><nav class="navbar-end" aria-label="{{site.nav_label}}"><a class="nav-link" href="{{site.base}}docs/">{{site.docs}}</a><a class="nav-link" href="{{site.base}}guide/">{{site.guide}}</a><a class="nav-link" href="{{site.base}}examples.html">{{site.examples}}</a><a class="nav-link nav-link-active" href="{{site.base}}get-started/" aria-current="page">{{site.get_started}}</a><details class="nav-more"><summary class="nav-link">{{site.more}}</summary><div class="nav-menu"><a class="nav-link" href="{{site.base}}product/agents/">{{site.agents}}</a><a class="nav-link" href="{{site.base}}community/">{{site.community}}</a><a class="nav-link" href="{{site.base}}self-hosting/">{{site.self_hosting}}</a><a class="nav-link" href="{{site.base}}integrations/">{{site.integrations}}</a><a class="nav-link" href="{{site.base}}changelog.html">{{site.changelog}}</a><a class="nav-link" href="{{site.showcases_href}}">{{site.showcases}}</a></div></details><a class="nav-link" href="{{site.switch_href}}" lang="{{site.switch_lang}}">{{site.switch}}</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub <svg class="icon-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></nav></header>
+  <main class="start-main" id="main-content">
+    <p class="section-kicker">{{get-started.kicker}}</p>
+    <h1>{{get-started.h1}}</h1>
+    <p class="start-lede">{{get-started.lede1}}{{get-started.lede2}}{{get-started.lede3}}{{get-started.lede4}}{{get-started.lede5}}</p>
+    <div class="start-notice"><strong>{{get-started.notice_title}}</strong><span>{{get-started.notice1}}{{get-started.notice2}}{{get-started.notice3}}</span></div>
+    <section class="start-grid" aria-label="{{get-started.grid_label}}">
+      <article class="start-card">
+        <p class="section-kicker">{{get-started.local.kicker}}</p>
+        <h2>{{get-started.local.title}}</h2>
+        <p>{{get-started.local.body1}}{{get-started.local.body2}}{{get-started.local.body3}}</p>
+        <dl class="start-meta"><div><dt>{{get-started.dt_prereq}}</dt><dd>{{get-started.local.dd_prereq1}}{{get-started.local.dd_prereq2}}</dd></div><div><dt>{{get-started.dt_product}}</dt><dd>{{get-started.local.dd_product}}</dd></div><div><dt>{{get-started.local.dt_updates}}</dt><dd>{{get-started.local.dd_updates1}}{{get-started.local.dd_updates2}}</dd></div></dl>
+        <div class="start-actions"><a class="btn btn-neutral" href="https://github.com/tans/miao#self-hosting">{{get-started.local.cta}}</a><a href="{{site.base}}docs/">{{get-started.local.link}}</a></div>
+        <span class="status ready">{{get-started.local.status}}</span>
+      </article>
+      <article class="start-card start-card-featured">
+        <p class="section-kicker">{{get-started.production.kicker}}</p>
+        <h2>{{get-started.production.title}}</h2>
+        <p>{{get-started.production.body1}}{{get-started.production.body2}}{{get-started.production.body3}}</p>
+        <dl class="start-meta"><div><dt>{{get-started.dt_prereq}}</dt><dd>{{get-started.production.dd_prereq}}</dd></div><div><dt>{{get-started.dt_product}}</dt><dd>{{get-started.production.dd_product}}</dd></div><div><dt>{{get-started.production.dt_rollback}}</dt><dd>{{get-started.production.dd_rollback1}}{{get-started.production.dd_rollback2}}</dd></div></dl>
+        <div class="start-actions"><a class="btn btn-neutral" href="https://github.com/tans/miao/releases">{{get-started.production.cta}}</a><a href="{{site.base}}self-hosting/">{{get-started.production.link1}}</a> · <a href="{{site.base}}self-hosting/costs/">{{get-started.production.link2}}</a></div>
+        <span class="status verify">{{get-started.production.status}}</span>
+      </article>
+      <article class="start-card">
+        <p class="section-kicker">{{get-started.contribute.kicker}}</p>
+        <h2>{{get-started.contribute.title}}</h2>
+        <p>{{get-started.contribute.body1}}{{get-started.contribute.body2}}{{get-started.contribute.body3}}</p>
+        <dl class="start-meta"><div><dt>{{get-started.dt_prereq}}</dt><dd>{{get-started.contribute.dd_prereq}}</dd></div><div><dt>{{get-started.dt_product}}</dt><dd>{{get-started.contribute.dd_product}}</dd></div><div><dt>{{get-started.contribute.dt_boundary}}</dt><dd>{{get-started.contribute.dd_boundary1}}{{get-started.contribute.dd_boundary2}}</dd></div></dl>
+        <div class="start-actions"><a class="btn btn-neutral" href="https://github.com/tans/miao/issues">{{get-started.contribute.cta}}</a><a href="https://github.com/tans/miao/blob/main/AGENTS.md">{{get-started.contribute.link}}</a></div>
+        <span class="status ready">{{get-started.contribute.status}}</span>
+      </article>
+    </section>
+    <section class="start-next" aria-labelledby="next-title"><p class="section-kicker">{{get-started.next.kicker}}</p><h2 id="next-title">{{get-started.next.title}}</h2><div class="start-next-grid"><a href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md"><strong>{{get-started.next.ops_title}}</strong><span>{{get-started.next.ops_desc}}</span></a><a href="{{site.base}}changelog.html"><strong>{{site.changelog}}</strong><span>{{get-started.next.changelog_desc}}</span></a><a href="{{site.base}}community/"><strong>{{get-started.next.community_title}}</strong><span>{{get-started.next.community_desc}}</span></a></div></section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="{{site.base}}" aria-label="{{site.brand_label}}"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong></a><span>{{site.tagline}}</span><nav aria-label="{{site.footer_label}}"><a href="{{site.base}}">{{site.footer_home}}</a><a href="{{site.base}}docs/">{{site.docs}}</a><a href="{{site.base}}guide/">{{site.guide}}</a><a href="{{site.base}}examples.html">{{site.examples}}</a><a href="{{site.base}}get-started/">{{site.get_started}}</a><a href="{{site.base}}community/">{{site.community}}</a><a href="{{site.base}}self-hosting/">{{site.self_hosting}}</a><a href="{{site.switch_href}}">{{site.switch}}</a><a href="https://github.com/tans/miao">GitHub <svg class="icon-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></nav></footer>
+</body>
+</html>
