@@ -6,6 +6,14 @@ import path from "node:path";
 // Multi-entry, NOT a SPA. Each page is its own HTML entry that Vite
 // bundles into a separate static HTML file. React renders the page
 // component; there is no client-side router.
+//
+// Output keys keep the current site URL layout:
+//   "index"               → dist/index.html            (/)
+//   "get-started/index"   → dist/get-started/index.html (/get-started/)
+//   ...
+// Legacy static pages (docs/, guide/, examples.html, changelog.html)
+// are NOT built by Vite — the postbuild script copies them into dist
+// unchanged (see scripts/postbuild.mjs).
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
@@ -14,25 +22,20 @@ export default defineConfig({
     },
   },
   build: {
-    // One input = one output HTML. No SPA, no router.
     rollupOptions: {
       input: {
-        home: path.resolve(__dirname, "src/pages/home.html"),
-        docs: path.resolve(__dirname, "src/pages/docs.html"),
-        guide: path.resolve(__dirname, "src/pages/guide.html"),
-        examples: path.resolve(__dirname, "src/pages/examples.html"),
-        getStarted: path.resolve(__dirname, "src/pages/get-started.html"),
-        changelog: path.resolve(__dirname, "src/pages/changelog.html"),
-        community: path.resolve(__dirname, "src/pages/community.html"),
-        selfHosting: path.resolve(__dirname, "src/pages/self-hosting.html"),
-        integrations: path.resolve(__dirname, "src/pages/integrations.html"),
-        product: path.resolve(__dirname, "src/pages/product.html"),
+        index: path.resolve(__dirname, "src/pages/home.html"),
+        "get-started/index": path.resolve(__dirname, "src/pages/get-started.html"),
+        "community/index": path.resolve(__dirname, "src/pages/community.html"),
+        "self-hosting/index": path.resolve(__dirname, "src/pages/self-hosting.html"),
+        "self-hosting/costs/index": path.resolve(__dirname, "src/pages/self-hosting-costs.html"),
+        "integrations/index": path.resolve(__dirname, "src/pages/integrations.html"),
+        "product/agents/index": path.resolve(__dirname, "src/pages/product-agents.html"),
         showcases: path.resolve(__dirname, "src/pages/showcases.html"),
       },
     },
     outDir: path.resolve(__dirname, "../dist"),
     emptyOutDir: true,
-    // Keep the existing /assets/... public paths (fonts, logos) working.
   },
   publicDir: path.resolve(__dirname, "public"),
 });

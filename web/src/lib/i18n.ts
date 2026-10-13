@@ -20,7 +20,9 @@ export interface CopyApi {
   /** The other locale (for the switch link). */
   other: Locale;
   /** Look up a copy key for the current locale. */
-  t: (key: keyof Copy) => string;
+  t: (key: string) => string;
+  /** Look up a copy key that holds a root-relative URL, merged locale-neutral. */
+  h: (key: string) => string;
   /** The current locale's raw copy object (for arrays/objects). */
   raw: Copy;
 }
@@ -33,10 +35,12 @@ export function getCopy(locale: Locale): Copy {
 export function useCopy(locale: Locale): CopyApi {
   const raw = useMemo(() => COPY[locale], [locale]);
   const other: Locale = locale === "zh" ? "en" : "zh";
+  const t = (key: string) => raw[key] ?? "";
   return {
     locale,
     other,
-    t: (key) => raw[key] as string,
+    t,
+    h: (key) => (t(key) || "/").replace(/^\/en(?=\/|$)/, "/"),
     raw,
   };
 }

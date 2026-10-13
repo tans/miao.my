@@ -1,6 +1,15 @@
 {
+  "buildCommand": "cd web && npm ci && npm run build",
+  "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/en/(.*)",
+      "destination": "/$1",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
