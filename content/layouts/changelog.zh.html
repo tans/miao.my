@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MIAO 版本更新日志：记录 MIAO 应用每次发布的功能、改进与修复。" />
+  <title>更新日志 · MIAO</title><link rel="icon" type="image/png" href="/assets/mascots/cat-logo-head.png" />
+  <link rel="preload" href="/assets/fonts/caveat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin /><link href="/assets/css/app.css?v=4" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <a class="skip-link btn btn-ghost btn-sm" href="#main-content">跳到主要内容</a>
+  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong><span class="brand-divider"></span><span class="brand-caption">开源的企业 AI 工作台</span></a></div><nav class="navbar-end" aria-label="主导航"><a class="nav-link" href="/docs/">文档</a><a class="nav-link" href="/guide/">产品指南</a><a class="nav-link" href="/examples.html">行业示例</a><a class="nav-link" href="/get-started/">开始使用</a><details class="nav-more"><summary class="nav-link">更多</summary><div class="nav-menu"><a class="nav-link" href="/product/agents/">Agent</a><a class="nav-link" href="/community/">社区与支持</a><a class="nav-link" href="/self-hosting/">自托管</a><a class="nav-link" href="/integrations/">集成</a><a class="nav-link nav-link-active" href="/changelog.html" aria-current="page">更新日志</a><a class="nav-link" href="/showcases.html">案例故事</a></div></details><a class="nav-link" href="/" lang="en">English</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub <svg class="icon-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></nav></header>
+  <main class="changelog-main" id="main-content">
+    <p class="changelog-eyebrow">CHANGELOG</p>
+    <h1>更新日志</h1>
+    <p class="changelog-lead">记录 MIAO 应用的版本更新：新功能、改进与修复。只有 GitHub Release 才代表可下载交付；源码提交和现场部署不会被写成已发布版本。查看 <a href="/en/changelog.html">English changelog</a> 或 <a href="https://github.com/tans/miao/releases">全部 Releases</a>。</p>
+    <aside class="changelog-ops" aria-label="发布说明"><strong>发布说明</strong><span>单体发布：Go binary + 嵌入式 UI + PocketBase migration。</span><span>升级前先备份；生产切换由 PM2 管理，健康检查失败会回到上一个 binary。</span><span>数据库不会自动回滚，恢复前请保留备份并在隔离环境演练。</span><a href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md">阅读运维文档 ↗</a></aside>
+    <div class="changelog-legend" aria-label="发布证据说明"><strong>证据状态</strong><span><b class="changelog-tag">已打包</b> GitHub Release 可下载</span><span><b class="changelog-tag">源码记录</b> 仅代表 commit 历史</span><span><b class="changelog-tag changelog-tag-pending">现场验收待单独确认</b> 不等于生产业务已验收</span></div>
+    <div class="changelog-list">{{ENTRIES}}</div>
+    <p class="changelog-note">更早的每次代码变更见 <a href="https://github.com/tans/miao/commits/main">GitHub 提交历史</a>。</p>
+  </main>
+  <footer class="site-footer"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong></a><span>开源的企业 AI 工作台</span><nav aria-label="页脚导航"><a href="/">首页</a><a href="/docs/">文档</a><a href="/guide/">产品指南</a><a href="/examples.html">行业示例</a><a href="/get-started/">开始使用</a><a href="/community/">社区与支持</a><a href="/self-hosting/">自托管</a><a href="/">English</a><a href="https://github.com/tans/miao">GitHub <svg class="icon-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></nav></footer>
+</body>
+</html>

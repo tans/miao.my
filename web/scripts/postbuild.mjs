@@ -1,10 +1,15 @@
 // Postbuild: copy static site assets/legacy pages into dist/, and
 // arrange the Vite-built pages into the site URL layout.
 import { cp, mkdir, rename, rm, stat } from "node:fs/promises";
+import { execFileSync } from "node:child_process";
 import { dirname, resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "../..");
 const dist = resolve(root, "dist");
+
+// Regenerate examples/changelog HTML from their Markdown sources first,
+// so the copied static pages always match content/*.md (build-content.py).
+execFileSync("python3", [resolve(root, "scripts/build-content.py")], { stdio: "inherit" });
 
 // Static site content copied verbatim (assets are referenced by every
 // page; docs/guide/examples/changelog are legacy static pages served

@@ -47,8 +47,9 @@ npm run preview     # 预览 http://localhost:5173
 - `docs/`：用户手册（zh 与 en 的 .md 正文 + 生成的静态页 + 12 张原型界面）、产品选择指南正文
 - `guide/`、`en/guide/`：双语产品选择指南静态页（由 `scripts/build-decision-guide.py` 生成）
 - `docs/index.html`、`en/docs/index.html`：由 `python3 scripts/build-docs.py` 生成（需要 Pandoc）
-- `examples.html`、`en/examples.html`：行业示例
-- `changelog.html`、`en/changelog.html`：更新日志
+- `examples.html`、`en/examples.html`：行业示例，内容源为 `content/examples.{zh,en}.md`，由 `scripts/build-content.py` 生成
+- `changelog.html`、`en/changelog.html`：更新日志，内容源为 `content/changelog.{zh,en}.md`，由 `scripts/build-content.py` 生成
+- `content/`：以上内容页的 Markdown 单一来源（英文版为 `*.en.md`）+ `layouts/` 页面骨架；改内容后运行 `python3 scripts/build-content.py` 重新生成 HTML
 
 ### 样式（单一产物）
 - `assets/css/app.css`：唯一的站点样式表，Tailwind CSS 4 + daisyUI 5 编译产物
