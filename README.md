@@ -1,41 +1,66 @@
 # MIAO 官网与文档
 
-MIAO 是开源企业内部工作台。本仓库提供中英双语静态官网、用户手册和英文产品示意图，可直接作为 Vercel 项目部署。完整应用单独自托管，源码见 [`tans/miao`](https://github.com/tans/miao)。
+MIAO 是开源企业内部工作台。本仓库提供中英双语官网、用户手册和英文产品示意图，作为 Vercel 项目部署。完整应用单独自托管，源码见 [`tans/miao`](https://github.com/tans/miao)。
+
+官网由 React MPA（多页面应用）构建，与遗留静态页（文档、指南、示例）共存，两者共用一份样式（`assets/css/app.css`）。
 
 ## 本地预览
 
-用任意静态 HTTP 服务器将本目录作为站点根目录，例如：
-
 ```sh
-python3 -m http.server 4173
+cd web
+npm ci
+npm run dev
 ```
 
-然后打开 `http://localhost:4173`。
+打开 `http://localhost:5173`。dev server 通过 `web/scripts/dev-layout.mjs` 以生产 URL 布局服务各页面（`/`、`/get-started/`、`/docs/` 等）。
+
+生产构建与预览：
+
+```sh
+cd web
+npm run build       # 输出到 ../dist，含静态页拷贝与 URL 布局整理
+npm run preview     # 预览 http://localhost:5173
+```
 
 ## 部署到 Vercel
 
-在 Vercel 导入此目录（或将此目录作为项目根目录），无需 Build Command，Output Directory 使用 `.`。站点为纯静态 HTML/CSS，无需安装依赖。
+项目根即为 Vercel 项目根，`vercel.json` 配置了构建与服务规则：
+
+- Build Command：`cd web && npm ci && npm run build`
+- Output Directory：`dist`
+- `/en/(.*)` 永久重定向到 `/$1`（React 迁移后英文站并入单 URL，语言由 `?lang=` / localStorage 切换）
+
+## 架构
+
+### React MPA（`web/`，主力页面）
+- `web/src/pages/*.html` + `*.tsx`：9 个页面入口（home、get-started、community、self-hosting、self-hosting-costs、integrations、product-agents、showcases）
+- `web/src/components/`：React 组件（`site/` 站点骨架，`ui/` 基础组件）
+- `web/src/lib/`：i18n（`i18n.ts`、`locale.tsx`）与 copy 生成（`copy.gen.ts`）
+- `web/vite.config.ts`：Vite 多入口构建（每页独立 HTML）
+- `web/scripts/postbuild.mjs`：构建后把产物排到站点 URL 布局，并拷贝遗留静态页到 `dist/`
+- `web/scripts/gen-copy.py`：从 `copy/*.toml` 生成 `copy.gen.ts`（React 的 i18n 数据）
+- `web/src/index.css`：Tailwind 主题配置（仅 React 组件路径使用）
+
+### 遗留静态页（`docs/`、`guide/`、`examples.html`、`changelog.html`、`en/`）
+尚未迁移到 React 的内容页，由 postbuild 原样拷贝进 `dist/`：
+
+- `docs/`：用户手册（zh 与 en 的 .md 正文 + 生成的静态页 + 12 张原型界面）、产品选择指南正文
+- `guide/`、`en/guide/`：双语产品选择指南静态页（由 `scripts/build-decision-guide.py` 生成）
+- `docs/index.html`、`en/docs/index.html`：由 `python3 scripts/build-docs.py` 生成（需要 Pandoc）
+- `examples.html`、`en/examples.html`：行业示例
+- `changelog.html`、`en/changelog.html`：更新日志
+
+### 样式（单一产物）
+- `assets/css/app.css`：唯一的站点样式表，Tailwind CSS 4 + daisyUI 5 编译产物
+- `styles.css`、`showcases.css`、`examples.css`、`integrations/integrations.css`：样式构建输入，由 `scripts/build-css.sh` 编译进 `app.css`，不再被页面直接引用
+- `assets/mascots/`、`assets/scenes/`、`assets/fonts/`：素材与自托管字体
+
+### 其他
+- `copy/{zh,en}.toml`：i18n 文案单一来源（React 与静态页渲染共用）
+- `scripts/`：文档/样式/llms 生成脚本
+- `llms.txt`：AI 友好站点索引，由 `scripts/gen-llms.py` 生成
 
 此工程只包含官网和文档，不含原应用的 Fastify API、PocketBase 或登录/工作区功能。完整应用后端需单独部署。
-
-## 目录
-
-- `index.html`：官网
-- `en/index.html`：英文官网
-- `showcases.html`、`showcases.js`：中文滚动产品展示，使用组件演示 8 个工作场景（样式在 `showcases.css`，已并入 `app.css` 构建）
-- `zh/docs/USER_GUIDE.md`：中文用户手册正文
-- `docs/USER_GUIDE.en.md`：英文用户手册正文
-- `docs/DECISION_GUIDE.md`、`docs/DECISION_GUIDE.en.md`：双语产品选择指南正文
-- `docs/index.html`、`en/docs/index.html`、`guide/index.html`、`en/guide/index.html`：双语文档静态页面，由 `python3 scripts/build-docs.py` 生成（需要 Pandoc）
-- `docs/prototypes/`：12 张独立英文 HTML 界面原型、同名 PNG 预览与图库；`scripts/build-prototypes.py` 生成 HTML
-- `scripts/render-prototypes.py`：从英文 HTML 导出 1440×900 PNG（需要 WeasyPrint、PyMuPDF 和字体）
-- `docs/product/`、`docs/architecture/`：旧文档地址，跳转到手册对应章节
-- `assets/mascots/`：官网使用的 MIAO 猫咪素材
-- `assets/scenes/`：AI 生成的工作场景示意图
-- `assets/css/app.css`：唯一的站点样式表。Tailwind CSS 4 + daisyUI 5 编译产物，`styles.css`/`showcases.css`/`examples.css`/`integrations/integrations.css` 作为构建输入一并编译进来，页面不再单独 link 这些文件；替代 CDN 引用。由 `scripts/build-css.sh` 重新生成，改动类名后在 HTML 中递增 `app.css?v=` 版本号
-- `assets/fonts/`：自托管的 Caveat woff2 字体（wordmark 使用）
-- `styles.css` 等：站点样式的构建输入（编译进 `app.css`，不再被页面直接引用）
-- `vercel.json`：静态路由与图片缓存设置
 
 场景图由内置 ImageGen 生成，提示词：
 
