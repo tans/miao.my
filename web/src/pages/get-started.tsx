@@ -12,7 +12,7 @@ export default function GetStarted() {
       <p className="section-kicker">{t("get-started.kicker")}</p>
       <h1>{t("get-started.h1")}</h1>
       <p className="start-lede">
-        {t("get-started.lede1")}{t("get-started.lede2")}{t("get-started.lede3")}{t("get-started.lede4")}{t("get-started.lede5")}
+        {t("get-started.lede1")}{t("get-started.lede2")}{t("get-started.lede3")}
       </p>
       <div className="start-notice">
         <strong>{t("get-started.notice_title")}</strong>
@@ -21,88 +21,47 @@ export default function GetStarted() {
 
       <section className="start-grid" aria-label={t("get-started.grid_label")}>
         <article className="start-card">
-          <p className="section-kicker">{t("get-started.local.kicker")}</p>
-          <h2>{t("get-started.local.title")}</h2>
-          <p>{t("get-started.local.body1")}{t("get-started.local.body2")}{t("get-started.local.body3")}</p>
-          <dl className="start-meta">
-            <div>
-              <dt>{t("get-started.dt_prereq")}</dt>
-              <dd>{t("get-started.local.dd_prereq1")}{t("get-started.local.dd_prereq2")}</dd>
-            </div>
-            <div>
-              <dt>{t("get-started.dt_product")}</dt>
-              <dd>{t("get-started.local.dd_product")}</dd>
-            </div>
-            <div>
-              <dt>{t("get-started.local.dt_updates")}</dt>
-              <dd>{t("get-started.local.dd_updates1")}{t("get-started.local.dd_updates2")}</dd>
-            </div>
-          </dl>
+          <p className="section-kicker">{t("get-started.watch.kicker")}</p>
+          <h2>{t("get-started.watch.title")}</h2>
+          <p>{t("get-started.watch.body1")}{t("get-started.watch.body2")}{t("get-started.watch.body3")}</p>
           <div className="start-actions">
-            <a className="btn btn-neutral" href="https://github.com/tans/miao#self-hosting">{t("get-started.local.cta")}</a>
-            <a href="/docs/">{t("get-started.local.link")}</a>
+            <a className="btn btn-neutral" href="/examples.html">{t("get-started.watch.cta")}</a>
           </div>
-          <span className="status ready">{t("get-started.local.status")}</span>
+          <span className="status ready">{t("get-started.watch.status")}</span>
         </article>
 
         <article className="start-card start-card-featured">
-          <p className="section-kicker">{t("get-started.production.kicker")}</p>
-          <h2>{t("get-started.production.title")}</h2>
-          <p>{t("get-started.production.body1")}{t("get-started.production.body2")}{t("get-started.production.body3")}</p>
-          <dl className="start-meta">
-            <div>
-              <dt>{t("get-started.dt_prereq")}</dt>
-              <dd>{t("get-started.production.dd_prereq")}</dd>
-            </div>
-            <div>
-              <dt>{t("get-started.dt_product")}</dt>
-              <dd>{t("get-started.production.dd_product")}</dd>
-            </div>
-            <div>
-              <dt>{t("get-started.production.dt_rollback")}</dt>
-              <dd>{t("get-started.production.dd_rollback1")}{t("get-started.production.dd_rollback2")}</dd>
-            </div>
-          </dl>
+          <p className="section-kicker">{t("get-started.deploy.kicker")}</p>
+          <h2>{t("get-started.deploy.title")}</h2>
+          <p>{t("get-started.deploy.body1")}{t("get-started.deploy.body2")}{t("get-started.deploy.body3")}</p>
           <div className="start-actions">
-            <a className="btn btn-neutral" href="https://github.com/tans/miao/releases">{t("get-started.production.cta")}</a>
-            <a href="/self-hosting/">{t("get-started.production.link1")}</a>
+            <a className="btn btn-neutral" href="/self-hosting/">{t("get-started.deploy.cta")}</a>
+            <a href="https://github.com/tans/miao/releases">{t("get-started.deploy.link1")}</a>
             {" · "}
-            <a href="/self-hosting/costs/">{t("get-started.production.link2")}</a>
+            <a href="/self-hosting/costs/">{t("get-started.deploy.link2")}</a>
           </div>
-          <span className="status verify">{t("get-started.production.status")}</span>
+          <span className="status verify">{t("get-started.deploy.status")}</span>
         </article>
+      </section>
 
-        <article className="start-card">
-          <p className="section-kicker">{t("get-started.contribute.kicker")}</p>
-          <h2>{t("get-started.contribute.title")}</h2>
-          <p>{t("get-started.contribute.body1")}{t("get-started.contribute.body2")}{t("get-started.contribute.body3")}</p>
-          <dl className="start-meta">
-            <div>
-              <dt>{t("get-started.dt_prereq")}</dt>
-              <dd>{t("get-started.contribute.dd_prereq")}</dd>
-            </div>
-            <div>
-              <dt>{t("get-started.dt_product")}</dt>
-              <dd>{t("get-started.contribute.dd_product")}</dd>
-            </div>
-            <div>
-              <dt>{t("get-started.contribute.dt_boundary")}</dt>
-              <dd>{t("get-started.contribute.dd_boundary1")}{t("get-started.contribute.dd_boundary2")}</dd>
-            </div>
-          </dl>
-          <div className="start-actions">
-            <a className="btn btn-neutral" href="https://github.com/tans/miao/issues">{t("get-started.contribute.cta")}</a>
-            <a href="https://github.com/tans/miao/blob/main/AGENTS.md">{t("get-started.contribute.link")}</a>
-          </div>
-          <span className="status ready">{t("get-started.contribute.status")}</span>
-        </article>
+      <section className="start-steps" aria-labelledby="steps-title">
+        <p className="section-kicker">{t("get-started.steps.kicker")}</p>
+        <h2 id="steps-title">{t("get-started.steps.title")}</h2>
+        <ol className="start-steps-list">
+          {[1, 2, 3].map((n) => (
+            <li key={n}>
+              <strong>{t(`get-started.steps.step${n}_title`)}</strong>
+              <span>{t(`get-started.steps.step${n}_body`)}</span>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section className="start-next" aria-labelledby="next-title">
         <p className="section-kicker">{t("get-started.next.kicker")}</p>
         <h2 id="next-title">{t("get-started.next.title")}</h2>
         <div className="start-next-grid">
-          <a href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md">
+          <a href="/docs/">
             <strong>{t("get-started.next.ops_title")}</strong>
             <span>{t("get-started.next.ops_desc")}</span>
           </a>
