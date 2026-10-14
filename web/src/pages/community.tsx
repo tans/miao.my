@@ -1,6 +1,32 @@
+import { useState } from "react";
 import { SiteLayout, GithubIcon, ShieldIcon } from "@/components/site/SiteLayout";
 import { useCopy } from "@/lib/i18n";
 import { useLocale, usePageMeta } from "@/lib/locale";
+
+function CopyTemplate({ steps, hint }: { steps: string[]; hint: string }) {
+  const [copied, setCopied] = useState(false);
+  const text = steps.map((s) => `- ${s}`).join("\n");
+  return (
+    <div className="community-template">
+      <ul>
+        {steps.map((s, i) => (
+          <li key={i}>{s}</li>
+        ))}
+      </ul>
+      <button
+        type="button"
+        className="btn btn-outline btn-sm"
+        onClick={() => {
+          void navigator.clipboard.writeText(text);
+          setCopied(true);
+          setTimeout(() => setCopied(false), 1600);
+        }}
+      >
+        {copied ? "✓" : hint}
+      </button>
+    </div>
+  );
+}
 
 export default function Community() {
   const { locale } = useLocale();
@@ -14,40 +40,47 @@ export default function Community() {
         <h1 id="community-title">{t("community.h1")}</h1>
         <p>{t("community.lede1")}{t("community.lede2")}{t("community.lede3")}</p>
         <div className="community-actions">
-          <a className="btn btn-neutral" href="https://github.com/tans/miao/issues">
+          <a className="btn btn-neutral" href={t("community.found_bug.link_href")}>
             {t("community.cta_issues")} <GithubIcon />
           </a>
-          <a className="btn btn-outline" href="/docs/">{t("community.cta_docs")}</a>
+          <a className="btn btn-outline" href={t("community.help_not_sure.link_href")}>{t("community.cta_docs")}</a>
         </div>
       </section>
 
       <section className="community-grid" aria-labelledby="routes-title">
-        <h2 id="routes-title">{t("community.routes_title")}</h2>
+        <h2 id="routes-title">{t("community.routes.title")}</h2>
         <div className="community-cards">
-          <article className="community-card">
-            <p className="section-kicker">{t("community.bug.kicker")}</p>
-            <h3>{t("community.bug.title")}</h3>
-            <p>{t("community.bug.body")}</p>
-            <a href="https://github.com/tans/miao/issues/new/choose">{t("community.bug.link")}</a>
-          </article>
-          <article className="community-card">
-            <p className="section-kicker">{t("community.idea.kicker")}</p>
-            <h3>{t("community.idea.title")}</h3>
-            <p>{t("community.idea.body1")}{t("community.idea.body2")}</p>
-            <a href="https://github.com/tans/miao/discussions">{t("community.idea.link")}</a>
-          </article>
-          <article className="community-card">
-            <p className="section-kicker">{t("community.self_hosting.kicker")}</p>
-            <h3>{t("community.self_hosting.title")}</h3>
-            <p>{t("community.self_hosting.body1")}{t("community.self_hosting.body2")}</p>
-            <a href="/self-hosting/">{t("community.self_hosting.link")}</a>
-          </article>
-          <article className="community-card">
-            <p className="section-kicker">{t("community.releases.kicker")}</p>
-            <h3>{t("community.releases.title")}</h3>
-            <p>{t("community.releases.body1")}{t("community.releases.body2")}</p>
-            <a href="https://github.com/tans/miao/releases">{t("community.releases.link")}</a>
-          </article>
+          {(["help_not_sure", "install_error", "found_bug"] as const).map((k) => (
+            <article className="community-card" key={k}>
+              <p className="section-kicker">{t(`community.${k}.kicker`)}</p>
+              <h3>{t(`community.${k}.title`)}</h3>
+              <p>{t(`community.${k}.body`)}</p>
+              <a href={t(`community.${k}.link_href`)}>{t(`community.${k}.link`)}</a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="community-template-wrap" aria-labelledby="template-title">
+        <p className="section-kicker">{t("community.template.kicker")}</p>
+        <h2 id="template-title">{t("community.template.title")}</h2>
+        <CopyTemplate
+          steps={[1, 2, 3, 4, 5].map((n) => t(`community.template.step${n}`))}
+          hint={t("community.template.copy_hint")}
+        />
+      </section>
+
+      <section className="community-grid" aria-labelledby="build-title">
+        <h2 id="build-title">{t("community.build_together.title")}</h2>
+        <div className="community-cards">
+          {(["idea", "code", "releases"] as const).map((k) => (
+            <article className="community-card" key={k}>
+              <p className="section-kicker">{t(`community.build_together.${k}_title`)}</p>
+              <h3>{t(`community.build_together.${k}_title`)}</h3>
+              <p>{t(`community.build_together.${k}_body`)}</p>
+              <a href={t(`community.build_together.${k}_link_href`)}>{t(`community.build_together.${k}_link`)}</a>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -57,9 +90,9 @@ export default function Community() {
           <h2 id="safety-title">{t("community.security.title")}</h2>
           <p>
             {t("community.security.body1")}{t("community.security.body2")}
-            {t("community.security.body3")}{t("community.security.body4")}
+            {t("community.security.body3")}
           </p>
-          <a className="btn btn-outline" href="https://github.com/tans/miao/security/advisories/new">
+          <a className="btn btn-outline" href={t("community.security.cta_href")}>
             {t("community.security.cta")} <ShieldIcon />
           </a>
         </div>
@@ -68,8 +101,6 @@ export default function Community() {
           <ul>
             <li>{t("community.boundary.li1")}</li>
             <li>{t("community.boundary.li2")}</li>
-            <li>{t("community.boundary.li3")}</li>
-            <li>{t("community.boundary.li4")}</li>
           </ul>
         </div>
       </section>

@@ -214,60 +214,80 @@ community_title = "Report a problem"
 community_desc = "Public Issues, Discussions, Releases and support boundaries ↗"
 
 [community]
-title = "Community and support · MIAO"
-meta1 = "MIAO community, support and security entry points: "
-meta2 = "docs, issues, releases and self-hosting boundaries."
-kicker = "COMMUNITY / SUPPORT"
-h1 = "Start with a reproducible signal."
-lede1 = "This is MIAO’s public collaboration map: "
-lede2 = "read the docs first, then choose the right issue, discussion or release record. "
-lede3 = "MIAO is open source and self-hosted; community collaboration is not an enterprise SLA."
-cta_issues = "Browse issues"
+title = "Stuck? Find help here · MIAO"
+meta1 = "Stuck using MIAO? Read the docs, or report a problem and suggest improvements. "
+meta2 = "Community support is public collaboration, not a commercial helpdesk."
+kicker = "HELP & SUPPORT"
+h1 = "Stuck? Find help here."
+lede1 = "If you hit a problem while using MIAO, read the docs first — or report an issue and suggest improvements. "
+lede2 = "Community support is public collaboration, not a commercial helpdesk."
+lede3 = ""
+cta_issues = "New issue"
 cta_docs = "Read the docs"
-routes_title = "Choose the right route"
 
-[community.bug]
-kicker = "BUG"
-title = "Report a reproducible problem"
-body = "Include minimal reproduction steps, the MIAO version or commit, browser/system details and a redacted error excerpt."
-link = "Open an issue ↗"
+[community.routes]
+title = "What problem are you facing?"
 
-[community.idea]
-kicker = "IDEA"
-title = "Suggest a capability"
-body1 = "Describe the work problem, affected roles and acceptable boundaries. "
-body2 = "Check the docs and open issues first."
-link = "Join discussions ↗"
+[community.help_not_sure]
+kicker = "New to MIAO"
+title = "Not sure how to create apps, manage members or use background tasks?"
+body = "Read the user manual and try once with a concrete need — building from a real request beats reading everything first."
+link = "Read the user manual"
+link_href = "/docs/"
 
-[community.self_hosting]
-kicker = "SELF-HOSTING"
-title = "Debug a deployment"
-body1 = "Start with the self-hosting and operations docs, "
-body2 = "then share the deployment mode, commit, log summary and a reproducible command."
-link = "Read self-hosting docs"
+[community.install_error]
+kicker = "Installation or runtime error"
+title = "Problems with the server, model configuration, backups or recovery?"
+body = "Check the self-hosting and troubleshooting docs first; they list common environments and known boundaries."
+link = "View the self-hosting docs"
+link_href = "/self-hosting/"
 
-[community.releases]
-kicker = "RELEASES"
-title = "Confirm versions and changes"
-body1 = "Use releases and the changelog to align versions, compatibility and rollback boundaries. "
-body2 = "Local success is not production acceptance."
-link = "Browse releases ↗"
+[community.found_bug]
+kicker = "Found a problem"
+title = "A feature is broken, the UI is wrong, or copy/translations are off?"
+body = "Report product-runtime problems to the tans/miao repository; website, copy and translation problems go to tans/miao.my."
+link = "Report a product issue"
+link_href = "https://github.com/tans/miao/issues/new/choose"
+
+[community.template]
+kicker = "BEFORE REPORTING"
+title = "Prepare these details before reporting"
+step1 = "Version: release number or commit"
+step2 = "Problem: one sentence describing what happened"
+step3 = "How to reproduce: concrete steps"
+step4 = "Expected / actual result: write both"
+step5 = "Environment and redacted logs: OS, browser, log snippets with sensitive data removed"
+copy_hint = "Copy template"
+
+[community.build_together]
+kicker = "BUILD TOGETHER"
+title = "Help improve MIAO"
+idea_title = "Feature suggestions"
+idea_body = "Describe the work problem to solve, the affected roles and acceptable boundaries."
+idea_link = "Join Discussions ↗"
+idea_link_href = "https://github.com/tans/miao/discussions"
+code_title = "Code contributions"
+code_body = "Read the contribution guide and pick a reproducible issue to start from."
+code_link = "Read contribution guide ↗"
+code_link_href = "https://github.com/tans/miao/blob/main/AGENTS.md"
+releases_title = "Releases"
+releases_body = "Download release versions from Releases and follow recent changes in the changelog."
+releases_link = "View Releases ↗"
+releases_link_href = "https://github.com/tans/miao/releases"
 
 [community.security]
 kicker = "SECURITY"
-title = "Do not paste security issues in public."
-body1 = "Never include tokens, passwords, internal addresses, complete production data "
-body2 = "or unredacted attachments in an issue, discussion or log. "
-body3 = "Prefer GitHub Security Advisories; "
-body4 = "if the repository does not show a private report entry, contact the maintainers to confirm a private channel."
+title = "Security issues: report through a private channel."
+body1 = "Never paste tokens, passwords, internal addresses, complete production data or unredacted attachments in an issue, discussion or log."
+body2 = "Prefer GitHub Security Advisories; "
+body3 = "if the repository does not show a private report entry, contact the maintainers to confirm a private channel."
 cta = "Open private security report"
+cta_href = "https://github.com/tans/miao/security/advisories/new"
 
 [community.boundary]
-title = "Support boundaries"
-li1 = "Public support: docs, reproducible problems, code collaboration and release notes."
-li2 = "Self-hosting responsibility: model configuration, backups, credentials, networking and on-site operations stay with the deployer."
-li3 = "Upstream services: model, Jev, mail and paid API quotas or authorization require separate acceptance."
-li4 = "Response expectations: issues are triaged by reproducibility, impact and maintainer time; no enterprise SLA is promised."
+title = "About support scope"
+li1 = "Response is not guaranteed to be timely: issues are triaged by reproducibility, impact and maintainer time, not as a helpdesk ticket."
+li2 = "Production operations stay with the self-hoster: model configuration, backups, credentials, networking and service availability are not community-guaranteed."
 
 [self-hosting]
 title = "Self-hosting and security boundaries · MIAO"

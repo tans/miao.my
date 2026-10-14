@@ -214,60 +214,80 @@ community_title = "反馈问题"
 community_desc = "公开 Issue、Discussion、Release 和支持边界 ↗"
 
 [community]
-title = "社区与支持 · MIAO"
-meta1 = "MIAO 社区、支持与安全反馈入口："
-meta2 = "从文档、Issue、发布记录到自托管排障。"
-kicker = "COMMUNITY / SUPPORT"
-h1 = "遇到问题，从一条可复现的信息开始。"
-lede1 = "这里是 MIAO 的公开协作入口："
-lede2 = "先读文档，再选择合适的 Issue、讨论或发布记录。"
-lede3 = "MIAO 是开源、自托管项目，社区协作不等同于企业 SLA。"
-cta_issues = "查看 Issues"
-cta_docs = "先读文档"
-routes_title = "选择正确的入口"
+title = "遇到问题，从这里找到帮助 · MIAO"
+meta1 = "使用 MIAO 遇到困难：先查文档，也可以反馈问题、提出建议。"
+meta2 = "社区支持是公开协作，不等于商业客服服务。"
+kicker = "HELP & SUPPORT"
+h1 = "遇到问题？从这里找到帮助。"
+lede1 = "使用 MIAO 遇到困难，可以先查文档，也可以反馈问题、提出建议。"
+lede2 = "社区支持是公开协作，不等于商业客服服务。"
+lede3 = ""
+cta_issues = "新建 Issue"
+cta_docs = "查看使用文档"
 
-[community.bug]
-kicker = "BUG"
-title = "报告可复现的问题"
-body = "请附上最小复现步骤、MIAO 版本或 commit、浏览器/系统环境，以及已脱敏的错误片段。"
-link = "新建 Issue ↗"
+[community.routes]
+title = "你遇到了什么问题？"
 
-[community.idea]
-kicker = "IDEA"
-title = "提出功能建议"
-body1 = "说明要解决的工作问题、受影响的角色和可接受的边界。"
-body2 = "先确认它不是现有文档或开放 Issue。"
-link = "参加 Discussions ↗"
+[community.help_not_sure]
+kicker = "不会使用"
+title = "创建应用、成员权限、后台任务，还不熟悉？"
+body = "先读用户手册，动手试一次：从一个具体需求开始搭建，比从头看文档更快。"
+link = "阅读用户手册"
+link_href = "/docs/"
 
-[community.self_hosting]
-kicker = "SELF-HOSTING"
-title = "排查部署问题"
-body1 = "先看自托管、运维和发布文档，"
-body2 = "再提供部署方式、commit、日志摘要和可复现命令。"
+[community.install_error]
+kicker = "安装或运行出错"
+title = "服务器、模型配置、备份恢复遇到问题？"
+body = "先看自托管与排障文档，那里列出了常见环境和已知边界。"
 link = "查看自托管文档"
+link_href = "/self-hosting/"
 
-[community.releases]
-kicker = "RELEASES"
-title = "确认版本与变更"
-body1 = "使用发布记录和 changelog 对齐版本、兼容性和回滚边界，"
-body2 = "不把本地成功当成生产验收。"
-link = "查看 Releases ↗"
+[community.found_bug]
+kicker = "发现问题"
+title = "功能异常、界面错误、文案或翻译有误？"
+body = "产品运行问题提交到 tans/miao 仓库；官网展示、文案和翻译问题提交到 tans/miao.my 仓库。"
+link = "反馈产品问题"
+link_href = "https://github.com/tans/miao/issues/new/choose"
+
+[community.template]
+kicker = "BEFORE REPORTING"
+title = "提交问题前，准备这些信息"
+step1 = "使用版本：Release 版本号或 commit"
+step2 = "遇到的问题：一句话说明现象"
+step3 = "如何复现：操作步骤（越具体越好）"
+step4 = "预期结果 / 实际结果：两个都写"
+step5 = "环境与脱敏日志：系统、浏览器、去掉敏感信息的日志片段"
+copy_hint = "复制模板"
+
+[community.build_together]
+kicker = "BUILD TOGETHER"
+title = "一起完善 MIAO"
+idea_title = "功能建议"
+idea_body = "说明要解决的工作问题、受影响的角色和可接受的边界。"
+idea_link = "参加 Discussions ↗"
+idea_link_href = "https://github.com/tans/miao/discussions"
+code_title = "代码贡献"
+code_body = "阅读贡献约定，从公开 Issue 里挑一个可复现的问题开始。"
+code_link = "阅读贡献约定 ↗"
+code_link_href = "https://github.com/tans/miao/blob/main/AGENTS.md"
+releases_title = "版本更新"
+releases_body = "在 Releases 查看可下载的正式版本，在更新日志了解近期变化。"
+releases_link = "查看 Releases ↗"
+releases_link_href = "https://github.com/tans/miao/releases"
 
 [community.security]
 kicker = "SECURITY"
-title = "安全问题不要公开粘贴。"
-body1 = "不要在 Issue、Discussion 或日志中提交 token、密码、内部地址、"
-body2 = "完整生产数据或未脱敏附件。"
-body3 = "优先使用 GitHub Security Advisories 的私密报告入口；"
-body4 = "如果仓库没有显示该入口，请先联系维护者确认私密通道。"
+title = "安全问题，请通过私密渠道反馈。"
+body1 = "不要在 Issue、Discussion 或日志中粘贴 token、密码、内部地址、完整生产数据或未脱敏附件。"
+body2 = "优先使用 GitHub Security Advisories 的私密报告入口；"
+body3 = "如果仓库没有显示该入口，请先联系维护者确认私密通道。"
 cta = "打开私密安全报告"
+cta_href = "https://github.com/tans/miao/security/advisories/new"
 
 [community.boundary]
-title = "支持边界"
-li1 = "公开支持：文档、可复现问题、代码协作和发布说明。"
-li2 = "自托管责任：模型配置、备份、凭据、网络和现场运维由部署方负责。"
-li3 = "上游服务：模型、Jev、邮件或付费 API 的配额与授权需要单独验收。"
-li4 = "响应预期：Issue 会按可复现性、影响范围和维护者时间排序，不承诺企业 SLA。"
+title = "关于支持范围"
+li1 = "社区响应不保证时效：Issue 会按可复现性、影响范围和维护者时间排序，不是客服工单。"
+li2 = "生产运维仍由自托管者负责：模型配置、备份、凭据、网络和服务可用性不在社区保证范围。"
 
 [self-hosting]
 title = "自托管与安全边界 · MIAO"
