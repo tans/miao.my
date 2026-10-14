@@ -4,7 +4,7 @@ import { useLocale, usePageMeta } from "@/lib/locale";
 
 export default function SelfHosting() {
   const { locale } = useLocale();
-  const { t, h } = useCopy(locale);
+  const { t } = useCopy(locale);
   usePageMeta("self-hosting.title", ["self-hosting.meta"]);
 
   return (
@@ -12,107 +12,129 @@ export default function SelfHosting() {
       <p className="section-kicker">{t("self-hosting.kicker")}</p>
       <h1 className="text-[clamp(2.5rem,6vw,5rem)] my-2 mb-4">{t("self-hosting.h1")}</h1>
       <p className="lede text-[1.2rem] max-w-[700px]">
-        {t("self-hosting.lede1")}{t("self-hosting.lede2")}{t("self-hosting.lede3")}{t("self-hosting.lede4")}
+        {t("self-hosting.lede1")}{t("self-hosting.lede2")}
       </p>
       <p className="note p-4 pl-5 border-l-4 border-[#c99b52] bg-[#f8f1e5]">
         {t("self-hosting.note_lead")}
         <a href="/self-hosting/costs/">{t("self-hosting.note_link")}</a>
         {t("self-hosting.note_tail1")}{t("self-hosting.note_tail2")}
       </p>
-      <p>
-        <span className="badge badge-success">{t("self-hosting.badge_implemented")}</span>
-        <span className="badge badge-warning">{t("self-hosting.badge_verify")}</span>
-        <span className="badge badge-error">{t("self-hosting.badge_not_provided")}</span>
+
+      <h2 className="mt-14">{t("self-hosting.prepare.title")}</h2>
+      <p className="muted">{t("self-hosting.prepare.intro")}</p>
+      <div className="boundary grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4 my-6">
+        <div className="p-4 border border-[#d8d7ce] rounded-xl">
+          <span className="badge badge-soft">{t("self-hosting.prepare.must_kicker")}</span>
+          <ul>
+            <li><strong>{t("self-hosting.prepare.must1_title")}</strong><span>{t("self-hosting.prepare.must1_body")}</span></li>
+            <li><strong>{t("self-hosting.prepare.must2_title")}</strong><span>{t("self-hosting.prepare.must2_body")}</span></li>
+            <li><strong>{t("self-hosting.prepare.must3_title")}</strong><span>{t("self-hosting.prepare.must3_body")}</span></li>
+          </ul>
+        </div>
+        <div className="p-4 border border-[#d8d7ce] rounded-xl">
+          <span className="badge badge-soft">{t("self-hosting.prepare.public_kicker")}</span>
+          <ul>
+            <li><strong>{t("self-hosting.prepare.public1_title")}</strong><span>{t("self-hosting.prepare.public1_body")}</span></li>
+          </ul>
+          <span className="badge badge-soft">{t("self-hosting.prepare.model_kicker")}</span>
+          <ul>
+            <li><strong>{t("self-hosting.prepare.model1_title")}</strong><span>{t("self-hosting.prepare.model1_body")}</span></li>
+          </ul>
+          <span className="badge badge-soft">{t("self-hosting.prepare.mail_kicker")}</span>
+          <ul>
+            <li><strong>{t("self-hosting.prepare.mail1_title")}</strong><span>{t("self-hosting.prepare.mail1_body")}</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="mt-14">{t("self-hosting.steps.title")}</h2>
+      <ol className="steps pl-5 list-decimal">
+        {[1, 2, 3].map((n) => (
+          <li className="my-4" key={n}>
+            <strong>{t(`self-hosting.steps.step${n}_title`)}。</strong>
+            {t(`self-hosting.steps.step${n}_body`)}
+          </li>
+        ))}
+      </ol>
+      <p className="note p-4 pl-5 border-l-4 border-[#c99b52] bg-[#f8f1e5]">
+        {t("self-hosting.steps.finish_note")}
       </p>
 
-      <h2 className="mt-14">{t("self-hosting.architecture.title")}</h2>
-      <div className="architecture my-8 p-4 border border-[#d8d7ce] rounded-2xl bg-[#fbfaf4] overflow-auto">
-        <svg className="block min-w-[720px] w-full h-auto" viewBox="0 0 900 330" role="img" aria-labelledby="arch-title arch-desc">
+      <h2 className="mt-14">{t("self-hosting.data.title")}</h2>
+      <div className="boundary grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-4 my-6">
+        {[1, 2, 3].map((n) => (
+          <article className="p-4 border border-[#d8d7ce] rounded-xl" key={n}>
+            <h3 className="mt-0">{t(`self-hosting.data.point${n}_title`)}</h3>
+            <p className="text-[0.95rem] leading-relaxed text-[#5d655e]">{t(`self-hosting.data.point${n}_body`)}</p>
+          </article>
+        ))}
+      </div>
+      <details className="border border-[#d8d7ce] rounded-xl bg-[#fbfaf4] p-4 my-4">
+        <summary className="cursor-pointer font-semibold">{t("self-hosting.data.arch_link")}</summary>
+        <p className="note text-[0.9rem] my-3">{t("self-hosting.data.arch_intro")}</p>
+        <svg className="block w-full h-auto" viewBox="0 0 900 250" role="img" aria-labelledby="arch-title arch-desc">
           <title id="arch-title">{t("self-hosting.architecture.svg_title")}</title>
-          <desc id="arch-desc">{t("self-hosting.architecture.desc1")}{t("self-hosting.architecture.desc2")}{t("self-hosting.architecture.desc3")}</desc>
+          <desc id="arch-desc">{t("self-hosting.architecture.desc1")}{t("self-hosting.architecture.desc2")}</desc>
+          <g fontFamily="system-ui,sans-serif" fontSize="14" fill="#26332b" stroke="#566b5d" strokeWidth="1.5">
+            <rect x="20" y="90" width="130" height="60" rx="10" fill="#e6f0e6" />
+            <text x="85" y="118" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_browser")}</text>
+            <text x="85" y="138" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_browser_sub")}</text>
+            <rect x="210" y="40" width="380" height="160" rx="14" fill="#eef3ed" />
+            <text x="400" y="68" textAnchor="middle" stroke="none" fontWeight="bold">{t("self-hosting.architecture.node_process")}</text>
+            <rect x="235" y="82" width="155" height="42" rx="7" fill="#fffdf7" />
+            <text x="312" y="107" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_api")}</text>
+            <rect x="420" y="82" width="145" height="42" rx="7" fill="#fffdf7" />
+            <text x="492" y="107" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_agent")}</text>
+            <rect x="235" y="140" width="155" height="42" rx="7" fill="#fffdf7" />
+            <text x="312" y="165" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_ui")}</text>
+            <rect x="420" y="140" width="145" height="42" rx="7" fill="#fffdf7" />
+            <text x="492" y="165" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_db")}</text>
+            <rect x="650" y="150" width="220" height="55" rx="10" fill="#f7ead4" />
+            <text x="760" y="177" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_gateway")}</text>
+            <text x="760" y="195" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_gateway_sub")}</text>
+            <rect x="650" y="30" width="220" height="55" rx="10" fill="#e8e1d8" />
+            <text x="760" y="57" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_data")}</text>
+            <text x="760" y="75" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_data_sub")}</text>
+            <path d="M150 120h60" markerEnd="url(#arrow2)" fill="none" />
+            <path d="M590 103h60" markerEnd="url(#arrow2)" fill="none" />
+            <path d="M590 161l60 34" markerEnd="url(#arrow2)" fill="none" />
+            <path d="M150 120h60" markerEnd="url(#arrow2)" fill="none" />
+          </g>
           <defs>
-            <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+            <marker id="arrow2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
               <path d="M0,0 L8,4 L0,8z" fill="#566b5d" />
             </marker>
           </defs>
-          <g fontFamily="system-ui,sans-serif" fontSize="16" fill="#26332b" stroke="#566b5d" strokeWidth="2">
-            <rect x="20" y="125" width="145" height="70" rx="12" fill="#e6f0e6" />
-            <text x="92" y="155" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_browser")}</text>
-            <text x="92" y="178" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_browser_sub")}</text>
-            <rect x="210" y="75" width="390" height="170" rx="16" fill="#eef3ed" />
-            <text x="405" y="103" textAnchor="middle" stroke="none" fontWeight="bold">{t("self-hosting.architecture.node_process")}</text>
-            <rect x="235" y="120" width="155" height="45" rx="8" fill="#fffdf7" />
-            <text x="312" y="148" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_api")}</text>
-            <rect x="420" y="120" width="155" height="45" rx="8" fill="#fffdf7" />
-            <text x="497" y="148" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_agent")}</text>
-            <rect x="235" y="180" width="155" height="40" rx="8" fill="#fffdf7" />
-            <text x="312" y="205" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_ui")}</text>
-            <rect x="420" y="180" width="155" height="40" rx="8" fill="#fffdf7" />
-            <text x="497" y="205" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_db")}</text>
-            <rect x="650" y="30" width="210" height="65" rx="12" fill="#f7ead4" />
-            <text x="755" y="58" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_gateway")}</text>
-            <text x="755" y="80" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_gateway_sub")}</text>
-            <rect x="650" y="130" width="210" height="65" rx="12" fill="#f7ead4" />
-            <text x="755" y="158" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_jev")}</text>
-            <text x="755" y="180" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_jev_sub")}</text>
-            <rect x="650" y="230" width="210" height="65" rx="12" fill="#e8e1d8" />
-            <text x="755" y="258" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_data")}</text>
-            <text x="755" y="280" textAnchor="middle" stroke="none">{t("self-hosting.architecture.node_data_sub")}</text>
-            <path d="M165 160H210" markerEnd="url(#arrow)" fill="none" />
-            <path d="M600 120L650 70" markerEnd="url(#arrow)" fill="none" />
-            <path d="M600 160H650" markerEnd="url(#arrow)" fill="none" />
-            <path d="M600 210L650 255" markerEnd="url(#arrow)" fill="none" />
-          </g>
         </svg>
-      </div>
-      <p className="note p-4 pl-5 border-l-4 border-[#c99b52] bg-[#f8f1e5]">
-        {t("self-hosting.architecture.note1")}{t("self-hosting.architecture.note2")}
-      </p>
+        <p className="note text-[0.85rem] mt-3">{t("self-hosting.architecture.note1")}</p>
+      </details>
 
-      <h2 className="mt-14">{t("self-hosting.install.title")}</h2>
-      <ol className="steps pl-5 list-decimal">
-        <li className="my-4">
-          {t("self-hosting.install.step1_lead")}
-          <code>{t("self-hosting.install.code_curl")}</code>
-          {t("self-hosting.install.step1_and")}
-          <code>{t("self-hosting.install.code_openssl")}</code>
-          {t("self-hosting.install.step1_mid")}
-          <a href="https://github.com/tans/miao/releases">{t("self-hosting.install.step1_releases")}</a>
-          {t("self-hosting.install.step1_tail")}
-        </li>
-        <li className="my-4">{t("self-hosting.install.step2a")}{t("self-hosting.install.step2b")}</li>
-        <li className="my-4">{t("self-hosting.install.step3a")}{t("self-hosting.install.step3b")}</li>
-      </ol>
-
-      <h2 className="mt-14">{t("self-hosting.permissions.title")}</h2>
-      <div className="boundary grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-4">
-        <article className="p-4 border border-[#d8d7ce] rounded-xl">
-          <h3 className="mt-0">{t("self-hosting.permissions.row1_label")}</h3>
-          <p>{t("self-hosting.permissions.row1_body1")}{t("self-hosting.permissions.row1_body2")}</p>
-          <span className="badge badge-success">{t("self-hosting.badge_implemented")}</span>
-        </article>
-        <article className="p-4 border border-[#d8d7ce] rounded-xl">
-          <h3 className="mt-0">{t("self-hosting.permissions.row2_label")}</h3>
-          <p>{t("self-hosting.permissions.row2_body1")}{t("self-hosting.permissions.row2_body2")}</p>
-          <span className="badge badge-warning">{t("self-hosting.badge_verify")}</span>
-        </article>
-        <article className="p-4 border border-[#d8d7ce] rounded-xl">
-          <h3 className="mt-0">{t("self-hosting.permissions.row3_label")}</h3>
-          <p>{t("self-hosting.permissions.row3_body1")}{t("self-hosting.permissions.row3_body2")}</p>
-          <span className="badge badge-success">{t("self-hosting.badge_implemented")}</span>
-        </article>
-      </div>
-
-      <h2 className="mt-14">{t("self-hosting.operations.title")}</h2>
+      <h2 className="mt-14">{t("self-hosting.ops.title")}</h2>
       <div className="links flex flex-wrap gap-4">
-        <a className="font-semibold" href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md">{t("self-hosting.operations.install")}</a>
-        <a className="font-semibold" href={h("self-hosting.operations.backup_href")}>{t("self-hosting.operations.backup")}</a>
-        <a className="font-semibold" href={h("self-hosting.operations.upgrade_href")}>{t("self-hosting.operations.upgrade")}</a>
-        <a className="font-semibold" href={h("self-hosting.operations.gateway_href")}>{t("self-hosting.operations.gateway")}</a>
+        <a className="font-semibold" href={t("self-hosting.ops.install_href")}>{t("self-hosting.ops.install")}</a>
+        <a className="font-semibold" href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md">{t("self-hosting.ops.backup")}</a>
+        <a className="font-semibold" href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md">{t("self-hosting.ops.upgrade")}</a>
+        <a className="font-semibold" href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md">{t("self-hosting.ops.gateway")}</a>
       </div>
       <p className="note p-4 pl-5 border-l-4 border-[#c99b52] bg-[#f8f1e5]">
-        {t("self-hosting.operations.note1")}{t("self-hosting.operations.note2")}
+        {t("self-hosting.ops.note1")}{t("self-hosting.ops.note2")}
       </p>
+
+      <h2 className="mt-14">{t("self-hosting.details.title")}</h2>
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
+        <a className="p-4 border border-[#d8d7ce] rounded-xl no-underline hover:border-[#9db6a4]" href="/self-hosting/costs/">
+          <h3 className="mt-0">{t("self-hosting.details.costs_title")}</h3>
+          <p className="text-[0.95rem] text-[#5d655e]">{t("self-hosting.details.costs_body")}</p>
+        </a>
+        <a className="p-4 border border-[#d8d7ce] rounded-xl no-underline hover:border-[#9db6a4]" href="/docs/#附录：技术架构">
+          <h3 className="mt-0">{t("self-hosting.details.arch_title")}</h3>
+          <p className="text-[0.95rem] text-[#5d655e]">{t("self-hosting.details.arch_body")}</p>
+        </a>
+        <a className="p-4 border border-[#d8d7ce] rounded-xl no-underline hover:border-[#9db6a4]" href="/docs/#权限与安全边界">
+          <h3 className="mt-0">{t("self-hosting.details.security_title")}</h3>
+          <p className="text-[0.95rem] text-[#5d655e]">{t("self-hosting.details.security_body")}</p>
+        </a>
+      </div>
     </SiteLayout>
   );
 }
