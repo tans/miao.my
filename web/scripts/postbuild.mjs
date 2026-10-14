@@ -11,6 +11,18 @@ const dist = resolve(root, "dist");
 // so the copied static pages always match content/*.md (build-content.py).
 execFileSync("python3", [resolve(root, "scripts/build-content.py")], { stdio: "inherit" });
 
+// guide/index.html is generated from docs/DECISION_GUIDE.{md,en.md} —
+// it is not tracked in git (build products live only in dist).
+execFileSync("python3", [resolve(root, "scripts/build-decision-guide.py")], { stdio: "inherit" });
+
+// Product mockup pages are generated too (pure python, no weasyprint);
+// the PNG previews under docs/prototypes/images/ stay tracked because
+// re-rendering them needs WeasyPrint + a Chinese font.
+execFileSync("python3", [resolve(root, "scripts/build-prototypes.py")], { stdio: "inherit" });
+
+// llms.txt is generated from the final page titles/descriptions.
+execFileSync("python3", [resolve(root, "scripts/gen-llms.py")], { stdio: "inherit" });
+
 // Static site content copied verbatim (assets are referenced by every
 // page; docs/guide/examples/changelog are static pages built as single
 // bilingual files by scripts/build-*.py — no /en/ mirror anymore).

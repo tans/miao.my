@@ -34,12 +34,11 @@ npm run preview     # 预览 http://localhost:5173
 
 ### React MPA（`web/`，主力页面）
 - `web/src/pages/*.html` + `*.tsx`：6 个页面入口（home、get-started、community、self-hosting、self-hosting-costs）
-- `web/src/components/`：React 组件（`site/` 站点骨架，`ui/` 基础组件）
-- `web/src/lib/`：i18n（`i18n.ts`、`locale.tsx`）与 copy 生成（`copy.gen.ts`）
+- `web/src/components/`：React 组件（`site/` 站点骨架）
+- `web/src/lib/`：i18n（`i18n.ts`、`locale.tsx`）与 copy 数据（`copy.gen.ts`，由 `gen-copy.py` 在构建时生成，不入库）
 - `web/vite.config.ts`：Vite 多入口构建（每页独立 HTML）
 - `web/scripts/postbuild.mjs`：构建后把产物排到站点 URL 布局，并拷贝遗留静态页到 `dist/`
 - `web/scripts/gen-copy.py`：从 `copy/*.toml` 生成 `copy.gen.ts`（React 的 i18n 数据）
-- `web/src/index.css`：Tailwind 主题配置（仅 React 组件路径使用）
 
 ### 遗留静态页（`docs/`、`guide/`、`examples.html`、`changelog.html`）
 尚未迁移到 React 的内容页，由 postbuild 原样拷贝进 `dist/`。每页均为**单文件双语**（zh/en 两个区块，客户端切换，默认中文）：
@@ -53,9 +52,9 @@ npm run preview     # 预览 http://localhost:5173
 - `content/`：以上内容页的 Markdown 单一来源（英文版为 `*.en.md`）+ `layouts/` 页面骨架；改内容后运行 `python3 scripts/build-content.py` 重新生成 HTML
 
 ### 样式（单一产物）
-- `assets/css/app.css`：唯一的站点样式表，Tailwind CSS 4 + daisyUI 5 编译产物
-- `styles.css`、`showcases.css`、`examples.css`、`integrations/integrations.css`：样式构建输入，由 `scripts/build-css.sh` 编译进 `app.css`，不再被页面直接引用
-- `assets/mascots/`、`assets/scenes/`、`assets/fonts/`：素材与自托管字体
+- `assets/css/app.css`：唯一的站点样式表，Tailwind CSS 4 + daisyUI 5 编译产物，由 `scripts/build-css.sh` 在构建时生成（不入库）
+- `styles.css`、`examples.css`：样式构建输入，由 `scripts/build-css.sh` 编译进 `app.css`，不再被页面直接引用
+- `assets/mascots/`、`assets/fonts/`：素材与自托管字体
 
 ### 其他
 - `copy/{zh,en}.toml`：i18n 文案单一来源（React 与静态页渲染共用）

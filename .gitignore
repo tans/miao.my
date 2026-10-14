@@ -1,7 +1,18 @@
 .DS_Store
 .workbuddy/
-web/node_modules/
+.impeccable/
 
-dist/
+web/node_modules/
 web/public/assets
 scripts/__pycache__/
+
+dist/
+
+# 构建生成物（scripts/build-*.py / build-css.sh / gen-copy.py 在部署时重建，不入库）
+assets/css/app.css
+web/src/lib/copy.gen.ts
+examples.html
+changelog.html
+guide/index.html
+llms.txt
+docs/prototypes/*.html
