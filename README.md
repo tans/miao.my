@@ -28,7 +28,7 @@ npm run preview     # 预览 http://localhost:5173
 
 - Build Command：`cd web && npm ci && npm run build`
 - Output Directory：`dist`
-- `/en/(.*)` 永久重定向到 `/$1`（React 迁移后英文站并入单 URL，语言由 `?lang=` / localStorage 切换）
+- `/en/(.*)` 永久重定向到 `/$1?lang=en`（兼容旧链接：英文版已并入同一 URL，语言由 `?lang=` / localStorage 切换，无独立英文文件）
 
 ## 架构
 
@@ -41,14 +41,15 @@ npm run preview     # 预览 http://localhost:5173
 - `web/scripts/gen-copy.py`：从 `copy/*.toml` 生成 `copy.gen.ts`（React 的 i18n 数据）
 - `web/src/index.css`：Tailwind 主题配置（仅 React 组件路径使用）
 
-### 遗留静态页（`docs/`、`guide/`、`examples.html`、`changelog.html`、`en/`）
-尚未迁移到 React 的内容页，由 postbuild 原样拷贝进 `dist/`：
+### 遗留静态页（`docs/`、`guide/`、`examples.html`、`changelog.html`）
+尚未迁移到 React 的内容页，由 postbuild 原样拷贝进 `dist/`。每页均为**单文件双语**（zh/en 两个区块，客户端切换，默认中文）：
 
 - `docs/`：用户手册（zh 与 en 的 .md 正文 + 生成的静态页 + 12 张原型界面）、产品选择指南正文
-- `guide/`、`en/guide/`：双语产品选择指南静态页（由 `scripts/build-decision-guide.py` 生成）
-- `docs/index.html`、`en/docs/index.html`：由 `python3 scripts/build-docs.py` 生成（需要 Pandoc）
-- `examples.html`、`en/examples.html`：行业示例，内容源为 `content/examples.{zh,en}.md`，由 `scripts/build-content.py` 生成
-- `changelog.html`、`en/changelog.html`：更新日志，内容源为 `content/changelog.{zh,en}.md`，由 `scripts/build-content.py` 生成
+- `guide/`：双语产品选择指南静态页（由 `scripts/build-decision-guide.py` 生成，无 Pandoc 依赖）
+- `docs/index.html`：由 `python3 scripts/build-docs.py` 生成（需要 Pandoc）
+- `examples.html`：行业示例，内容源为 `content/examples.{zh,en}.md`，由 `scripts/build-content.py` 生成
+- `changelog.html`：更新日志，内容源为 `content/changelog.{zh,en}.md`，由 `scripts/build-content.py` 生成
+- `scripts/bilingual.py`：合并 zh/en 两版为单文件双语页，注入 `assets/js/site-switch.js` 切换
 - `content/`：以上内容页的 Markdown 单一来源（英文版为 `*.en.md`）+ `layouts/` 页面骨架；改内容后运行 `python3 scripts/build-content.py` 重新生成 HTML
 
 ### 样式（单一产物）

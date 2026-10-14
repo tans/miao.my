@@ -1,17 +1,17 @@
 # miao.my
 
-MIAO 是面向内部运营团队的开源、可自托管 Agent 工作台：用自然语言描述需求，由服务端 Agent 生成受控草稿，协作处理记录，再以授权后台任务持续运行。
+MIAO 是适合中小企业的开源、可自托管工作台：说出需求、搭建应用、团队协作，定时任务自动处理重复工作。
 
 站点地址：https://miao.my
-内容语言：简体中文（/）与 English（/en/）镜像。
+内容语言：每页均为中英双语，客户端切换（默认中文，?lang=en 或页面按钮切换）。
 本页由 scripts/gen-llms.py 自动生成并维护，每小时刷新。
 
 ## 页面
 
-- [MIAO｜开源的企业 AI 工作台](https://miao.my/): MIAO 是面向内部运营团队的开源、可自托管 Agent 工作台：描述需求、生成受控草稿、协作处理记录，再以授权后台任务持续运行。
-- [更新日志 · MIAO](https://miao.my/changelog.html): MIAO 版本更新日志：记录 MIAO 应用每次发布的功能、改进与修复。
-- [社区与支持 · MIAO](https://miao.my/community): MIAO 社区、支持与安全反馈入口：从文档、Issue、发布记录到自托管排障。
-- [用户手册 · MIAO](https://miao.my/docs): MIAO 用户手册：从创建工作区、通过 Agent 建立应用，到团队使用、权限管理、数据治理与企业运营。
+- [Changelog · MIAO](https://miao.my/content/layouts/changelog.en.html): MIAO release notes: shipped features, fixes and self-hosting impact.
+- [更新日志 · MIAO](https://miao.my/content/layouts/changelog.zh.html): MIAO 版本更新日志：记录 MIAO 应用每次发布的功能、改进与修复。
+- [Examples | Industry workspaces - MIAO](https://miao.my/content/layouts/examples.en.html): MIAO scenario examples: see how different teams can build their own workspace.
+- [Examples｜行业工作台场景 - MIAO](https://miao.my/content/layouts/examples.zh.html): MIAO 行业场景示例：看看不同企业如何搭出自己的工作台。
 - [MIAO product mockups](https://miao.my/docs/prototypes): Illustrative prototypes of the current MIAO workspace: sample data shows entry points, hierarchy and confirmation boundaries, from sign-in to daily work.
 - [MIAO overview · MIAO current product mockup](https://miao.my/docs/prototypes/01-overview.html): Start work from an app: the assistant drafts proposals whenever you need to create or change one in the MIAO workspace prototype.
 - [Getting started · MIAO current product mockup](https://miao.my/docs/prototypes/02-start.html)
@@ -27,24 +27,3 @@ MIAO 是面向内部运营团队的开源、可自托管 Agent 工作台：用�
 - [Architecture · MIAO current product mockup](https://miao.my/docs/prototypes/12-architecture.html): Responsibilities across the browser, Go service, PocketBase and AI/Jev in the MIAO enterprise architecture prototype.
 - [User Guide · MIAO](https://miao.my/docs/template.en.html): MIAO user guide: create workspaces, build apps with the AI assistant, run team workflows, manage permissions and govern data.
 - [用户手册 · MIAO](https://miao.my/docs/template.html): MIAO 用户手册：从创建工作区、通过 Agent 建立应用，到团队使用、权限管理、数据治理与企业运营。
-- [MIAO | Open source business workspace](https://miao.my/en): MIAO is an open-source, self-hostable Agent workspace for internal operations teams: describe work, shape controlled drafts, collaborate on records, and operate authorized background jobs.
-- [Changelog · MIAO](https://miao.my/en/changelog.html): MIAO release notes: shipped features, fixes and self-hosting impact.
-- [Community and support · MIAO](https://miao.my/en/community): MIAO community, support and security entry points: docs, issues, releases and self-hosting boundaries.
-- [User Guide · MIAO](https://miao.my/en/docs): MIAO user guide: create workspaces, build apps with the AI assistant, run team workflows, manage permissions and govern data.
-- [Examples | Industry workspaces - MIAO](https://miao.my/en/examples.html): MIAO scenario examples: see how different teams can build their own workspace.
-- [Get started · MIAO](https://miao.my/en/get-started): Choose a local evaluation, single-server production, or source contribution path for MIAO.
-- [Product Decision Guide · MIAO](https://miao.my/en/guide): MIAO product decision guide: use public facts to decide whether MIAO fits your team's work.
-- [Integrations | MIAO](https://miao.my/en/integrations): MIAO integration directory: current HTTP(S) reads, declarative collection, controlled workflows, and planned capabilities—with their boundaries.
-- [Agent capabilities and boundaries · MIAO](https://miao.my/en/product/agents): MIAO Agent capabilities, permission boundaries, run receipts and deterministic features that remain available when the model is offline.
-- [Self-hosting and security boundaries · MIAO](https://miao.my/en/self-hosting): MIAO self-hosting architecture, installation path and security boundaries.
-- [Self-hosting costs and service dependencies · MIAO](https://miao.my/en/self-hosting/costs): External services, cost ownership and impact of missing configuration before self-hosting MIAO.
-- [Showcases · Build · Use · Operate · Maintain - MIAO](https://miao.my/en/showcases.html): AI ships software every day, and teams need one shared workspace. MIAO brings build, use, operate and maintain into one open source workspace.
-- [Examples｜行业工作台场景 - MIAO](https://miao.my/examples.html): MIAO 行业场景示例：看看不同企业如何搭出自己的工作台。
-- [开始使用 · MIAO](https://miao.my/get-started): 选择 MIAO 的本地评估、单机生产或源码贡献路径。
-- [产品选择指南 · MIAO](https://miao.my/guide): MIAO 产品选择指南：用公开事实判断 MIAO 是否适合团队的工作。
-- [集成能力｜MIAO](https://miao.my/integrations): MIAO 集成能力目录：区分现有 HTTP(S) 读取、声明式采集、受控工作流和计划能力，并说明权限与边界。
-- [Agent 能力与边界 · MIAO](https://miao.my/product/agents): MIAO Agent 的能力、权限边界、运行回执与模型离线时仍可用的确定性功能。
-- [自托管与安全边界 · MIAO](https://miao.my/self-hosting): MIAO 自托管架构、安装路径与安全边界。
-- [自托管成本与服务依赖 · MIAO](https://miao.my/self-hosting/costs): MIAO 自托管前需要准备的外部服务、费用归属与未配置时的影响。
-- [MIAO｜开源的企业 AI 工作台](https://miao.my/zh): MIAO 是面向内部运营团队的开源、可自托管 Agent 工作台：描述需求、生成受控草稿、协作处理记录，再以授权后台任务持续运行。
-- [Showcases｜搭建 · 使用 · 部署 · 维护，一个工作台 - MIAO](https://miao.my/zh/showcases.html): AI 每天生产软件，企业需要内部统一的工作台。MIAO 把搭建、使用、部署、维护收进同一个开源工作台。

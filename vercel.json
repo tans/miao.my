@@ -6,7 +6,7 @@
   "redirects": [
     {
       "source": "/en/(.*)",
-      "destination": "/$1",
+      "destination": "/$1?lang=en",
       "permanent": true
     }
   ],

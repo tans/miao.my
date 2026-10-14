@@ -78,8 +78,8 @@ const devLayoutFetch = (req, res, next) => {
   // 2a. /assets/* — from repo root, so dev and prod URLs match exactly.
   if (segments[0] === "assets") return serveFile(segments.join("/"));
 
-  // 2b. Static legacy pages: docs/, guide/, en/, examples.html, changelog.html, llms.txt
-  if (segments[0] === "docs" || segments[0] === "guide" || segments[0] === "en") {
+  // 2b. Static pages: docs/, guide/, examples.html, changelog.html, llms.txt
+  if (segments[0] === "docs" || segments[0] === "guide") {
     // Preserve the trailing slash so /docs/ resolves to docs/index.html.
     return serveFile(clean.endsWith("/") ? clean + "index.html" : clean);
   }

@@ -15,9 +15,8 @@ root = Path(__file__).resolve().parent.parent
 # 站点基础信息（llms.txt 头部）
 SITE_NAME = "miao.my"
 SITE_DESC = (
-    "MIAO 是面向内部运营团队的开源、可自托管 Agent 工作台："
-    "用自然语言描述需求，由服务端 Agent 生成受控草稿，协作处理记录，"
-    "再以授权后台任务持续运行。"
+    "MIAO 是适合中小企业的开源、可自托管工作台："
+    "说出需求、搭建应用、团队协作，定时任务自动处理重复工作。"
 )
 SITE_URL = "https://miao.my"
 
@@ -47,8 +46,8 @@ def extract(path: Path, html: str) -> dict | None:
 
 def main() -> None:
     entries = []
-    # 排除模板源（templates/）与独立子项目（web/、_temp/）
-    SKIP_DIRS = {"templates", "web", "_temp"}
+    # 排除模板源（templates/）与独立子项目（web/、_temp/、dist/）
+    SKIP_DIRS = {"templates", "web", "_temp", "dist"}
     for path in sorted(root.rglob("*.html")):
         if SKIP_DIRS & set(path.parts):
             continue
@@ -68,7 +67,7 @@ def main() -> None:
         SITE_DESC,
         "",
         f"站点地址：{SITE_URL}",
-        f"内容语言：简体中文（/）与 English（/en/）镜像。",
+        f"内容语言：每页均为中英双语，客户端切换（默认中文，?lang=en 或页面按钮切换）。",
         f"本页由 scripts/gen-llms.py 自动生成并维护，每小时刷新。",
         "",
         "## 页面",

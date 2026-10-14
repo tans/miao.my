@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Generate examples.html and changelog.html (zh + en) from Markdown content.
+"""Generate examples.html and changelog.html as single bilingual pages.
 
 Content source: content/examples.{zh,en}.md, content/changelog.{zh,en}.md
-Page skeleton: content/layouts/{kind}.{locale}.html ({{CARDS}} / {{ENTRIES}} placeholder)
+Page skeleton: content/layouts/{kind}.{locale}.html ({{CARDS}} / {{ENTRIES}}
+placeholder) — one bilingual page per kind: both languages ship in one HTML,
+switched client-side by assets/js/site-switch.js (see scripts/bilingual.py).
 
 Usage: python3 scripts/build-content.py
 The generated HTML is what Vercel deploys via web/scripts/postbuild.mjs;
@@ -11,6 +13,10 @@ keep the Markdown as the editable source and re-run this script after edits.
 from html import escape
 from pathlib import Path
 import re
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from bilingual import merge_bilingual
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content"
@@ -112,13 +118,14 @@ def render_changelog(source: Path, locale: str) -> str:
 
 
 for kind in ("examples", "changelog"):
+    pages = {}
     for locale in ("zh", "en"):
         md = CONTENT / f"{kind}.{locale}.md"
         layout = LAYOUTS / f"{kind}.{locale}.html"
-        target = ROOT / (f"en/{kind}.html" if locale == "en" else f"{kind}.html")
         placeholder = "{{CARDS}}" if kind == "examples" else "{{ENTRIES}}"
         html = layout.read_text(encoding="utf-8")
         render = render_examples if kind == "examples" else render_changelog
-        html = html.replace(placeholder, render(md, locale))
-        target.write_text(html, encoding="utf-8")
-        print(f"wrote {target}")
+        pages[locale] = html.replace(placeholder, render(md, locale))
+    target = ROOT / f"{kind}.html"
+    target.write_text(merge_bilingual(pages["zh"], pages["en"]), encoding="utf-8")
+    print(f"wrote {target}")

@@ -1,8 +1,16 @@
 #!/usr/bin/env python3
-"""Build the bilingual product decision guide without extra dependencies."""
+"""Build the product decision guide as one bilingual page (no pandoc needed).
+
+guide/index.html = DECISION_GUIDE zh + en in a single static page, switched
+client-side by assets/js/site-switch.js (see scripts/bilingual.py).
+"""
 from html import escape
 from pathlib import Path
 import re
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from bilingual import merge_bilingual
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -63,28 +71,27 @@ def render(source):
     return "\n".join(out)
 
 
-def build(source, template, target, replacements):
+def build(source, template, replacements=None):
     html = template.read_text(encoding="utf-8").replace("<!-- GUIDE_CONTENT -->", render(source))
-    for old, new in replacements.items():
+    for old, new in (replacements or {}).items():
         html = html.replace(old, new)
-    target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(html, encoding="utf-8")
+    return html
 
 
-build(ROOT / "docs/DECISION_GUIDE.md", ROOT / "docs/template.html", ROOT / "guide/index.html", {
+zh = build(ROOT / "docs/DECISION_GUIDE.md", ROOT / "docs/template.html", {
     "MIAO 用户手册：从创建工作区、通过 Agent 建立应用，到团队使用、权限管理、数据治理与企业运营。": "MIAO 产品选择指南：用公开事实判断 MIAO 是否适合团队的工作。",
     "<title>用户手册 · MIAO</title>": "<title>产品选择指南 · MIAO</title>",
     'href="#目录">手册目录</a>': 'href="#miao-产品选择指南">指南目录</a>',
-    'href="/en/docs/">English': 'href="/en/guide/">English',
     'href="#目录">返回目录 ↑</a>': 'href="#miao-产品选择指南">返回目录 ↑</a>',
 })
-build(ROOT / "docs/DECISION_GUIDE.en.md", ROOT / "docs/template.html", ROOT / "en/guide/index.html", {
-    "MIAO 用户手册：从创建工作区、通过 Agent 建立应用，到团队使用、权限管理、数据治理与企业运营。": "MIAO product decision guide: use public facts to decide whether MIAO fits your team's work.",
-    "开源的企业 AI 工作台": "Open source business workspace",
+en = build(ROOT / "docs/DECISION_GUIDE.en.md", ROOT / "docs/template.en.html", {
+    "MIAO user guide: create workspaces, build apps with the AI assistant, run team workflows, manage permissions and govern data.": "MIAO product decision guide: use public facts to decide whether MIAO fits your team's work.",
+    "<title>User Guide · MIAO</title>": "<title>Product Decision Guide · MIAO</title>",
     "用户手册 · MIAO": "Product Decision Guide · MIAO",
-    "lang=\"zh-CN\"": "lang=\"en\"",
-    'aria-label="MIAO 首页"': 'aria-label="MIAO home"',
-    'href="#目录">手册目录</a>': 'href="#miao-product-decision-guide">Guide contents</a>',
-    'href="/en/docs/">English': 'href="/guide/">中文',
-    'href="#目录">返回目录 ↑</a>': 'href="#miao-product-decision-guide">Back to contents ↑</a>',
+    'href="#contents">Contents</a>': 'href="#miao-product-decision-guide">Guide contents</a>',
+    'href="#contents">Back to contents ↑</a>': 'href="#miao-product-decision-guide">Back to contents ↑</a>',
 })
+
+target = ROOT / "guide" / "index.html"
+target.write_text(merge_bilingual(zh, en), encoding="utf-8")
+print(target)
