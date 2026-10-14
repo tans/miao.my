@@ -33,7 +33,7 @@ npm run preview     # 预览 http://localhost:5173
 ## 架构
 
 ### React MPA（`web/`，主力页面）
-- `web/src/pages/*.html` + `*.tsx`：9 个页面入口（home、get-started、community、self-hosting、self-hosting-costs、integrations、product-agents、showcases）
+- `web/src/pages/*.html` + `*.tsx`：6 个页面入口（home、get-started、community、self-hosting、self-hosting-costs）
 - `web/src/components/`：React 组件（`site/` 站点骨架，`ui/` 基础组件）
 - `web/src/lib/`：i18n（`i18n.ts`、`locale.tsx`）与 copy 生成（`copy.gen.ts`）
 - `web/vite.config.ts`：Vite 多入口构建（每页独立 HTML）

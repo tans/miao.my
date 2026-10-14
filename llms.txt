@@ -10,8 +10,8 @@ MIAO 是适合中小企业的开源、可自托管工作台：说出需求、搭
 
 - [Changelog · MIAO](https://miao.my/content/layouts/changelog.en.html): MIAO release notes: shipped features, fixes and self-hosting impact.
 - [更新日志 · MIAO](https://miao.my/content/layouts/changelog.zh.html): MIAO 版本更新日志：记录 MIAO 应用每次发布的功能、改进与修复。
-- [Examples | Industry workspaces - MIAO](https://miao.my/content/layouts/examples.en.html): MIAO scenario examples: see how different teams can build their own workspace.
-- [Examples｜行业工作台场景 - MIAO](https://miao.my/content/layouts/examples.zh.html): MIAO 行业场景示例：看看不同企业如何搭出自己的工作台。
+- [Scenario examples | From business problems - MIAO](https://miao.my/content/layouts/examples.en.html): MIAO scenario examples: website content, customer management and tender collection app ideas.
+- [行业场景示例｜从业务问题出发 - MIAO](https://miao.my/content/layouts/examples.zh.html): MIAO 行业场景示例：官网内容管理、客户管理、招投标信息采集等业务应用思路。
 - [MIAO product mockups](https://miao.my/docs/prototypes): Illustrative prototypes of the current MIAO workspace: sample data shows entry points, hierarchy and confirmation boundaries, from sign-in to daily work.
 - [MIAO overview · MIAO current product mockup](https://miao.my/docs/prototypes/01-overview.html): Start work from an app: the assistant drafts proposals whenever you need to create or change one in the MIAO workspace prototype.
 - [Getting started · MIAO current product mockup](https://miao.my/docs/prototypes/02-start.html)

@@ -23,9 +23,6 @@ PAGES = {
     "community/index.html": ("community", ["title", "meta1", "meta2"]),
     "self-hosting/index.html": ("self-hosting", ["title", "meta"]),
     "self-hosting/costs/index.html": ("self-hosting.costs", ["title", "meta"]),
-    "integrations/index.html": ("integrations", ["title", "meta"]),
-    "product/agents/index.html": ("product.agents", ["title", "meta"]),
-    "showcases.html": ("showcases", ["title", "meta"]),
 }
 
 

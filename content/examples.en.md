@@ -194,6 +194,5 @@ Link projects, versions and feedback into one lightweight pipeline so the team k
 - flow: Lead | Closed | Renewed
 - footer: AI collaboration · change preview | Customer service page
 - meta: Automation | Status flow | AI assistant
-- link: See the full story ↗ | /showcases.html
 
 Start from one customer need and let sales, projects and after-sales support each other in the same workbench.

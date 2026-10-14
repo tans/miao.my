@@ -9,9 +9,6 @@ import GetStarted from "./get-started";
 import Community from "./community";
 import SelfHosting from "./self-hosting";
 import SelfHostingCosts from "./self-hosting-costs";
-import Integrations from "./integrations";
-import ProductAgents from "./product-agents";
-import Showcases from "./showcases";
 
 const PAGES: Record<string, () => React.ReactElement> = {
   home: Home,
@@ -19,9 +16,6 @@ const PAGES: Record<string, () => React.ReactElement> = {
   community: Community,
   "self-hosting": SelfHosting,
   "self-hosting-costs": SelfHostingCosts,
-  integrations: Integrations,
-  "product-agents": ProductAgents,
-  showcases: Showcases,
 };
 
 const page = document.body.dataset.page ?? "home";

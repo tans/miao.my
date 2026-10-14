@@ -33,9 +33,6 @@ const pages = {
   "src/pages/community.html": "community/index.html",
   "src/pages/self-hosting.html": "self-hosting/index.html",
   "src/pages/self-hosting-costs.html": "self-hosting/costs/index.html",
-  "src/pages/integrations.html": "integrations/index.html",
-  "src/pages/product-agents.html": "product/agents/index.html",
-  "src/pages/showcases.html": "showcases.html",
 };
 for (const [from, to] of Object.entries(pages)) {
   await mkdir(dirname(resolve(dist, to)), { recursive: true });

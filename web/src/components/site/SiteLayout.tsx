@@ -81,21 +81,15 @@ export type NavId =
   | "guide"
   | "examples"
   | "get_started"
-  | "agents"
   | "community"
   | "self_hosting"
-  | "integrations"
-  | "changelog"
-  | "showcases";
+  | "changelog";
 
 const TOP_NAV: NavId[] = ["docs", "guide", "examples", "get_started"];
 const MORE_NAV: NavId[] = [
-  "agents",
   "community",
   "self_hosting",
-  "integrations",
   "changelog",
-  "showcases",
 ];
 
 const NAV_HREF: Record<NavId, string> = {
@@ -103,12 +97,9 @@ const NAV_HREF: Record<NavId, string> = {
   guide: "/guide/",
   examples: "/examples.html",
   get_started: "/get-started/",
-  agents: "/product/agents/",
   community: "/community/",
   self_hosting: "/self-hosting/",
-  integrations: "/integrations/",
   changelog: "/changelog.html",
-  showcases: "/showcases.html",
 };
 
 function NavLink({ id, active }: { id: NavId; active: NavId | null }) {
@@ -188,7 +179,7 @@ export function SiteFooter() {
 
 /**
  * Page shell: skip link + header + main + footer, with body class for
- * per-page theming (home-page / community-page / showcase-page …).
+ * per-page theming (home-page / community-page …).
  */
 export function SiteLayout({
   active,

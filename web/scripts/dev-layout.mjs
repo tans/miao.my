@@ -4,7 +4,6 @@
 //
 //   /                    -> src/pages/home.html
 //   /get-started/        -> src/pages/get-started.html
-//   /showcases           -> src/pages/showcases.html
 //   /assets/*            -> repo root assets/*
 //   /docs/* /guide/* ... -> repo root static pages, served verbatim
 //
@@ -21,10 +20,6 @@ const prodUrlToEntry = {
   "community/": "src/pages/community.html",
   "self-hosting/": "src/pages/self-hosting.html",
   "self-hosting/costs/": "src/pages/self-hosting-costs.html",
-  "integrations/": "src/pages/integrations.html",
-  "product/agents/": "src/pages/product-agents.html",
-  showcases: "src/pages/showcases.html",
-  "showcases.html": "src/pages/showcases.html",
 };
 
 // Custom URLs that resolve to a file under repoRoot (served verbatim).

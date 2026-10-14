@@ -11,7 +11,7 @@
 | Agent 辅助建应用与受控 JSON UI | 当前可用（代码已记录） | [产品边界](https://github.com/tans/miao/blob/main/PRODUCT.md) · [源码](https://github.com/tans/miao) | 通过服务端 schema、字段和动作校验；不执行任意用户源码、SQL 或 shell。 |
 | UI 草稿、发布和版本切换 | 当前可用（代码已记录） | [用户手册：预览与发布](#预览与发布) · [发布 Issue](https://github.com/tans/miao/issues/79) | UI 版本回退不会撤销已经写入的业务记录或 schema。 |
 | 状态流、业务动作和后台任务 | 当前可用（代码已记录） | [用户手册：后台任务](#后台任务通知和自动化) · [运维手册](https://github.com/tans/miao/blob/main/docs/OPERATIONS.md) | 任务按声明动作、预算、超时和服务端权限运行；真实模型、邮件和长任务仍需现场验收。 |
-| 无凭据 HTTP(S) 读取与声明式采集 | 需要现场验收 | [集成目录](/integrations/) · [外部读取源码](https://github.com/tans/miao/blob/main/internal/httpapi/external_fetch.go) · [SSRF Issue #93](https://github.com/tans/miao/issues/93) | 不是通用 OAuth、凭据库或任意代码执行环境；部署者应限制出站网络。 |
+| 无凭据 HTTP(S) 读取与声明式采集 | 需要现场验收 | [外部读取源码](https://github.com/tans/miao/blob/main/internal/httpapi/external_fetch.go) · [SSRF Issue #93](https://github.com/tans/miao/issues/93) | 不是通用 OAuth、凭据库或任意代码执行环境；部署者应限制出站网络。 |
 | 公开只读发布 | 当前可用（代码已记录） | [公开发布源码](https://github.com/tans/miao/blob/main/internal/httpapi/publications.go) · [产品边界](https://github.com/tans/miao/blob/main/PRODUCT.md) | 只返回发布白名单中的页面、记录、字段和图片，不提供通用公开写入。 |
 | 工作区/应用/字段权限 | 当前可用（代码已记录） | [权限模型](#成员与权限) · [运维手册](https://github.com/tans/miao/blob/main/docs/OPERATIONS.md) | 服务端重新检查成员、应用角色和字段授权；知道 URL 不会获得数据权限。 |
 | 备份、恢复、升级和回滚 | 需要现场验收 | [运维手册](https://github.com/tans/miao/blob/main/docs/OPERATIONS.md) · [自托管页](/self-hosting/) | 升级前要备份；数据库不会自动回滚，恢复需在目标环境单独演练。 |

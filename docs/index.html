@@ -5,7 +5,7 @@
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="MIAO 用户手册：从创建工作区、通过 Agent 建立应用，到团队使用、权限管理、数据治理与企业运营。" data-zh="MIAO 用户手册：从创建工作区、通过 Agent 建立应用，到团队使用、权限管理、数据治理与企业运营。" data-en="MIAO user guide: create workspaces, build apps with the AI assistant, run team workflows, manage permissions and govern data." />
   <title data-en="User Guide · MIAO">用户手册 · MIAO</title><link rel="icon" type="image/png" href="/assets/mascots/cat-logo-head.png" />
-  <link rel="preload" href="/assets/fonts/caveat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin /><link href="/assets/css/app.css?v=6" rel="stylesheet" type="text/css" />
+  <link rel="preload" href="/assets/fonts/caveat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin /><link href="/assets/css/app.css?v=7" rel="stylesheet" type="text/css" />
 
 <script src="/assets/js/site-switch.js"></script>
 </head>
@@ -13,7 +13,7 @@
 <div data-lang-zh>
 
   <a class="skip-link btn btn-ghost btn-sm" href="#main-content">跳到主要内容</a>
-  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong><span class="brand-divider"></span><span class="brand-caption">开源的企业 AI 工作台</span></a></div><nav class="navbar-end" aria-label="主导航"><a class="nav-link nav-link-active" href="/docs/" aria-current="page">文档</a><a class="nav-link" href="/guide/">产品指南</a><a class="nav-link" href="/examples.html">行业示例</a><a class="nav-link" href="/get-started/">开始使用</a><details class="nav-more"><summary class="nav-link">更多</summary><div class="nav-menu"><a class="nav-link" href="/product/agents/">Agent</a><a class="nav-link" href="/community/">社区与支持</a><a class="nav-link" href="/self-hosting/">自托管</a><a class="nav-link" href="/integrations/">集成</a><a class="nav-link" href="/changelog.html">更新日志</a><a class="nav-link" href="/showcases.html">产品演示</a></div></details><a class="nav-link lang-switch" href="#" data-lang="en">English</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub <svg class="icon-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></nav></header>
+  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="/" aria-label="MIAO 首页"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong><span class="brand-divider"></span><span class="brand-caption">开源的企业 AI 工作台</span></a></div><nav class="navbar-end" aria-label="主导航"><a class="nav-link nav-link-active" href="/docs/" aria-current="page">文档</a><a class="nav-link" href="/guide/">产品指南</a><a class="nav-link" href="/examples.html">行业示例</a><a class="nav-link" href="/get-started/">开始使用</a><details class="nav-more"><summary class="nav-link">更多</summary><div class="nav-menu"><a class="nav-link" href="/community/">社区与支持</a><a class="nav-link" href="/self-hosting/">自托管</a><a class="nav-link" href="/changelog.html">更新日志</a></div></details><a class="nav-link lang-switch" href="#" data-lang="en">English</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub <svg class="icon-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></nav></header>
   <main class="docs-main guide-main" id="main-content">
     <article class="docs-article guide-article">
 <h1 id="miao-用户手册">MIAO 用户手册</h1>
@@ -51,7 +51,7 @@
 <tr>
 <td>无凭据 HTTP(S) 读取与声明式采集</td>
 <td>需要现场验收</td>
-<td><a href="/integrations/">集成目录</a> · <a href="https://github.com/tans/miao/blob/main/internal/httpapi/external_fetch.go">外部读取源码</a> · <a href="https://github.com/tans/miao/issues/93">SSRF Issue #93</a></td>
+<td><a href="https://github.com/tans/miao/blob/main/internal/httpapi/external_fetch.go">外部读取源码</a> · <a href="https://github.com/tans/miao/issues/93">SSRF Issue #93</a></td>
 <td>不是通用 OAuth、凭据库或任意代码执行环境；部署者应限制出站网络。</td>
 </tr>
 <tr>
@@ -405,7 +405,7 @@
 <div data-lang-en hidden>
 
   <a class="skip-link btn btn-ghost btn-sm" href="#en-main-content">Skip to content</a>
-  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="/" aria-label="MIAO home"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong><span class="brand-divider"></span><span class="brand-caption">Open source business workspace</span></a></div><nav class="navbar-end" aria-label="Main navigation"><a class="nav-link" href="/docs/">Docs</a><a class="nav-link" href="/guide/">Decision guide</a><a class="nav-link" href="/examples.html">Examples</a><a class="nav-link" href="/get-started/">Get started</a><details class="nav-more"><summary class="nav-link">More</summary><div class="nav-menu"><a class="nav-link" href="/product/agents/">Agent</a><a class="nav-link" href="/community/">Community</a><a class="nav-link" href="/self-hosting/">Self-hosting</a><a class="nav-link" href="/integrations/">Integrations</a><a class="nav-link" href="/changelog.html">Changelog</a><a class="nav-link" href="/showcases.html">Showcases</a></div></details><a class="nav-link lang-switch" href="#" data-lang="zh">中文</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub <svg class="icon-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></nav></header>
+  <header class="navbar site-nav"><div class="navbar-start"><a class="brand" href="/" aria-label="MIAO home"><img src="/assets/mascots/cat-logo-head.png" alt="" /><strong>miao.my</strong><span class="brand-divider"></span><span class="brand-caption">Open source business workspace</span></a></div><nav class="navbar-end" aria-label="Main navigation"><a class="nav-link" href="/docs/">Docs</a><a class="nav-link" href="/guide/">Decision guide</a><a class="nav-link" href="/examples.html">Examples</a><a class="nav-link" href="/get-started/">Get started</a><details class="nav-more"><summary class="nav-link">More</summary><div class="nav-menu"><a class="nav-link" href="/community/">Community</a><a class="nav-link" href="/self-hosting/">Self-hosting</a><a class="nav-link" href="/changelog.html">Changelog</a></div></details><a class="nav-link lang-switch" href="#" data-lang="zh">中文</a><a class="btn btn-neutral btn-sm nav-github" href="https://github.com/tans/miao">GitHub <svg class="icon-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></nav></header>
   <main class="docs-main guide-main" id="en-main-content">
     <article class="docs-article guide-article">
 <h1 id="en-miao-user-guide">MIAO User Guide</h1>
@@ -443,7 +443,7 @@
 <tr>
 <td>Credential-free HTTP(S) reads and declarative collection</td>
 <td>Needs field verification</td>
-<td><a href="/integrations/">Integrations</a> · <a href="https://github.com/tans/miao/blob/main/internal/httpapi/external_fetch.go">External reads source</a> · <a href="https://github.com/tans/miao/issues/93">SSRF Issue #93</a></td>
+<td><a href="https://github.com/tans/miao/blob/main/internal/httpapi/external_fetch.go">External reads source</a> · <a href="https://github.com/tans/miao/issues/93">SSRF Issue #93</a></td>
 <td>Not general OAuth, a credential vault or arbitrary code execution; operators should restrict egress.</td>
 </tr>
 <tr>
