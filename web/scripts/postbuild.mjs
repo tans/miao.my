@@ -55,4 +55,8 @@ await rm(resolve(dist, "src"), { recursive: true, force: true });
 // pages now serve both languages on the same URL.
 await rm(resolve(dist, "zh"), { recursive: true, force: true });
 
+// Fill the static zh SEO tags (title / meta description) into each built
+// page shell from copy/zh.toml — single source of truth, see inject-seo.py.
+execFileSync("python3", [resolve(root, "scripts/inject-seo.py")], { stdio: "inherit" });
+
 console.log("postbuild done.");
