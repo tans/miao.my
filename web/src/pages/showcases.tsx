@@ -442,7 +442,7 @@ export default function Showcases() {
             <p>{t("showcases.outro.body1")}{t("showcases.outro.body2")}</p>
             <div className="outro-actions">
               <a className="btn btn-ghost" href="/examples.html">{t("showcases.outro.cta_examples")}</a>
-              <a className="btn btn-neutral" href="https://miao.minapp.xin">{t("showcases.outro.cta_open")}</a>
+              <a className="btn btn-neutral" href="/get-started/">{t("showcases.outro.cta_open")}</a>
               <a className="btn btn-ghost" href="/docs/">{t("showcases.outro.cta_docs")}</a>
             </div>
           </div>
