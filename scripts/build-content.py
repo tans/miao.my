@@ -58,12 +58,12 @@ def inline(text: str) -> str:
 
 def render_examples(source: Path, locale: str) -> str:
     foot_label = "场景示例" if locale == "zh" else "Scenario example"
-    cards = []
+    featured, more = [], []
     for item in parse_sections(source.read_text(encoding="utf-8")):
         f = item["fields"]
         title, sub = item["title"], f.get("sub", "")
         tag = f.get("tag", "")
-        tag_cls = " built-in" if f.get("kind") == "built-in" else ""
+        tag_cls = " built-in" if f.get("kind") == "built-in" else (" featured" if f.get("kind") == "featured" else "")
         rail = "".join(f"<span>{inline(x)}</span>" for x in vals(f.get("rail", "")))
         table = "".join(f"<span>{inline(x)}</span>" for x in vals(f.get("table", "")))
         flow = "".join(f"<b>{inline(x)}</b><i></i>" for x in vals(f.get("flow", ""))).rsplit("<i></i>", 1)[0]
@@ -81,17 +81,23 @@ def render_examples(source: Path, locale: str) -> str:
         else:
             link_html = ""
         desc = inline(" ".join(item["body"]))
-        cards.append(
+        scope = inline(f.get("scope", ""))
+        scope_html = f'<p class="example-scope">{scope}</p>' if scope else ""
+        card = (
             f'<article class="example-card"><div class="example-card-head">'
             f'<h2>{inline(title)}<span>{inline(sub)}</span></h2>'
             f'<span class="example-tag{tag_cls}">{inline(tag)}</span></div>'
             f'<div class="example-diagram"><div class="diagram-rail">{rail}</div>'
             f'<div class="diagram-body"><div class="diagram-table">{table}</div>'
             f'<div class="diagram-flow">{flow}</div><div class="diagram-footer">{footer}</div></div></div>'
-            f'<p>{desc}</p><div class="example-meta">{meta}</div>'
+            f'<p>{desc}</p>{scope_html}<div class="example-meta">{meta}</div>'
             f'<div class="example-foot"><span>{foot_label}</span>{link_html}</div></article>'
         )
-    return "\n".join(cards)
+        (featured if f.get("kind") == "featured" else more).append(card)
+    return {
+        "FEATURED": "\n".join(featured),
+        "MORE": "\n".join(more),
+    }
 
 
 def render_changelog(source: Path, locale: str) -> str:
@@ -122,10 +128,13 @@ for kind in ("examples", "changelog"):
     for locale in ("zh", "en"):
         md = CONTENT / f"{kind}.{locale}.md"
         layout = LAYOUTS / f"{kind}.{locale}.html"
-        placeholder = "{{CARDS}}" if kind == "examples" else "{{ENTRIES}}"
         html = layout.read_text(encoding="utf-8")
-        render = render_examples if kind == "examples" else render_changelog
-        pages[locale] = html.replace(placeholder, render(md, locale))
+        if kind == "examples":
+            render = render_examples(md, locale)
+            html = html.replace("{{FEATURED}}", render["FEATURED"]).replace("{{MORE}}", render["MORE"])
+        else:
+            html = html.replace("{{ENTRIES}}", render_changelog(md, locale))
+        pages[locale] = html
     target = ROOT / f"{kind}.html"
     target.write_text(merge_bilingual(pages["zh"], pages["en"]), encoding="utf-8")
     print(f"wrote {target}")

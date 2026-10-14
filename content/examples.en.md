@@ -1,8 +1,50 @@
 # Industry scenario examples
 
+## Website and content management
+- kind: featured
+- sub: Website &amp; content · concept
+- tag: Scenario design
+- rail: Content | Products | Pages
+- table: Content items | Product info | Published pages
+- flow: Draft | Review | Published
+- footer: Central editing · read-only publish | Content page
+- meta: Public page | Status flow | Team collaboration
+- scope: This is a scenario design only: no promise of arbitrary HTML, complex marketing sites, free-form multi-page canvases or visitor submissions.
+- link: See the app idea ↗ | /guide/
+
+Update website content without changing code every time. Manage company intro, product info and showcase content centrally, and publish read-only pages for public display.
+
+## Customer management
+- kind: featured
+- sub: CRM · concept
+- tag: Scenario design
+- rail: Customers | Deals | Follow-ups
+- table: Customers | Deals | Follow-up notes
+- flow: New lead | In conversation | Closed
+- footer: Team visibility · next step | Customer list page
+- meta: Status flow | Team collaboration | Permissions
+- scope: This is a scenario design only: not all CRM reports and third-party syncs are promised as available.
+- link: See the app idea ↗ | /guide/
+
+Keep customer follow-up visible to the whole team. Bring customers, deals, owners and follow-up notes together so the next step is clear.
+
+## Tender information collection
+- kind: featured
+- sub: Tender collection · concept
+- tag: Scenario design
+- rail: Sources | Leads | Watchlist
+- table: Sources | Project leads | Watchlist
+- flow: New | To screen | Followed up
+- footer: Scheduled collection · filters | Lead list page
+- meta: Collection script | Background tasks | Notifications
+- scope: This is a scenario design only: site access depends on permission, anti-scraping rules, interfaces and field validation; no promise across all sites.
+- link: See the app idea ↗ | /guide/
+
+Collect public information on a schedule and spot opportunities early. Pull from permitted public sources, turn matches into project leads, and follow up with tasks and notifications.
+
 ## Clinic · patient follow-up
 - sub: Care plans that do not get lost
-- tag: Candidate
+- tag: Scenario idea
 - rail: Patients | Visits | Follow-up
 - table: Patient files | Appointments | Care plans
 - flow: New | In care | Followed up
@@ -14,7 +56,7 @@ Connect visits, reminders and follow-ups so the team can see who needs a call to
 
 ## Equipment · service desk
 - sub: From repair request to sign-off
-- tag: Candidate
+- tag: Scenario idea
 - rail: Assets | Tickets | Parts
 - table: Asset register | Service tickets | Parts stock
 - flow: Reported | Assigned | Signed off
@@ -26,132 +68,132 @@ Route repair requests to engineers with parts, updates and acceptance in one tic
 
 ## Law firm · case deadlines
 - sub: A clear next step for every case
-- tag: Candidate
+- tag: Scenario idea
 - rail: Cases | Clients | Files
-- table: Case list | Deadline calendar | Evidence
+- table: Case list | Deadline calendar | Evidence files
 - flow: Opened | In progress | Closed
-- footer: Daily tasks · alerts | Client view
+- footer: Daily tasks · deadline alerts | Client lookup page
 - meta: Status flow | Tasks | Attachments
 - link: Template tracker ↗ | https://github.com/tans/miao/issues/115
 
-Relate deadlines, case progress and documents so the next action is visible before it is late.
+Link case progress, key deadlines and evidence files so the team sees the next step before the due date.
 
 ## Restaurant chain · inspections
-- sub: One checklist across every store
-- tag: Candidate
-- rail: Stores | Checks | Fixes
-- table: Store register | Checklists | Fix records
-- flow: To inspect | Issues | Reviewed
-- footer: Scheduled · bulk dispatch | Store board
-- meta: Bulk actions | Intake script | Automation
+- sub: From checklist to sign-off
+- tag: Scenario idea
+- rail: Stores | Inspections | Fixes
+- table: Store register | Checklists | Rectification log
+- flow: Pending | Issues | Reviewed
+- footer: Scheduled inspections · batch dispatch | Store dashboard
+- meta: Batch | Intake script | Automation
 - link: Template tracker ↗ | https://github.com/tans/miao/issues/115
 
-Send checklists in bulk, collect mobile reports and bring photos back to one board.
+HQ pushes checklists, stores fill them on mobile, and fix photos with review results return to one dashboard.
 
 ## Research lab · literature
-- sub: From paper to shared context
-- tag: Candidate
+- sub: Papers, topics and notes in one place
+- tag: Scenario idea
 - rail: Papers | Topics | Notes
-- table: Paper library | Research topics | Reading notes
+- table: Library | Research topics | Reading notes
 - flow: To read | Organized | Cited
-- footer: Scheduled intake · tags | Research page
+- footer: Scheduled collection · tags | Public research page
 - meta: Intake script | Relations | Public page
 - link: Template tracker ↗ | https://github.com/tans/miao/issues/115
 
-Keep new papers, reading progress and research notes connected for the next group meeting.
+New papers, reading progress and topic notes stay connected, so lab meetings start from a full research map.
 
 ## Fleet · vehicle maintenance
-- sub: Keep every vehicle ready
-- tag: Candidate
+- sub: Mileage, upkeep and repairs
+- tag: Scenario idea
 - rail: Vehicles | Mileage | Repairs
-- table: Vehicle register | Service plan | Repair tickets
-- flow: Ready | Due | Complete
-- footer: Mileage · recurring tasks | Driver report page
-- meta: Tasks | Status flow | Intake script
+- table: Fleet register | Service plans | Repair tickets
+- flow: OK | Due | Completed
+- footer: Mileage intake · periodic tasks | Driver report page
+- meta: Background tasks | Status flow | Intake script
 - link: Template tracker ↗ | https://github.com/tans/miao/issues/115
 
-Generate maintenance work from mileage and cycles, then keep repair history traceable.
+Generate maintenance tasks by mileage and interval; driver reports, repair records and fleet costs stay traceable.
 
 ## Foundation · grant management
-- sub: Make every grant accountable
-- tag: Candidate
-- rail: Projects | Applications | Grants
-- table: Grant projects | Applications | Payment plan
-- flow: Applied | Reviewing | Running
-- footer: Review tasks · payments | Application page
-- meta: Public page | Bulk actions | Automation
+- sub: Applications, reviews and disbursements
+- tag: Scenario idea
+- rail: Projects | Applications | Funding
+- table: Grants | Application files | Disbursement plans
+- flow: Applying | In review | Executing
+- footer: Review tasks · staged funding | Public application page
+- meta: Public page | Batch | Automation
 - link: Template tracker ↗ | https://github.com/tans/miao/issues/115
 
-Connect applications, review steps, payments and close-out materials in one record.
+From application to review, disbursement and closure, grant materials, milestones and owners always line up.
 
 ## Property · repair desk
-- sub: Every request has an owner
-- tag: Candidate
-- rail: Buildings | Repairs | Vendors
-- table: Property register | Repair tickets | Vendor list
-- flow: Received | In progress | Followed up
-- footer: Resident intake · routing | Repair status page
+- sub: Resident reports to sign-off
+- tag: Scenario idea
+- rail: Buildings | Reports | Suppliers
+- table: Property register | Repair tickets | Supplier list
+- flow: Open | In progress | Followed up
+- footer: Resident submit · auto-assign | Status page
 - meta: Public page | Automation | Status flow
 - link: Template tracker ↗ | https://github.com/tans/miao/issues/115
 
-Residents submit a request, the team routes it by priority and records the follow-up.
+Residents scan to submit, property ops assign by building and priority, and call-back results become service records.
 
 ## Studio · member bookings
-- sub: From booking to delivery
-- tag: Candidate
+- sub: Appointments and delivery
+- tag: Scenario idea
 - rail: Members | Bookings | Delivery
 - table: Member files | Booking calendar | Selection progress
 - flow: Booked | Shot | Delivered
-- footer: Daily schedule · reminders | Booking page
-- meta: Public page | Tasks | Attachments
+- footer: Daily schedule · SMS reminders | Booking page
+- meta: Public page | Background tasks | Attachments
 - link: Template tracker ↗ | https://github.com/tans/miao/issues/115
 
-Give each member a clear place for booking, service progress and the next touchpoint.
+From booking slots to selection and delivery, each member's progress and next touchpoint stay clear.
 
 ## Events · exhibitor operations
-- sub: Keep event preparation moving
-- tag: Candidate
+- sub: Registration to wrap-up
+- tag: Scenario idea
 - rail: Exhibitors | Materials | Leads
 - table: Exhibitor list | Booth tasks | On-site leads
 - flow: Registered | Preparing | Reviewed
-- footer: Bulk notices · collection | Exhibitor page
-- meta: Bulk actions | Intake script | Public page
+- footer: Bulk notices · file collection | Exhibitor page
+- meta: Batch | Intake script | Public page
 - link: Template tracker ↗ | https://github.com/tans/miao/issues/115
 
-Manage exhibitor materials and on-site leads with an owner for every preparation task.
+Centralize registrations, materials and on-site leads, with an owner for every deliverable in preparation.
 
 ## Farm · price timing
-- sub: See the selling window
-- tag: Candidate
+- sub: Crops, prices and orders
+- tag: Scenario idea
 - rail: Crops | Prices | Orders
-- table: Crop batches | Market prices | Sales orders
-- flow: Growing | Harvest due | Sold
-- footer: Price intake · alerts | Pre-order page
-- meta: Intake script | Tasks | Public page
+- table: Growing batches | Market prices | Sales orders
+- flow: Growing | To harvest | Sold
+- footer: Price intake · alerts | Pre-sale public page
+- meta: Intake script | Background tasks | Public page
 - link: Template tracker ↗ | https://github.com/tans/miao/issues/115
 
-Put crop batches, market prices and sales orders together before harvest decisions.
+Bring growing batches, market prices and sales orders together to see the right selling window before harvest.
 
 ## Studio · release tracking
-- sub: Built-in template
-- tag: Built-in
-- rail: Projects | Releases | Feedback
-- table: Project list | Release log | Feedback
-- flow: Idea | Building | Released
-- footer: Version tasks · changes | Changelog page
+- sub: Projects, versions and feedback
+- tag: Template provided
+- rail: Projects | Versions | Feedback
+- table: Project list | Version log | Feedback items
+- flow: Idea | In production | Released
+- footer: Version tasks · change log | Changelog page
 - meta: Status flow | Attachments | Automation
-- foot: General workspace capability
+- foot: General workbench capability
 
-Connect projects, releases and feedback so the team knows what changed and why.
+Link projects, versions and feedback into one lightweight pipeline so the team knows what is being done and why.
 
 ## Sales · projects · service
-- sub: Built-in template
-- tag: Built-in
+- sub: From lead to renewal
+- tag: Template provided
 - rail: Customers | Projects | Service
-- table: Pipeline | Project tasks | Service tickets
-- flow: Lead | Won | Renewal
-- footer: AI collaboration · preview | Customer page
+- table: Deal pipeline | Project tasks | Service tickets
+- flow: Lead | Closed | Renewed
+- footer: AI collaboration · change preview | Customer service page
 - meta: Automation | Status flow | AI assistant
 - link: See the full story ↗ | /showcases.html
 
-Start with a customer request and let sales, projects and service hand work to each other.
+Start from one customer need and let sales, projects and after-sales support each other in the same workbench.
