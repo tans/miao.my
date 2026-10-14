@@ -4,7 +4,7 @@ import { useLocale, usePageMeta } from "@/lib/locale";
 
 export default function ProductAgents() {
   const { locale } = useLocale();
-  const { t, h } = useCopy(locale);
+  const { t } = useCopy(locale);
   usePageMeta("product.agents.title", ["product.agents.meta"]);
 
   return (
@@ -17,91 +17,77 @@ export default function ProductAgents() {
         {t("product.agents.tag_note")}
       </p>
 
-      <h2>{t("product.agents.flow.title")}</h2>
-      <div className="flow" role="img" aria-label={t("product.agents.flow.aria")}>
-        {[1, 2, 3, 4, 5, 6].map((n) => (
-          <div key={n}>
-            <b>{t(`product.agents.flow.step${n}_name`)}</b>
-            <span>{t(`product.agents.flow.step${n}_desc`)}</span>
-          </div>
+      <h2>{t("product.agents.build.title")}</h2>
+      <div className="cards">
+        {[1, 2, 3].map((n) => (
+          <article key={n} className="agent-card">
+            <h3>{t(`product.agents.build.card${n}_title`)}</h3>
+            <p>{t(`product.agents.build.card${n}_body`)}</p>
+          </article>
         ))}
       </div>
+      <p className="note">{t("product.agents.build.note")}</p>
 
-      <h2>{t("product.agents.scenarios.title")}</h2>
+      <h2>{t("product.agents.tasks.title")}</h2>
       <div className="cards">
-        {(["requests", "records", "collection"] as const).map((s) => (
-          <article key={s} className="agent-card">
-            <h3>{t(`product.agents.scenarios.${s}_title`)}</h3>
-            <p>{t(`product.agents.scenarios.${s}_body`)}</p>
-            <ul>
-              <li>{t(`product.agents.scenarios.${s}_li1`)}</li>
-              <li>{t(`product.agents.scenarios.${s}_li2`)}</li>
-              <li>{t(`product.agents.scenarios.${s}_li3`)}</li>
-            </ul>
+        {[1, 2, 3].map((n) => (
+          <article key={n} className="agent-card">
+            <h3>{t(`product.agents.tasks.card${n}_title`)}</h3>
+            <p>{t(`product.agents.tasks.card${n}_body`)}</p>
           </article>
         ))}
       </div>
 
-      <h2>{t("product.agents.capabilities.title")}</h2>
-      <div className="cards">
-        <article className="agent-card">
-          <h3>{t("product.agents.capabilities.read_label")}</h3>
-          <p>{t("product.agents.capabilities.read_body")}</p>
-          <p>
-            <a href="https://github.com/tans/miao/blob/main/PRODUCT.md">{t("product.agents.capabilities.read_product_link")}</a>
-            {t("product.agents.capabilities.read_sep")}
-            <a href="https://github.com/tans/miao">{t("product.agents.capabilities.read_source_link")}</a>
-          </p>
-        </article>
-        <article className="agent-card">
-          <h3>{t("product.agents.capabilities.execute_label")}</h3>
-          <p>{t("product.agents.capabilities.execute_body")}</p>
-          <p>{t("product.agents.capabilities.execute_note")}</p>
-        </article>
-        <article className="agent-card">
-          <h3>{t("product.agents.capabilities.cannot_label")}</h3>
-          <p>{t("product.agents.capabilities.cannot_body")}</p>
-          <p><a href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md">{t("product.agents.capabilities.cannot_link")}</a></p>
-        </article>
+      <h2>{t("product.agents.confirm.title")}</h2>
+      <p>{t("product.agents.confirm.body1")}</p>
+      <p>{t("product.agents.confirm.body2")}</p>
+
+      <h2>{t("product.agents.boundary.title")}</h2>
+      <div className="boundary">
+        <p>{t("product.agents.boundary.body1")}</p>
+        <p>{t("product.agents.boundary.body2")}</p>
       </div>
 
-      <h2>{t("product.agents.confirmation.title")}</h2>
-      <p>{t("product.agents.confirmation.body1")}{t("product.agents.confirmation.body2")}{t("product.agents.confirmation.body3")}</p>
-
-      <h2>{t("product.agents.receipt.title")}<span className="tag">{t("product.agents.receipt.tag")}</span></h2>
-      <section className="run">
-        <div>
-          <p>{t("product.agents.receipt.run")}</p>
-          <dl>
-            <dt>{t("product.agents.receipt.model_label")}</dt><dd>{t("product.agents.receipt.model_value")}</dd>
-            <dt>{t("product.agents.receipt.plan_label")}</dt><dd>{t("product.agents.receipt.plan_value")}</dd>
-            <dt>{t("product.agents.receipt.scope_label")}</dt><dd>{t("product.agents.receipt.scope_value")}</dd>
-          </dl>
+      <h2>{t("product.agents.how.title")}</h2>
+      <p>{t("product.agents.how.summary")}</p>
+      <details>
+        <summary>{t("product.agents.flow.title")}</summary>
+        <div className="flow" role="img" aria-label={t("product.agents.flow.aria")}>
+          {[1, 2, 3, 4, 5, 6].map((n) => (
+            <div key={n}>
+              <b>{t(`product.agents.flow.step${n}_name`)}</b>
+              <span>{t(`product.agents.flow.step${n}_desc`)}</span>
+            </div>
+          ))}
         </div>
-        <div>
-          <dl>
-            <dt>{t("product.agents.receipt.events_label")}</dt><dd>{t("product.agents.receipt.events_value")}</dd>
-            <dt>{t("product.agents.receipt.final_label")}</dt><dd>{t("product.agents.receipt.final_value")}</dd>
-            <dt>{t("product.agents.receipt.budget_label")}</dt><dd>{t("product.agents.receipt.budget_value")}</dd>
-          </dl>
-          <p>{t("product.agents.receipt.note")}</p>
-        </div>
-      </section>
 
-      <h2>{t("product.agents.offline.title")}</h2>
-      <div className="boundary">
-        <p><strong>{t("product.agents.offline.available_label")}</strong>{t("product.agents.offline.available_body")}</p>
-        <p><strong>{t("product.agents.offline.waits_label")}</strong>{t("product.agents.offline.waits_body")}</p>
-        <p><strong>{t("product.agents.offline.not_promised_label")}</strong>{t("product.agents.offline.not_promised_body")}</p>
+        <h3>{t("product.agents.receipt.title")}<span className="tag">{t("product.agents.receipt.tag")}</span></h3>
+        <section className="run">
+          <div>
+            <p>{t("product.agents.receipt.run")}</p>
+            <dl>
+              <dt>{t("product.agents.receipt.did_label")}</dt><dd>{t("product.agents.receipt.did_value")}</dd>
+              <dt>{t("product.agents.receipt.changed_label")}</dt><dd>{t("product.agents.receipt.changed_value")}</dd>
+              <dt>{t("product.agents.receipt.result_label")}</dt><dd>{t("product.agents.receipt.result_value")}</dd>
+            </dl>
+            <p>{t("product.agents.receipt.note")}</p>
+          </div>
+        </section>
+      </details>
+
+      <h2>{t("product.agents.cta.title")}</h2>
+      <div className="links">
+        <a className="btn btn-neutral" href={t("product.agents.cta.primary_href")}>{t("product.agents.cta.primary")}</a>
+        <a className="btn btn-ghost" href={t("product.agents.cta.secondary_href")}>{t("product.agents.cta.secondary")}</a>
       </div>
 
       <h2>{t("product.agents.read_next.title")}</h2>
       <div className="links">
-        <a href={h("product.agents.read_next.arch_href")}>{t("product.agents.read_next.arch_link")}</a>
+        <a href={t("product.agents.read_next.arch_href")}>{t("product.agents.read_next.arch_link")}</a>
         <a href="https://github.com/tans/miao/blob/main/PRODUCT.md">{t("product.agents.read_next.product_link")}</a>
         <a href="https://github.com/tans/miao/blob/main/docs/OPERATIONS.md">{t("product.agents.read_next.ops_link")}</a>
         <a href="https://github.com/tans/miao/issues/26">{t("product.agents.read_next.issue_link")}</a>
-        <a href={h("product.agents.read_next.alt_href")}>{t("product.agents.read_next.alt_link")}</a>
+        <a href={t("product.agents.read_next.alt_href")}>{t("product.agents.read_next.alt_link")}</a>
       </div>
     </SiteLayout>
   );

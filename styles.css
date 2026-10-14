@@ -282,6 +282,5 @@
 .run dt{margin-top:.8rem;color:#62666d;font-size:.8rem}
 .run dd{margin:.15rem 0;font-weight:600}
 .agent-main .links{display:flex;flex-wrap:wrap;gap:1rem;font-weight:600}
-.agent-main .tag{display:inline-block;border:1px solid #c99b52;border-radius:999px;padding:.25rem .65rem;font-size:.78rem}
-.agent-main code{background:#eeeae0;padding:.1rem .3rem;border-radius:.25rem}
+.agent-main .tag{display:inline-block;border:1px solid #c99b52;border-radius:999px;padding:.25rem .65rem;font-size:.78rem}.agent-main details{border:1px solid var(--line);border-radius:.75rem;background:#fafbfa;padding:1rem 1.25rem}.agent-main details summary{cursor:pointer;color:#24292f;font-weight:600;font-size:.95rem;font-family:inherit;list-style:none}.agent-main details summary::-webkit-details-marker{display:none}.agent-main details summary::before{content:'▸ ';color:#556e5a}.agent-main details[open] summary::before{content:'▾ '}.agent-main .note{color:#62666d;font-size:.85rem;margin-top:.6rem}.agent-main .btn{border-radius:6px}.agent-main code{background:#eeeae0;padding:.1rem .3rem;border-radius:.25rem}
 @media(max-width:720px){.flow,.cards{grid-template-columns:1fr}.flow>div{min-height:auto}.run{grid-template-columns:1fr}.agent-main{padding-top:3rem}}
