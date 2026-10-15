@@ -431,16 +431,21 @@ links = "".join(
 
 for _, _, _, body in SCREENS:
     pass
-for slug, section, _, body in SCREENS:
+for slug, section, label, body in SCREENS:
+    desc = "MIAO product mockup: illustrative interface screen with sample data (not a product commitment)."
     html = (
         '<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-        f'<title>{escape(section)} · MIAO current product mockup</title><link rel="stylesheet" href="prototype.css"></head><body>{body}</body></html>'
+        f'<title>{escape(section)} · MIAO current product mockup</title>'
+        f'<meta name="description" content="{escape(desc)}">'
+        f'<link rel="stylesheet" href="prototype.css"></head><body>{body}</body></html>'
     )
     (OUT / f"{slug}.html").write_text(english_markup(html), encoding="utf-8")
 
 gallery = (
     '<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-    '<title>MIAO product mockups</title><link rel="stylesheet" href="prototype.css"></head><body class="gallery">'
+    '<title>MIAO product mockups</title>'
+    '<meta name="description" content="MIAO product mockup gallery: 12 illustrative screens from sign-in to architecture, shown with sample data.">'
+    '<link rel="stylesheet" href="prototype.css"></head><body class="gallery">'
     '<header><a href="../">← Back to the user guide</a><span>MIAO / Product mockups</span></header><main><p class="kicker">12 SCREENS / HTML + PNG</p>'
     '<h1>From sign-in to daily work</h1><p>These screens are illustrative prototypes based on the current MIAO workspace. They use sample data to show entry points, hierarchy and confirmation boundaries.</p>'
     '<div class="gallery-grid">' + links + '</div></main></body></html>'
