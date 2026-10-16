@@ -278,80 +278,16 @@
 .agent-main .links{display:flex;flex-wrap:wrap;gap:1rem;font-weight:600}
 .agent-main .tag{display:inline-block;border:1px solid #c99b52;border-radius:999px;padding:.25rem .65rem;font-size:.78rem}.agent-main details{border:1px solid var(--line);border-radius:.75rem;background:#fafbfa;padding:1rem 1.25rem}.agent-main details summary{cursor:pointer;color:#24292f;font-weight:600;font-size:.95rem;font-family:inherit;list-style:none}.agent-main details summary::-webkit-details-marker{display:none}.agent-main details summary::before{content:'▸ ';color:#556e5a}.agent-main details[open] summary::before{content:'▾ '}.agent-main .note{color:#62666d;font-size:.85rem;margin-top:.6rem}.agent-main .btn{border-radius:6px}.agent-main code{background:#eeeae0;padding:.1rem .3rem;border-radius:.25rem}
 @media(max-width:720px){.flow,.cards{grid-template-columns:1fr}.flow>div{min-height:auto}.run{grid-template-columns:1fr}.agent-main{padding-top:3rem}}
-
-
-/* Interactive three-column homepage preview. This is a demo, not a connected app. */
-.home-preview-figure:has(.miao-demo){width:100%;max-width:none}
-.home-hero .hero-visual:has(.miao-demo){width:100%;min-width:0}
-.miao-demo{display:grid;grid-template-columns:21% 35% minmax(0,1fr);width:100%;min-height:490px;overflow:hidden;border:1px solid #e6e7e9;border-radius:12px;background:#fff;box-shadow:0 15px 55px #1b25300e;color:#1b2530;font-family:"PingFang SC","Microsoft YaHei",Arial,sans-serif;text-align:left}
-.miao-demo *{box-sizing:border-box}
-.miao-demo button{font:inherit;cursor:pointer}
-.miao-demo-side{min-width:0;display:flex;flex-direction:column;gap:6px;padding:18px 12px 13px;border-right:1px solid #e9ebef}
-.miao-demo-brand{display:flex;align-items:center;gap:8px;margin-bottom:14px;padding:0 5px;font-size:21px;letter-spacing:-.045em}
-.miao-demo-cat{display:grid;place-items:center;width:24px;height:24px;border:2px solid #111827;border-radius:9px;font-size:20px;line-height:1}
-.miao-demo-brand-plus{margin-left:auto;font-size:18px;color:#8a92a0}
-.miao-demo-search{padding:10px 9px;border:1px solid #e8eaf0;border-radius:7px;color:#a0a7b2;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.miao-demo-side-label{margin:16px 8px 5px;color:#9299a5;font-size:10px;letter-spacing:.03em}
-.miao-demo-app-link{display:flex;align-items:center;gap:9px;width:100%;min-height:39px;padding:5px 9px;border:0;border-radius:8px;background:transparent;color:#343b46;text-align:left;font-size:12px;white-space:nowrap}
-.miao-demo-app-link:hover{background:#f5f7fa}
-.miao-demo-app-link.is-active{background:#eaf1ff;color:#215acc;font-weight:650}
-.miao-demo-app-icon,.miao-demo-header-icon{display:grid;place-items:center;flex:none;width:26px;height:26px;border-radius:7px;background:#edf2fd;color:#2e70e4;font-size:18px}
-.miao-demo-side-divider{height:1px;margin:9px 3px 5px;background:#edf0f2}
-.miao-demo-muted-line{padding:7px 9px;color:#737b88;font-size:11px}
-.miao-demo-account{display:flex;align-items:center;gap:9px;margin-top:auto;padding:13px 3px 0;border-top:1px solid #edf0f2;font-size:11px}
-.miao-demo-account small{display:block;margin-top:3px;color:#97a0ab;font-size:9px}
-.miao-demo-avatar{display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:#e4e8ed;font-weight:700}
-.miao-demo-gear{margin-left:auto;color:#7f8894;font-size:16px}
-.miao-demo-chat{display:flex;flex-direction:column;min-width:0;border-right:1px solid #e9ebef}
-.miao-demo-panel-head{display:flex;align-items:center;gap:9px;height:65px;min-height:65px;padding:11px 14px;border-bottom:1px solid #edf0f2}
-.miao-demo-panel-head strong{display:block;font-size:13px}
-.miao-demo-panel-head small{display:flex;align-items:center;gap:5px;margin-top:3px;color:#8d95a0;font-size:9px}
-.miao-demo-panel-head i{width:6px;height:6px;border-radius:50%;background:#29b673}
-.miao-demo-head-menu{margin-left:auto;color:#8b94a3;font-weight:700}
-.miao-demo-conversation{flex:1;min-height:0;padding:24px 17px 16px}
-.miao-demo-greeting,.miao-demo-assistant-answer{display:flex;align-items:flex-start;gap:8px}
-.miao-demo-chat-cat{flex:none;margin-top:3px;font-size:19px;color:#2f3846}
-.miao-demo-greeting>div{padding:13px 14px;border-radius:11px;background:#f6f8fa;font-size:11px;line-height:1.6}
-.miao-demo-greeting strong{font-weight:650}
-.miao-demo-greeting p{margin:5px 0 0;color:#616b76}
-.miao-demo-suggestions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:12px 0 20px 28px}
-.miao-demo-suggestions button{padding:8px 5px;border:1px solid #e6e9ee;border-radius:7px;background:#fff;color:#596473;font-size:10px}
-.miao-demo-suggestions button:hover{border-color:#9db9f0;color:#215acc}
-.miao-demo-user-bubble{width:fit-content;max-width:90%;margin:0 0 20px auto;padding:11px 13px;border-radius:12px;background:#eaf1ff;color:#273a57;font-size:11px}
-.miao-demo-assistant-answer>div{flex:1;min-width:0}
-.miao-demo-assistant-answer p{margin:5px 0 11px;font-size:11px;line-height:1.6}
-.miao-demo-result{padding:11px 12px;border:1px solid #e9edf2;border-radius:10px}
-.miao-demo-result>strong{font-size:11px}
-.miao-demo-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:13px 0}
-.miao-demo-stats>span{padding:9px 3px;border-radius:7px;background:#f7f9fb;text-align:center}
-.miao-demo-stats b{display:block;font-size:17px;line-height:1.2}
-.miao-demo-stats small{display:block;margin-top:5px;color:#89929e;font-size:9px}
-.miao-demo-result-foot{border-top:1px solid #eef0f4;padding-top:9px;color:#4573ca;font-size:9px}
-.miao-demo-composer{display:flex;align-items:center;justify-content:space-between;gap:6px;margin:9px 13px 14px;padding:11px;border:1px solid #e4e8ed;border-radius:10px;color:#a2aab3;font-size:10px}
-.miao-demo-composer button{display:grid;place-items:center;width:26px;height:26px;flex:none;border:0;border-radius:7px;background:#2d70ed;color:white}
-.miao-demo-runtime{min-width:0}
-.miao-demo-tabs{display:flex;align-items:center;gap:16px;height:65px;padding:0 16px;border-bottom:1px solid #edf0f2}
-.miao-demo-tabs button{align-self:stretch;padding:0 4px;border:0;border-bottom:2px solid transparent;background:transparent;color:#858e9c;font-size:11px}
-.miao-demo-tabs button.selected{border-bottom-color:#3579f2;color:#2361d6;font-weight:650}
-.miao-demo-tabs-more{margin-left:auto;color:#89929d;font-weight:700}
-.miao-demo-runtime-body{padding:23px 15px}
-.miao-demo-runtime-intro{display:flex;align-items:center;gap:11px;margin-bottom:23px}
-.miao-demo-runtime-logo{display:grid;place-items:center;width:49px;height:49px;border-radius:12px;background:#eaf1ff;color:#2e72ed;font-size:28px}
-.miao-demo-runtime-intro h3{margin:0;font-size:15px;line-height:1.4}
-.miao-demo-runtime-intro p{margin:4px 0 0;color:#8c96a3;font-size:10px;line-height:1.5}
-.miao-demo-runtime-title{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
-.miao-demo-runtime-title strong{font-size:12px}
-.miao-demo-runtime-title span{padding:7px 10px;border-radius:6px;background:#2c72f1;color:#fff;font-size:10px}
-.miao-demo-table{overflow:hidden;border:1px solid #e9edf2;border-radius:8px}
-.miao-demo-table-header,.miao-demo-table-row{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(0,1fr) minmax(0,.8fr);gap:7px;align-items:center;padding:11px 9px;font-size:10px}
-.miao-demo-table-header{background:#f8fafb;color:#8a94a1}
-.miao-demo-table-row{border-top:1px solid #edf0f3;color:#596473}
-.miao-demo-table-row>span:first-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#333b47}
-.miao-demo-table-row em{display:inline-block;padding:4px 6px;border-radius:5px;background:#e8f2fc;color:#3267b5;font-size:9px;font-style:normal;white-space:nowrap}
-.miao-demo-pagination{margin-top:20px;color:#8e98a4;text-align:center;font-size:11px}
-.miao-demo-pagination b{padding:6px 9px;border-radius:5px;background:#eaf1ff;color:#2565d9}
-.miao-demo-file-list{border:1px solid #e9edf2;border-radius:8px}
-.miao-demo-file-list div{padding:13px;border-bottom:1px solid #eef0f2;font-size:11px}
-.miao-demo-file-list div:last-child{border-bottom:0}
-@media(max-width:1000px){.miao-demo{grid-template-columns:20% 36% minmax(0,1fr)}.miao-demo-side{padding-inline:8px}.miao-demo-conversation{padding-inline:10px}.miao-demo-suggestions{grid-template-columns:1fr}}
-@media(max-width:650px){.home-preview-figure:has(.miao-demo){overflow-x:auto}.miao-demo{width:780px;min-height:480px}.miao-demo-side{padding-inline:10px}.miao-demo-conversation{padding-inline:14px}.miao-demo-suggestions{grid-template-columns:1fr 1fr}}
+/* Marketing-site visual alignment with the MIAO workspace, not an app simulation. */
+.home-page .home-hero-compact{padding-top:54px;padding-bottom:64px}
+.home-page .home-hero-compact h1{max-width:840px;font-size:clamp(32px,4vw,48px);line-height:1.19;letter-spacing:-.045em;font-weight:600}
+.home-page .home-hero-compact .hero-description{max-width:740px;font-size:15px;line-height:1.8;color:#62676d}
+.home-page .home-hero-compact .hero-actions{gap:10px;flex-wrap:wrap;justify-content:center}
+.home-page .home-hero-compact .hero-actions .btn{min-height:36px;height:36px;padding-inline:14px;border-radius:6px;font-size:12px}
+.home-page .home-hero-compact .hero-visual{width:min(100%,1100px)}
+.home-page .home-preview-figure{width:100%}
+.home-page .home-hero-compact .home-preview-image{display:block;width:100%;height:auto;border:1px solid #e6e7e9;border-radius:10px;box-shadow:0 8px 30px rgba(23,26,29,.055)}
+.home-page .home-preview-caption{font-size:12px;color:#73777c}
+.home-page .product-story{border-color:#e6e7e9}
+.home-page .product-story .story-step figure img{border-color:#e6e7e9;border-radius:8px}
+@media(max-width:700px){.home-page .home-hero-compact{padding-top:34px;padding-bottom:42px}.home-page .home-hero-compact h1{font-size:32px}.home-page .home-hero-compact .hero-description{font-size:13px}.home-page .home-hero-compact .hero-actions{gap:8px}}
