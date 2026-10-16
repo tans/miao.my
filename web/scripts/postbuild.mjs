@@ -23,7 +23,7 @@ execFileSync("python3", [resolve(root, "scripts/build-prototypes.py")], { stdio:
 // Static site content copied verbatim (assets are referenced by every
 // page; docs/guide/examples/changelog are static pages built as single
 // bilingual files by scripts/build-*.py — no /en/ mirror anymore).
-for (const item of ["assets", "docs", "guide", "examples.html", "changelog.html", "llms.txt"]) {
+for (const item of ["assets", "docs", "guide", "examples.html", "changelog.html"]) {
   await cp(resolve(root, item), resolve(dist, item), { recursive: true });
   console.log(`copied ${item} → dist/${item}`);
 }
@@ -61,5 +61,7 @@ execFileSync("python3", [resolve(root, "scripts/inject-seo.py")], { stdio: "inhe
 // llms.txt is generated from the final page titles/descriptions — must run
 // after inject-seo.py so the React shells carry their static SEO tags.
 execFileSync("python3", [resolve(root, "scripts/gen-llms.py")], { stdio: "inherit" });
+await cp(resolve(root, "llms.txt"), resolve(dist, "llms.txt"));
+console.log("copied llms.txt → dist/llms.txt");
 
 console.log("postbuild done.");
