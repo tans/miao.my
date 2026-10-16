@@ -20,9 +20,6 @@ execFileSync("python3", [resolve(root, "scripts/build-decision-guide.py")], { st
 // re-rendering them needs WeasyPrint + a Chinese font.
 execFileSync("python3", [resolve(root, "scripts/build-prototypes.py")], { stdio: "inherit" });
 
-// llms.txt is generated from the final page titles/descriptions.
-execFileSync("python3", [resolve(root, "scripts/gen-llms.py")], { stdio: "inherit" });
-
 // Static site content copied verbatim (assets are referenced by every
 // page; docs/guide/examples/changelog are static pages built as single
 // bilingual files by scripts/build-*.py — no /en/ mirror anymore).
@@ -60,5 +57,9 @@ await rm(resolve(dist, "zh"), { recursive: true, force: true });
 // Fill the static zh SEO tags (title / meta description) into each built
 // page shell from copy/zh.toml — single source of truth, see inject-seo.py.
 execFileSync("python3", [resolve(root, "scripts/inject-seo.py")], { stdio: "inherit" });
+
+// llms.txt is generated from the final page titles/descriptions — must run
+// after inject-seo.py so the React shells carry their static SEO tags.
+execFileSync("python3", [resolve(root, "scripts/gen-llms.py")], { stdio: "inherit" });
 
 console.log("postbuild done.");

@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
 """生成并维护根目录的 llms.txt（AI Agent 友好性）。
 
-扫描所有"真实内容页"（排除纯重定向页），提取标题、URL、meta description，
-输出 llms.txt。幂等：每轮重跑，内容只随 HTML 的 title/description 变化。
+扫描部署产物 dist/ 下的所有真实页面（React 壳页 + 静态双语页），
+提取标题、URL、meta description，输出 llms.txt。幂等：每轮重跑，
+内容只随页面 title/description 变化。
 
-运行：python3 scripts/gen-llms.py   （在仓库根目录）
+页面 URL 均对应线上路径（cleanUrls：无 .html 后缀优先）。
+运行：python3 scripts/gen-llms.py   （在仓库根目录，需先构建生成 dist/）
 """
 import re
 from pathlib import Path
 from urllib.parse import urljoin
 
 root = Path(__file__).resolve().parent.parent
+DIST = root / "dist"
 
 # 站点基础信息（llms.txt 头部）
 SITE_NAME = "miao.my"
@@ -26,13 +29,14 @@ def is_redirect(html: str) -> bool:
 
 
 def extract(path: Path, html: str) -> dict | None:
-    m = re.search(r"<title>(.*?)</title>", html, re.S)
+    # 容忍 <title data-en="..."> 这类带属性的双语页标题
+    m = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
     title = re.sub(r"\s+", " ", m.group(1)).strip() if m else ""
     d = re.search(r'<meta name="description" content="(.*?)"', html, re.S)
     desc = re.sub(r"\s+", " ", d.group(1)).strip() if d else ""
     if not title:
         return None
-    rel = path.relative_to(root).as_posix()
+    rel = path.relative_to(DIST).as_posix()
     if rel.endswith(".html") and not rel.endswith("index.html"):
         url = rel
     elif rel.endswith("index.html"):
@@ -45,11 +49,13 @@ def extract(path: Path, html: str) -> dict | None:
 
 
 def main() -> None:
+    # 优先扫描构建产物 dist/（部署到线上的真实页面全集）；
+    # dist 不存在时回退扫描仓库根目录（排除模板源与子项目）。
+    base = DIST if DIST.is_dir() else root
+    skips = set() if DIST.is_dir() else {"templates", "web", "_temp", "dist", "content"}
     entries = []
-    # 排除模板源（templates/）与独立子项目（web/、_temp/、dist/）
-    SKIP_DIRS = {"templates", "web", "_temp", "dist"}
-    for path in sorted(root.rglob("*.html")):
-        if SKIP_DIRS & set(path.parts):
+    for path in sorted(base.rglob("*.html")):
+        if skips & set(path.parts):
             continue
         html = path.read_text(encoding="utf-8", errors="replace")
         if is_redirect(html):

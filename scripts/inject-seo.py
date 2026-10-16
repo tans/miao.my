@@ -45,7 +45,29 @@ def main() -> None:
         # Normalize: drop any existing hand-written tags, then insert fresh ones.
         html = re.sub(r"\s*<title>[^<]*</title>", "", html, count=1)
         html = re.sub(r'\s*<meta name="description" content="[^"]*"\s*/?>', "", html, count=1)
-        tags = f'\n    <title>{title}</title>\n    <meta name="description" content="{desc}" />'
+        # Idempotent JSON-LD: remove any previously injected block.
+        html = re.sub(
+            r'\s*<script type="application/ld\+json">.*?</script>',
+            "",
+            html,
+            count=1,
+            flags=re.S,
+        )
+        url = "/" if rel == "index.html" else "/" + rel
+        schema = {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": title,
+            "url": f"https://miao.my{url}",
+            "description": desc,
+            "inLanguage": "zh-CN",
+        }
+        ld = (
+            f'\n    <script type="application/ld+json">'
+            f'{__import__("json").dumps(schema, ensure_ascii=False)}'
+            f'</script>'
+        )
+        tags = f'\n    <title>{title}</title>\n    <meta name="description" content="{desc}" />{ld}'
         html = html.replace("</head>", tags + "\n  </head>", 1)
         f.write_text(html, encoding="utf-8")
         print(f"injected seo → {rel}")
