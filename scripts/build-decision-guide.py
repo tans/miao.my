@@ -58,7 +58,8 @@ def render(source):
         if re.match(r"^\d+\. ", line):
             items = []
             while i < len(lines) and re.match(r"^\d+\. ", lines[i]):
-                items.append(f"<li>{inline(re.sub(r'^\d+\. ', '', lines[i]))}</li>")
+                item = re.sub(r"^\d+\. ", "", lines[i])
+                items.append(f"<li>{inline(item)}</li>")
                 i += 1
             out.append("<ol>" + "".join(items) + "</ol>")
             continue
