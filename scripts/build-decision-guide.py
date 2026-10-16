@@ -94,5 +94,6 @@ en = build(ROOT / "docs/DECISION_GUIDE.en.md", ROOT / "docs/template.en.html", {
 })
 
 target = ROOT / "guide" / "index.html"
+target.parent.mkdir(parents=True, exist_ok=True)
 target.write_text(merge_bilingual(zh, en), encoding="utf-8")
 print(target)
