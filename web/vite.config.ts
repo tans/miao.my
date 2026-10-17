@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
 import path from "node:path";
 import devLayout from "./scripts/dev-layout.mjs";
 
@@ -19,7 +18,7 @@ export default defineConfig({
   // devLayout makes `npm run dev` serve the site at the same URLs as
   // production (/, /get-started/, /assets/* ...) instead of /src/pages/*.html.
   // Only the dev server; build output is unaffected.
-  plugins: [react(), tailwindcss(), devLayout()],
+  plugins: [react(), devLayout()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
