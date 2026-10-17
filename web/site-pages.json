@@ -1,0 +1,52 @@
+[
+  {
+    "id": "home",
+    "url": "/",
+    "entry": "src/pages/home.html",
+    "output": "index.html",
+    "seo": {
+      "section": "index",
+      "keys": ["title", "meta1", "meta2", "meta3", "meta4"]
+    }
+  },
+  {
+    "id": "get-started",
+    "url": "/get-started/",
+    "entry": "src/pages/get-started.html",
+    "output": "get-started/index.html",
+    "seo": {
+      "section": "get-started",
+      "keys": ["title", "meta1", "meta2"]
+    }
+  },
+  {
+    "id": "community",
+    "url": "/community/",
+    "entry": "src/pages/community.html",
+    "output": "community/index.html",
+    "seo": {
+      "section": "community",
+      "keys": ["title", "meta1", "meta2"]
+    }
+  },
+  {
+    "id": "self-hosting",
+    "url": "/self-hosting/",
+    "entry": "src/pages/self-hosting.html",
+    "output": "self-hosting/index.html",
+    "seo": {
+      "section": "self-hosting",
+      "keys": ["title", "meta"]
+    }
+  },
+  {
+    "id": "self-hosting-costs",
+    "url": "/self-hosting/costs/",
+    "entry": "src/pages/self-hosting-costs.html",
+    "output": "self-hosting/costs/index.html",
+    "seo": {
+      "section": "self-hosting.costs",
+      "keys": ["title", "meta"]
+    }
+  }
+]

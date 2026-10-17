@@ -8,19 +8,13 @@
 //   /docs/* /guide/* ... -> repo root static pages, served verbatim
 //
 // Only used by `vite` dev server; build output is unaffected.
+import { readFileSync } from "node:fs";
 import { readFile, stat } from "node:fs/promises";
-import { dirname, extname, resolve } from "node:path";
+import { extname, resolve } from "node:path";
 
 const repoRoot = resolve(import.meta.dirname, "../..");
-
-// Map of production URL (as in dist/, see postbuild.mjs) -> Vite HTML entry.
-const prodUrlToEntry = {
-  "": "src/pages/home.html",
-  "get-started/": "src/pages/get-started.html",
-  "community/": "src/pages/community.html",
-  "self-hosting/": "src/pages/self-hosting.html",
-  "self-hosting/costs/": "src/pages/self-hosting-costs.html",
-};
+const sitePages = JSON.parse(readFileSync(resolve(repoRoot, "web/site-pages.json"), "utf8"));
+const prodUrlToEntry = Object.fromEntries(sitePages.map(({ url, entry }) => [url.replace(/^\//, ""), entry]));
 
 // Custom URLs that resolve to a file under repoRoot (served verbatim).
 const staticUrls = new Set([

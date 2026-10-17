@@ -1,11 +1,12 @@
 // Postbuild: copy static site assets/legacy pages into dist/, and
 // arrange the Vite-built pages into the site URL layout.
-import { cp, mkdir, rename, rm } from "node:fs/promises";
+import { cp, mkdir, readFile, rename, rm } from "node:fs/promises";
 import { execFileSync } from "node:child_process";
 import { dirname, resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "../..");
 const dist = resolve(root, "dist");
+const sitePages = JSON.parse(await readFile(resolve(root, "web/site-pages.json"), "utf8"));
 
 // Regenerate examples/changelog HTML from their Markdown sources first,
 // so the copied static pages always match content/*.md (build-content.py).
@@ -36,17 +37,10 @@ await cp(resolve(root, "assets", "js", "site-switch.js"), resolve(dist, "assets"
 
 // Vite 7 emits every HTML entry as <root>/src/pages/<file>.html and
 // ignores the rollup input keys. Move each page into its site URL.
-const pages = {
-  "src/pages/home.html": "index.html",
-  "src/pages/get-started.html": "get-started/index.html",
-  "src/pages/community.html": "community/index.html",
-  "src/pages/self-hosting.html": "self-hosting/index.html",
-  "src/pages/self-hosting-costs.html": "self-hosting/costs/index.html",
-};
-for (const [from, to] of Object.entries(pages)) {
-  await mkdir(dirname(resolve(dist, to)), { recursive: true });
-  await rename(resolve(dist, from), resolve(dist, to));
-  console.log(`moved ${from} → ${to}`);
+for (const { entry, output } of sitePages) {
+  await mkdir(dirname(resolve(dist, output)), { recursive: true });
+  await rename(resolve(dist, entry), resolve(dist, output));
+  console.log(`moved ${entry} → ${output}`);
 }
 await rm(resolve(dist, "src"), { recursive: true, force: true });
 

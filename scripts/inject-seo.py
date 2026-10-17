@@ -7,6 +7,7 @@ of truth; the src/pages/*.html shells carry no copy of their own.
 
 Usage: python3 scripts/inject-seo.py   (after `vite build` + page rename in postbuild.mjs)
 """
+import json
 import re
 import tomllib
 from html import escape
@@ -15,15 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 COPY = tomllib.loads((ROOT / "copy" / "zh.toml").read_text(encoding="utf-8"))
-
-# dist page path -> (toml section, [keys: first is title, rest join into description])
-PAGES = {
-    "index.html": ("index", ["title", "meta1", "meta2", "meta3", "meta4"]),
-    "get-started/index.html": ("get-started", ["title", "meta1", "meta2"]),
-    "community/index.html": ("community", ["title", "meta1", "meta2"]),
-    "self-hosting/index.html": ("self-hosting", ["title", "meta"]),
-    "self-hosting/costs/index.html": ("self-hosting.costs", ["title", "meta"]),
-}
+SITE_PAGES = json.loads((ROOT / "web" / "site-pages.json").read_text(encoding="utf-8"))
 
 
 def copy_keys(section: str, keys: list[str]) -> list[str]:
@@ -34,11 +27,12 @@ def copy_keys(section: str, keys: list[str]) -> list[str]:
 
 
 def main() -> None:
-    for rel, (section, keys) in PAGES.items():
+    for page in SITE_PAGES:
+        rel = page["output"]
         f = DIST / rel
         if not f.exists():
             continue
-        vals = copy_keys(section, keys)
+        vals = copy_keys(page["seo"]["section"], page["seo"]["keys"])
         title = escape(vals[0])
         desc = escape("".join(vals[1:]))
         html = f.read_text(encoding="utf-8")
