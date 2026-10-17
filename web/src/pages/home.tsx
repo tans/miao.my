@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { GithubIcon } from "@/components/site/SiteLayout";
 import { useCopy } from "@/lib/i18n";
 import { useLocale, usePageMeta } from "@/lib/locale";
+import { mountPage } from "./mount";
 
 function CatFigure() {
   return (
@@ -233,3 +234,5 @@ export default function Home() {
     </SiteLayout>
   );
 }
+
+mountPage(Home);

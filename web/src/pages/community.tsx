@@ -2,6 +2,7 @@ import { useState } from "react";
 import { SiteLayout, GithubIcon, ShieldIcon } from "@/components/site/SiteLayout";
 import { useCopy } from "@/lib/i18n";
 import { useLocale, usePageMeta } from "@/lib/locale";
+import { mountPage } from "./mount";
 
 function CopyTemplate({ steps, hint }: { steps: string[]; hint: string }) {
   const [copied, setCopied] = useState(false);
@@ -107,3 +108,5 @@ export default function Community() {
     </SiteLayout>
   );
 }
+
+mountPage(Community);

@@ -1,6 +1,7 @@
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { useCopy } from "@/lib/i18n";
 import { useLocale, usePageMeta } from "@/lib/locale";
+import { mountPage } from "./mount";
 
 export default function SelfHosting() {
   const { locale } = useLocale();
@@ -138,3 +139,5 @@ export default function SelfHosting() {
     </SiteLayout>
   );
 }
+
+mountPage(SelfHosting);
